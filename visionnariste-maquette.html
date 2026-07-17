@@ -1,0 +1,1981 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Visionnariste Marketing</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23080808'/%3E%3Ctext x='32' y='52' text-anchor='middle' font-family='Georgia,serif' font-weight='900' font-size='54' fill='%23f0e6d2'%3EV%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Bangers&display=swap" rel="stylesheet"/>
+<style>
+@import url('https://fonts.cdnfonts.com/css/aileron');
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --bg:          #ffffff;
+  --bg2:         #f7f6f2;
+  --bg3:         #efece5;
+  --white:       #ffffff;
+  --cream:       #111111;
+  --muted:       rgba(0,0,0,0.45);
+  --border:      rgba(0,0,0,0.09);
+  --blue:        #1a3ff0;
+  --blue2:       #3558f4;
+  --blue-glow:   rgba(26,63,240,0.25);
+  --font-serif:  'Aileron','Plus Jakarta Sans','Inter',sans-serif;
+  --font-graffiti:'Bangers', Impact, cursive;
+  --font:        'Aileron','Plus Jakarta Sans','Inter',sans-serif;
+}
+
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:var(--font);font-weight:400;overflow-x:hidden;line-height:1.6}
+
+/* ═══════════════════════════
+   NAV
+═══════════════════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 52px;
+  background:transparent;
+  backdrop-filter:blur(0px);
+  -webkit-backdrop-filter:blur(0px);
+  transition:background .45s ease,backdrop-filter .45s ease,box-shadow .45s ease,padding .3s ease;
+}
+nav.scrolled{
+  background:rgba(7,7,7,0.97);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  box-shadow:0 1px 0 rgba(255,255,255,.06);
+  padding:12px 52px;
+}
+.nav-logo{display:flex;flex-direction:column;line-height:1;text-decoration:none;gap:1px}
+.nav-logo .ls{font-family:var(--font-serif);font-weight:900;font-size:17px;letter-spacing:.15em;text-transform:uppercase;color:#fff}
+.nav-logo .lg{font-family:var(--font-graffiti);font-size:13px;letter-spacing:.2em;color:#fff;opacity:.9}
+.nav-pills{display:flex;gap:8px;list-style:none}
+.nav-pills a{
+  display:block;background:#fff;border-radius:100px;
+  padding:9px 22px;font-size:11px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:#080808;
+  text-decoration:none;transition:background .2s,transform .15s;
+  box-shadow:0 2px 12px rgba(0,0,0,.2);
+}
+.nav-pills a:hover{background:var(--cream);transform:translateY(-1px)}
+.nav-socials{display:flex;gap:16px;align-items:center}
+.nav-socials a{color:rgba(255,255,255,.65);text-decoration:none;transition:color .2s;display:block}
+.nav-socials a:hover{color:#fff}
+.nav-socials svg{width:18px;height:18px;display:block}
+
+/* ═══════════════════════════
+   HERO
+═══════════════════════════ */
+/* V float animations */
+@keyframes vf1{0%,100%{transform:rotate(-15deg) translateY(0px)}50%{transform:rotate(-13.5deg) translateY(-28px)}}
+@keyframes vf2{0%,100%{transform:rotate(12deg) translateY(0px)}50%{transform:rotate(13deg) translateY(22px)}}
+@keyframes vf3{0%,100%{transform:rotate(-9deg) translateX(0px)}50%{transform:rotate(-10.5deg) translateX(18px)}}
+@keyframes vf4{0%,100%{transform:rotate(19deg) translateY(0px) scale(1)}50%{transform:rotate(17.5deg) translateY(-16px) scale(1.02)}}
+@keyframes vf5{0%,100%{transform:rotate(-4deg) translateX(0px)}50%{transform:rotate(-5.5deg) translateX(-22px)}}
+@keyframes vf6{0%,100%{transform:rotate(25deg) translateY(0px)}50%{transform:rotate(24deg) translateY(14px)}}
+
+#hero{
+  position:relative;min-height:72vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:120px 48px 80px;overflow:hidden;
+  background:#080808;
+}
+/* Subtle grain overlay */
+#hero::after{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity:.04;pointer-events:none;z-index:0;
+}
+/* V bg letters — animated cream */
+.hero-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.hero-bg span{
+  position:absolute;font-family:var(--font-serif);font-weight:900;
+  color:rgba(240,230,210,0.13);line-height:1;letter-spacing:-.04em;user-select:none;
+  pointer-events:auto;
+  transition:color .6s ease,text-shadow .6s ease;
+}
+.hero-bg span:hover{
+  color:rgba(240,230,210,0.38);
+  text-shadow:0 0 100px rgba(240,215,160,0.28),0 0 40px rgba(240,215,160,0.15);
+  animation-play-state:paused;
+}
+.hero-bg span:nth-child(1){font-size:520px;top:-14%;left:-14%;animation:vf1 28s ease-in-out infinite}
+.hero-bg span:nth-child(2){font-size:460px;top:-10%;right:-11%;animation:vf2 34s ease-in-out infinite 4s}
+.hero-bg span:nth-child(3){font-size:380px;bottom:-6%;left:6%;animation:vf3 24s ease-in-out infinite 8s}
+.hero-bg span:nth-child(4){font-size:310px;bottom:8%;right:2%;animation:vf4 38s ease-in-out infinite 2s}
+.hero-bg span:nth-child(5){font-size:220px;top:32%;left:-2%;animation:vf5 22s ease-in-out infinite 6s}
+.hero-bg span:nth-child(6){font-size:180px;top:10%;left:42%;animation:vf6 30s ease-in-out infinite 12s;opacity:.07}
+
+.hero-content{position:relative;z-index:2;max-width:900px}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;
+  color:rgba(255,255,255,.6);margin-bottom:32px;
+}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';width:32px;height:1px;background:rgba(255,255,255,.3)}
+h1.hero-title{
+  font-family:var(--font);font-weight:800;
+  font-size:clamp(38px,6.5vw,86px);
+  line-height:1.03;letter-spacing:-.03em;text-transform:uppercase;
+  color:#fff;margin-bottom:32px;
+}
+h1.hero-title span{
+  color:#fff;
+}
+.hero-sub{font-size:16px;line-height:1.75;color:rgba(255,255,255,.6);max-width:520px;margin:0 auto 44px}
+.hero-pills{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:48px}
+.hero-pill{
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+  border-radius:100px;padding:9px 24px;
+  font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#fff;
+  backdrop-filter:blur(8px);
+}
+.hero-cta{
+  display:inline-block;background:#fff;color:#080808;border-radius:100px;
+  padding:17px 48px;font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;
+  text-decoration:none;transition:background .2s,transform .2s,box-shadow .2s;
+  box-shadow:0 4px 28px rgba(255,255,255,.18);
+}
+.hero-cta:hover{background:var(--cream);transform:translateY(-2px);box-shadow:0 8px 40px rgba(255,255,255,.28)}
+.scroll-hint{
+  position:absolute;bottom:36px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  color:rgba(255,255,255,.3);z-index:2;
+}
+.scroll-hint span{font-size:9px;letter-spacing:.38em;text-transform:uppercase}
+.scroll-hint::after{
+  content:'';width:1px;height:44px;
+  background:linear-gradient(to bottom,rgba(255,255,255,.4),transparent);
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+
+/* ═══════════════════════════
+   MARQUEE BAND 1 — blue on blue (top of dark section)
+═══════════════════════════ */
+.band{
+  position:relative;z-index:100;
+  padding:15px 0;background:var(--blue);overflow:hidden;
+  white-space:nowrap;
+}
+.band-inner{display:inline-flex;white-space:nowrap}
+.band-inner.fwd{animation:mfwd 20s linear infinite}
+.band-inner.rev{animation:mrev 24s linear infinite}
+.band-item{
+  font-family:var(--font);font-size:12px;font-weight:700;
+  letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.9);
+  padding:0 28px;
+}
+.band-sep{color:rgba(255,255,255,.35);font-size:14px}
+@keyframes mfwd{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes mrev{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+
+/* ═══════════════════════════
+   TILTED BAND — au premier plan sur la transition
+═══════════════════════════ */
+.tilted-wrap{
+  position:relative;height:80px;overflow:visible;z-index:100;
+  background:#080808;
+  margin-top:-1px;
+}
+.tilted-band{
+  position:absolute;left:-6%;right:-6%;width:112%;
+  background:var(--blue);padding:15px 0;
+  transform:rotate(-2.8deg);
+  transform-origin:center center;
+  overflow:hidden;white-space:nowrap;
+  box-shadow:0 0 40px rgba(26,63,240,.45);
+  z-index:100;
+}
+.tilted-inner{display:inline-flex;animation:mrev 18s linear infinite}
+.tilted-item{
+  font-family:var(--font);font-weight:700;font-size:12px;
+  letter-spacing:.26em;text-transform:uppercase;
+  color:rgba(255,255,255,.9);padding:0 28px;
+}
+.tilted-sep{color:rgba(255,255,255,.3);font-size:16px}
+
+/* ═══════════════════════════
+   BIG TEXT SECTION
+═══════════════════════════ */
+#big-text{
+  position:relative;background:var(--bg);
+  padding:80px 0 56px;overflow:hidden;
+}
+.big-txt{
+  font-family:var(--font);font-weight:800;
+  font-size:clamp(80px,14vw,190px);
+  line-height:.9;letter-spacing:-.04em;text-transform:uppercase;
+  color:transparent;
+  -webkit-text-stroke:1.5px rgba(0,0,0,.07);
+  padding:0 52px;user-select:none;
+}
+.big-txt.bright{
+  -webkit-text-stroke:1.5px rgba(26,63,240,.25);
+  color:rgba(26,63,240,.04);
+}
+/* Floating stat cards */
+.float-cards{
+  position:absolute;right:80px;top:50%;transform:translateY(-50%);
+  display:flex;gap:16px;align-items:flex-end;z-index:2;
+  pointer-events:none;
+}
+.fcard{
+  background:#fff;border:1px solid rgba(0,0,0,.1);
+  border-radius:16px;padding:20px;width:130px;
+  box-shadow:0 8px 32px rgba(0,0,0,.1),0 0 0 1px rgba(26,63,240,.06);
+}
+.fcard:nth-child(1){transform:rotate(-3.5deg) translateY(12px)}
+.fcard:nth-child(2){transform:rotate(2deg);width:148px}
+.fcard-label{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(0,0,0,.35);margin-bottom:8px}
+.fcard-val{font-family:var(--font-serif);font-size:36px;font-weight:700;color:var(--blue);line-height:1}
+.fcard-sub{font-size:10px;color:rgba(0,0,0,.35);margin-top:4px}
+.fcard-bar{height:3px;background:rgba(26,63,240,.12);border-radius:2px;margin-top:10px}
+.fcard-bar-fill{height:100%;background:var(--blue2);border-radius:2px}
+
+/* ═══════════════════════════
+   WHITE MARQUEE SECTION
+═══════════════════════════ */
+#white-band{
+  background:#fff;padding:52px 0;overflow:hidden;
+  white-space:nowrap;
+}
+.wband{display:inline-flex;align-items:center;animation:mfwd 22s linear infinite}
+.witem{
+  font-family:var(--font);font-weight:800;
+  font-size:clamp(44px,6.5vw,84px);
+  letter-spacing:-.025em;text-transform:uppercase;
+  color:#080808;padding:0 36px;line-height:1;
+}
+.wdot{color:var(--blue);font-size:clamp(20px,3vw,40px);flex-shrink:0}
+
+/* ═══════════════════════════
+   STATS
+═══════════════════════════ */
+#stats{padding:100px 52px;background:var(--bg2);border-top:1px solid var(--border)}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  max-width:1100px;margin:0 auto;
+}
+.stat{
+  padding:56px 36px;text-align:center;border:1px solid var(--border);
+  position:relative;overflow:hidden;transition:background .3s;
+  background:var(--bg);
+}
+.stat::before{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--blue),transparent);
+  opacity:0;transition:opacity .3s;
+}
+.stat:hover{background:var(--bg3)}
+.stat:hover::before{opacity:1}
+.stat-n{
+  font-family:var(--font-serif);font-size:clamp(64px,8vw,108px);
+  font-weight:900;line-height:1;display:block;
+  background:linear-gradient(135deg,#111 20%,var(--blue));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.stat-l{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:10px;display:block}
+
+/* ═══════════════════════════
+   POURQUOI VISIONNARISTE (Kaivor style)
+═══════════════════════════ */
+#pourquoi{
+  padding:120px 52px;
+  background:#fff;
+  border-top:1px solid var(--border);
+}
+.pourquoi-wrap{
+  display:grid;grid-template-columns:2fr 3fr;gap:100px;
+  max-width:1200px;margin:0 auto;align-items:start;
+}
+.pourquoi-left{}
+.pourquoi-eyebrow{
+  font-size:10px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;
+  color:var(--blue2);display:block;margin-bottom:24px;
+}
+.pourquoi-title{
+  font-family:var(--font-serif);font-weight:700;
+  font-size:clamp(32px,4vw,54px);line-height:1.1;letter-spacing:-.02em;
+  color:#fff;margin-bottom:28px;
+}
+.pourquoi-desc{
+  font-size:15px;line-height:1.8;color:var(--muted);
+}
+.pourquoi-rows{}
+.pourquoi-row{
+  display:grid;grid-template-columns:48px 1fr;gap:28px;
+  padding:36px 0;border-top:1px solid var(--border);align-items:start;
+}
+.pourquoi-row:last-child{border-bottom:1px solid var(--border)}
+.pourquoi-num{
+  font-family:var(--font-serif);font-size:13px;font-weight:700;
+  color:var(--blue2);letter-spacing:.08em;padding-top:3px;
+}
+.pourquoi-row h3{
+  font-family:var(--font-serif);font-size:20px;font-weight:700;
+  color:#fff;margin-bottom:8px;
+}
+.pourquoi-row p{font-size:14px;line-height:1.75;color:var(--muted)}
+
+/* ═══════════════════════════
+   IMPACT / CHIFFRES (Kaivor style)
+═══════════════════════════ */
+#impact{
+  padding:100px 52px;
+  background:#f7f6f2;
+  border-top:none;
+}
+.impact-header{max-width:1200px;margin:0 auto 70px;text-align:center}
+.impact-eyebrow{
+  font-size:10px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;
+  color:#888;display:block;margin-bottom:18px;
+}
+.impact-title{
+  font-family:var(--font-serif);font-weight:700;
+  font-size:clamp(32px,4vw,52px);line-height:1.1;letter-spacing:-.02em;
+  color:#111;
+}
+.impact-title span{
+  background:linear-gradient(135deg,var(--blue),#6ea8fe);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.impact-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  max-width:1200px;margin:0 auto;
+}
+.impact-stat{
+  text-align:center;padding:0 40px;
+  border-right:1px solid rgba(0,0,0,.1);
+}
+.impact-stat:last-child{border-right:none}
+.impact-num{
+  font-family:var(--font-serif);font-weight:900;
+  font-size:clamp(48px,6vw,80px);line-height:1;
+  color:#111;display:block;margin-bottom:16px;
+}
+.impact-dash{
+  width:28px;height:2px;background:var(--blue);margin:0 auto 12px;
+}
+.impact-label{
+  font-size:13px;font-weight:600;color:#666;line-height:1.5;
+  letter-spacing:.02em;
+}
+
+/* ═══════════════════════════
+   SERVICES (4 cartes)
+═══════════════════════════ */
+#services{
+  padding:100px 52px;
+  background:#fff;
+}
+.sec-label{font-size:11px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:var(--blue2);display:block;margin-bottom:16px}
+.sec-title{
+  font-family:var(--font-serif);font-weight:700;
+  font-size:clamp(32px,4vw,52px);line-height:1.1;letter-spacing:-.02em;
+  color:#111;max-width:760px;margin-bottom:16px;
+}
+.sec-sub{font-size:16px;color:#777;margin-bottom:60px;line-height:1.6;max-width:520px}
+.services-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  max-width:1200px;margin:0 auto;
+}
+.scard{
+  background:#fff;border:1px solid #e8e8e8;
+  border-radius:20px;padding:36px 28px 28px;
+  position:relative;transition:transform .3s,border-color .3s,box-shadow .3s;
+  display:flex;flex-direction:column;
+}
+.scard:hover{
+  transform:translateY(-4px);
+  border-color:rgba(26,63,240,.3);
+  box-shadow:0 12px 40px rgba(0,0,0,.1),0 0 0 1px rgba(26,63,240,.1);
+}
+.scard-icon{
+  width:48px;height:48px;border-radius:14px;
+  background:#f3f3f3;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;margin-bottom:24px;color:#444;
+  flex-shrink:0;
+}
+.scard-icon.blue-icon{
+  background:rgba(26,63,240,.1);color:var(--blue);
+}
+.scard-title{
+  font-size:20px;font-weight:700;color:#111;
+  margin-bottom:10px;line-height:1.3;
+}
+.scard-text{font-size:14px;line-height:1.7;color:#666;margin-bottom:20px}
+.scard-list{list-style:none;margin-bottom:auto;padding:0}
+.scard-list li{
+  font-size:13px;color:#555;padding:5px 0;
+  display:flex;align-items:center;gap:8px;line-height:1.4;
+}
+.scard-list li::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--blue);flex-shrink:0;
+}
+.scard-cta{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:13px;font-weight:700;color:#111;
+  text-decoration:none;margin-top:24px;
+  border-top:1px solid #eee;padding-top:20px;
+  letter-spacing:.02em;transition:color .2s;
+}
+.scard-cta:hover{color:var(--blue)}
+.services-footer{
+  text-align:center;margin-top:44px;
+}
+.services-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#111;color:#fff;border-radius:100px;
+  padding:14px 32px;font-size:13px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  text-decoration:none;transition:background .2s,transform .15s;
+}
+.services-btn:hover{background:var(--blue);transform:translateY(-1px)}
+
+/* ═══════════════════════════
+   METHODOLOGIE
+═══════════════════════════ */
+#methode{
+  padding:100px 52px;
+  background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 100%);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+}
+.methode-wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;max-width:1200px;margin:0 auto;align-items:start}
+.steps{display:flex;flex-direction:column;gap:0}
+.step{display:flex;gap:28px;padding:36px 0;border-bottom:1px solid var(--border);position:relative}
+.step:first-child{padding-top:0}
+.step-num{
+  font-family:var(--font-serif);font-weight:900;font-size:52px;
+  color:var(--blue);opacity:.6;line-height:1;flex-shrink:0;width:56px;
+}
+.step h3{font-family:var(--font-serif);font-size:24px;font-weight:700;color:#fff;margin-bottom:8px}
+.step p{font-size:14px;line-height:1.75;color:var(--muted)}
+.methode-right{padding-top:60px}
+.big-quote{
+  font-family:var(--font-serif);font-style:italic;
+  font-size:clamp(28px,3.8vw,50px);font-weight:400;
+  line-height:1.3;color:#111;margin-bottom:40px;letter-spacing:-.01em;
+}
+.big-quote em{color:var(--blue);font-style:normal}
+.quote-note{
+  font-size:14px;color:var(--muted);line-height:1.75;
+  border-left:3px solid var(--blue);padding-left:20px;
+  border-radius:0 0 0 3px;
+}
+
+/* ═══════════════════════════
+   À PROPOS
+═══════════════════════════ */
+#apropos{padding:100px 52px;background:var(--bg)}
+.apropos-wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;max-width:1200px;margin:0 auto;align-items:center}
+.apropos-visual{position:relative}
+.apropos-img{
+  width:100%;aspect-ratio:3/4;background:#e8e6e0;
+  border:1px solid var(--border);border-radius:20px;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;position:relative;
+}
+.apropos-img::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(26,63,240,.06) 0%,transparent 60%);
+}
+.apropos-img-label{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:rgba(0,0,0,.2)}
+.apropos-badge{
+  position:absolute;bottom:-16px;right:-16px;
+  width:110px;height:110px;border-radius:50%;
+  background:#fff;border:2px solid var(--blue);
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  box-shadow:0 4px 20px rgba(26,63,240,.15);
+}
+.apropos-badge span{font-family:var(--font-serif);font-size:12px;font-weight:700;color:var(--blue);line-height:1.3}
+.apropos-text{}
+.apropos-bio{
+  font-family:var(--font-serif);font-weight:400;
+  font-size:clamp(22px,2.8vw,34px);line-height:1.45;
+  color:#fff;margin-bottom:24px;letter-spacing:-.01em;
+}
+.apropos-body{font-size:15px;line-height:1.8;color:var(--muted);margin-bottom:28px}
+.epills{display:flex;flex-wrap:wrap;gap:8px;margin-top:36px}
+.epill{
+  font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(0,0,0,.5);border:1px solid rgba(0,0,0,.15);
+  border-radius:100px;padding:7px 18px;transition:border-color .2s,color .2s;
+}
+.epill:hover{color:var(--blue);border-color:var(--blue)}
+
+/* ═══════════════════════════
+   BIG FOOTER / CONTACT
+═══════════════════════════ */
+#footer-contact{background:var(--bg2);overflow:hidden;border-top:1px solid var(--border)}
+.footer-headline-wrap{
+  padding:60px 52px 0;
+  overflow:hidden;
+}
+.footer-headline{
+  font-family:var(--font);font-weight:800;
+  font-size:clamp(70px,12vw,160px);
+  line-height:.88;letter-spacing:-.04em;text-transform:uppercase;
+  color:#111;
+  text-shadow:none;
+}
+.footer-main{
+  display:grid;grid-template-columns:1fr 1.1fr;gap:0;
+  padding:60px 52px 0;align-items:start;
+}
+/* Left */
+.footer-left{padding-right:64px;padding-bottom:60px}
+.footer-info{margin-bottom:40px}
+.footer-info p{font-size:14px;font-weight:500;color:rgba(0,0,0,.5);margin-bottom:6px}
+.footer-info a{color:rgba(0,0,0,.5);text-decoration:none;transition:color .2s}
+.footer-info a:hover{color:#111}
+.footer-nav{list-style:none;margin-bottom:40px}
+.footer-nav li{margin-bottom:10px}
+.footer-nav a{
+  font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(0,0,0,.4);text-decoration:none;transition:color .2s;display:inline-flex;align-items:center;gap:8px;
+}
+.footer-nav a:hover{color:#111}
+.footer-nav a.hl{color:var(--blue)}
+.fsocials{display:flex;gap:18px;align-items:center}
+.fsocials a{color:rgba(0,0,0,.4);text-decoration:none;transition:color .2s,transform .15s}
+.fsocials a:hover{color:#111;transform:translateY(-2px)}
+.fsocials svg{width:20px;height:20px;display:block}
+/* Right — white card */
+.footer-card{
+  background:#fff;border-radius:20px;padding:40px 44px 44px;margin-bottom:60px;
+  border:1px solid rgba(0,0,0,.1);box-shadow:0 4px 32px rgba(0,0,0,.07);
+}
+.fc-title{font-size:11px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:#080808;margin-bottom:6px}
+.fc-sub{font-size:14px;color:#666;line-height:1.6;margin-bottom:28px}
+.fc-form{display:flex;flex-direction:column;gap:18px}
+.fc-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fc-field{display:flex;flex-direction:column;gap:6px}
+.fc-field label{font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#111}
+.fc-field input,.fc-field textarea{
+  background:transparent;border:none;border-bottom:1.5px solid #ddd;
+  color:#111;padding:10px 0;font-family:var(--font);font-size:14px;
+  outline:none;transition:border-color .2s;border-radius:0;resize:none;
+  -webkit-appearance:none;
+}
+.fc-field textarea{min-height:72px}
+.fc-field input::placeholder,.fc-field textarea::placeholder{color:#aaa}
+.fc-field input:focus,.fc-field textarea:focus{border-color:var(--blue)}
+.fc-btn{
+  background:#080808;color:#fff;border:none;border-radius:100px;
+  padding:18px 48px;font-family:var(--font);font-size:12px;font-weight:800;
+  letter-spacing:.25em;text-transform:uppercase;cursor:pointer;
+  width:100%;margin-top:8px;transition:background .2s,transform .15s;
+}
+.fc-btn:hover{background:var(--blue);transform:translateY(-1px)}
+/* ═══════════════════════════
+   FAN CAROUSEL
+═══════════════════════════ */
+/* ═══════════════════════════
+   SERVICES FAN
+═══════════════════════════ */
+#services-fan{
+  padding:64px 0 80px;background:var(--bg);
+  overflow:hidden;border-top:1px solid var(--border);
+}
+.svc-eyebrow{
+  display:block;text-align:center;
+  font-size:11px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:44px;
+}
+.svc-title-row{
+  display:flex;align-items:center;justify-content:center;
+  padding:0 52px;margin-bottom:14px;
+}
+.svc-adj{
+  flex:1;font-family:var(--font);
+  font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(0,0,0,.2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.svc-adj.prev{text-align:right;padding-right:24px}
+.svc-adj.next{text-align:left;padding-left:24px}
+.svc-big-wrap{
+  position:relative;overflow:hidden;height:68px;min-width:200px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.svc-big-title{
+  font-family:var(--font);font-weight:800;
+  font-size:clamp(20px,3.2vw,46px);
+  line-height:1.1;letter-spacing:-.03em;text-transform:uppercase;
+  color:#111;text-align:center;white-space:nowrap;
+  animation:svcIn .48s cubic-bezier(.22,1,.36,1) both;
+}
+@keyframes svcIn{from{transform:translateY(52px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes svcOut{from{transform:translateY(0);opacity:1}to{transform:translateY(-34px);opacity:0}}
+.fan-stage{
+  position:relative;height:500px;
+  display:flex;align-items:flex-end;justify-content:center;perspective:1200px;
+}
+.fan-card{
+  position:absolute;width:280px;height:394px;border-radius:22px;
+  overflow:hidden;cursor:pointer;transform-origin:50% 100%;
+  transition:transform .55s cubic-bezier(.34,1.4,.64,1),opacity .4s,box-shadow .3s,filter .4s ease;
+  will-change:transform;user-select:none;
+}
+.fan-card-inner{
+  width:100%;height:100%;display:flex;flex-direction:column;
+  position:relative;overflow:hidden;
+}
+.svc-card-art{flex:0 0 62%;overflow:hidden}
+.svc-card-art svg{width:100%;height:100%;display:block}
+.svc-card-info{flex:1;padding:12px 16px;display:flex;flex-direction:column;justify-content:flex-end}
+.svc-card-name{font-size:13px;font-weight:800;line-height:1.2;color:#fff;margin-bottom:4px}
+.svc-card-tags{font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.fan-card-badge{
+  position:absolute;top:11px;right:11px;z-index:3;
+  background:rgba(255,255,255,.15);border-radius:100px;padding:4px 10px;
+  font-size:9px;font-weight:700;letter-spacing:.1em;color:#fff;backdrop-filter:blur(8px);
+}
+.fan-nav{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:36px}
+.fan-arrow{
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(0,0,0,.05);border:1px solid rgba(0,0,0,.12);
+  color:#111;font-size:18px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s,border-color .2s;flex-shrink:0;
+}
+.fan-arrow:hover{background:rgba(0,0,0,.1);border-color:rgba(0,0,0,.2)}
+.fan-dots{display:flex;gap:8px;align-items:center}
+.fan-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:rgba(0,0,0,.15);border:none;padding:0;cursor:pointer;
+  transition:background .25s,transform .25s;
+}
+.fan-dot.active{background:#111;transform:scale(1.25)}
+
+/* ═══════════════════════════
+   PROCESSUS ADS
+═══════════════════════════ */
+#processus{padding:100px 52px;background:#fff;border-top:1px solid var(--border)}
+.proc-header{margin-bottom:64px}
+.proc-eyebrow{font-size:11px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:16px}
+.proc-title{font-family:var(--font);font-weight:800;font-size:clamp(34px,4.5vw,60px);line-height:1.05;letter-spacing:-.03em;color:#111;margin-bottom:12px}
+.proc-sub{font-size:16px;color:rgba(0,0,0,.45);max-width:520px}
+.proc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1000px}
+.proc-card{
+  background:#f7f6f2;border-radius:20px;padding:36px;
+  border:1px solid rgba(0,0,0,.06);
+  transition:transform .3s,box-shadow .3s;
+}
+.proc-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.08)}
+.proc-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:36px;height:36px;border-radius:50%;
+  background:#111;color:#fff;font-size:11px;font-weight:800;letter-spacing:.05em;
+  margin-bottom:20px;
+}
+.proc-card h3{font-size:20px;font-weight:800;color:#111;margin-bottom:10px;line-height:1.2}
+.proc-card p{font-size:14px;color:rgba(0,0,0,.5);line-height:1.7}
+.proc-card-tag{
+  display:inline-block;margin-top:16px;
+  font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--blue);
+}
+
+/* ═══════════════════════════
+   TARIFS
+═══════════════════════════ */
+#tarifs{padding:100px 52px;background:var(--bg2);border-top:1px solid var(--border)}
+.tarifs-header{text-align:center;margin-bottom:64px}
+.tarifs-eyebrow{font-size:11px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:16px}
+.tarifs-title{font-family:var(--font);font-weight:800;font-size:clamp(34px,4.5vw,60px);line-height:1.05;letter-spacing:-.03em;color:#111;margin-bottom:12px}
+.tarifs-sub{font-size:16px;color:rgba(0,0,0,.45)}
+.tarifs-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;max-width:1080px;margin:0 auto}
+.tcard{
+  background:#fff;border-radius:24px;padding:40px 32px;
+  border:1px solid rgba(0,0,0,.08);position:relative;
+  display:flex;flex-direction:column;
+}
+.tcard.featured{
+  background:#111;border-color:transparent;
+  box-shadow:0 32px 80px rgba(0,0,0,.22);
+  transform:scale(1.04);
+}
+.tcard-badge{
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  background:var(--blue);color:#fff;
+  font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;
+  padding:6px 20px;border-radius:100px;white-space:nowrap;
+}
+.tcard-for{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(0,0,0,.35);margin-bottom:12px}
+.tcard.featured .tcard-for{color:rgba(255,255,255,.45)}
+.tcard-name{font-size:28px;font-weight:800;color:#111;margin-bottom:6px;letter-spacing:-.02em}
+.tcard.featured .tcard-name{color:#fff}
+.tcard-budget{font-size:12px;color:rgba(0,0,0,.4);margin-bottom:4px}
+.tcard.featured .tcard-budget{color:rgba(255,255,255,.4)}
+.tcard-price{font-size:36px;font-weight:900;color:var(--blue);line-height:1;margin-bottom:28px;letter-spacing:-.03em}
+.tcard.featured .tcard-price{color:#fff}
+.tcard-sep{height:1px;background:rgba(0,0,0,.08);margin-bottom:24px}
+.tcard.featured .tcard-sep{background:rgba(255,255,255,.12)}
+.tcard-features{list-style:none;padding:0;margin:0 0 32px;flex:1}
+.tcard-features li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:14px;color:rgba(0,0,0,.65);margin-bottom:12px;line-height:1.4;
+}
+.tcard.featured .tcard-features li{color:rgba(255,255,255,.75)}
+.tcard-features li::before{content:'✓';color:var(--blue);font-weight:800;flex-shrink:0;margin-top:1px}
+.tcard.featured .tcard-features li::before{color:#6ea8fe}
+.tcard-cta{
+  display:block;text-align:center;padding:14px 24px;border-radius:100px;
+  font-size:12px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;
+  text-decoration:none;transition:transform .2s,box-shadow .2s;
+  background:transparent;border:1.5px solid rgba(0,0,0,.2);color:#111;cursor:pointer;
+}
+.tcard.featured .tcard-cta{background:#fff;border-color:transparent;color:#111;box-shadow:0 4px 24px rgba(255,255,255,.1)}
+.tcard-cta:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.12)}
+
+/* ═══════════════════════════
+   FAQ
+═══════════════════════════ */
+#faq{padding:100px 52px;background:#fff;border-top:1px solid var(--border)}
+.faq-header{max-width:640px;margin:0 auto 56px}
+.faq-eyebrow{font-size:11px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:16px}
+.faq-title{font-family:var(--font);font-weight:800;font-size:clamp(32px,4vw,56px);line-height:1.05;letter-spacing:-.03em;color:#111}
+.faq-list{max-width:840px;margin:0 auto}
+.faq-item{border-top:1px solid rgba(0,0,0,.08)}
+.faq-item:last-child{border-bottom:1px solid rgba(0,0,0,.08)}
+.faq-q{
+  width:100%;background:none;border:none;text-align:left;cursor:pointer;
+  padding:24px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.faq-q-text{font-size:17px;font-weight:700;color:#111;line-height:1.4}
+.faq-icon{
+  width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(0,0,0,.18);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  font-size:16px;color:#111;transition:transform .3s,background .2s;
+}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:#111;border-color:#111;color:#fff}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s ease,padding .3s;
+}
+.faq-item.open .faq-a{max-height:400px;padding-bottom:24px}
+.faq-a p{font-size:15px;color:rgba(0,0,0,.55);line-height:1.75}
+
+/* ═══════════════════════════
+   FOOTER FINAL
+═══════════════════════════ */
+/* Footer logo */
+.footer-logo{
+  font-family:var(--font-graffiti);font-size:44px;line-height:1;
+  color:#fff;letter-spacing:.02em;display:block;margin-bottom:4px;
+}
+.footer-tagline{font-size:13px;line-height:1.7;color:rgba(255,255,255,.38);max-width:240px;margin:14px 0 22px}
+.footer-col-title{
+  font-size:10px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;
+  color:rgba(255,255,255,.25);margin-bottom:18px;
+}
+.footer-links{list-style:none;padding:0;margin:0}
+.footer-links li{margin-bottom:9px;font-size:14px;color:rgba(255,255,255,.45)}
+.footer-links li a{color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s}
+.footer-links li a:hover{color:#fff}
+.footer-contact-list li{display:flex;align-items:center;gap:8px}
+.footer-contact-list li span{font-size:13px}
+
+/* Processus additional */
+.proc-header{text-align:center;margin-bottom:64px}
+.proc-eyebrow,.tarifs-eyebrow,.faq-eyebrow{
+  display:block;font-size:11px;font-weight:700;letter-spacing:.35em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:16px;
+}
+.proc-title,.tarifs-title,.faq-title{
+  font-size:clamp(28px,3.5vw,46px);font-weight:800;line-height:1.15;letter-spacing:-.03em;
+  color:#111;margin-bottom:16px;
+}
+.proc-sub,.tarifs-sub{
+  font-size:16px;color:rgba(0,0,0,.45);line-height:1.65;max-width:520px;margin:0 auto;
+}
+.proc-card h3{font-size:17px;font-weight:800;letter-spacing:-.02em;color:#111;margin-bottom:10px}
+.proc-card p{font-size:14px;color:rgba(0,0,0,.5);line-height:1.7}
+.proc-card-tag{
+  display:inline-block;margin-top:20px;
+  font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--blue);background:rgba(26,63,240,.06);
+  padding:6px 14px;border-radius:100px;
+}
+.proc-grid{margin:0 auto}
+
+/* Tarifs additional */
+.tarifs-header{text-align:center;margin-bottom:64px}
+.tcard-for{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.tcard.featured .tcard-for{color:rgba(255,255,255,.45)}
+.tcard-name{font-size:22px;font-weight:800;letter-spacing:-.03em;color:#111;margin-bottom:4px}
+.tcard.featured .tcard-name{color:#fff}
+.tcard-budget{font-size:12px;color:rgba(0,0,0,.35);margin-bottom:20px}
+.tcard.featured .tcard-budget{color:rgba(255,255,255,.3)}
+.tcard-price{font-size:42px;font-weight:900;letter-spacing:-.04em;color:#111;margin-bottom:0}
+.tcard.featured .tcard-price{color:#fff}
+.tcard-sep{height:1px;background:rgba(0,0,0,.08);margin:24px 0}
+.tcard.featured .tcard-sep{background:rgba(255,255,255,.1)}
+.tcard-features{list-style:none;padding:0;margin:0 0 32px;flex:1}
+.tcard-features li{font-size:14px;color:rgba(0,0,0,.55);padding:8px 0;border-bottom:1px solid rgba(0,0,0,.05);padding-left:20px;position:relative}
+.tcard-features li::before{content:'✓';position:absolute;left:0;color:var(--blue);font-weight:700}
+.tcard.featured .tcard-features li{color:rgba(255,255,255,.65);border-bottom-color:rgba(255,255,255,.07)}
+.tcard.featured .tcard-features li::before{color:#6b9fff}
+.tcard-cta{
+  display:block;text-align:center;padding:14px 24px;border-radius:100px;
+  font-size:12px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;
+  text-decoration:none;transition:all .2s;
+  border:1.5px solid rgba(0,0,0,.12);color:#111;
+}
+.tcard.featured .tcard-cta{background:#fff;color:#111;border-color:transparent}
+.tcard-cta:hover{background:#111;color:#fff;border-color:#111}
+.tcard.featured .tcard-cta:hover{background:rgba(255,255,255,.85)}
+.tcard-badge{
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  background:var(--blue);color:#fff;
+  font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  padding:5px 16px;border-radius:100px;white-space:nowrap;
+}
+
+/* FAQ additional */
+.faq-header{text-align:center;margin-bottom:56px}
+.faq-q-text{font-size:16px;font-weight:700;letter-spacing:-.01em;color:#111;flex:1}
+.faq-a p{font-size:15px;color:rgba(0,0,0,.55);line-height:1.75;padding-right:52px}
+
+footer.site-footer{
+  background:#080808;color:rgba(255,255,255,.6);
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.footer-top{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;
+  padding:72px 52px 56px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.footer-brand p{font-size:14px;color:rgba(255,255,255,.4);line-height:1.7;margin:20px 0 24px;max-width:260px}
+.footer-socials{display:flex;gap:12px}
+.footer-socials a{
+  width:36px;height:36px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.12);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.5);transition:border-color .2s,color .2s;
+}
+.footer-socials a:hover{border-color:rgba(255,255,255,.4);color:#fff}
+.footer-socials svg{width:15px;height:15px}
+.footer-col h4{
+  font-size:10px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;
+  color:rgba(255,255,255,.25);margin-bottom:20px;
+}
+.footer-col ul{list-style:none;padding:0;margin:0}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{
+  font-size:14px;color:rgba(255,255,255,.5);text-decoration:none;
+  transition:color .2s;
+}
+.footer-col ul li a:hover{color:#fff}
+.footer-col .contact-line{font-size:14px;color:rgba(255,255,255,.45);margin-bottom:10px}
+.footer-col .contact-line strong{color:rgba(255,255,255,.75)}
+.footer-cta-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:16px;padding:12px 24px;border-radius:100px;
+  background:var(--blue);color:#fff;
+  font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;
+  text-decoration:none;transition:background .2s;
+}
+.footer-cta-btn:hover{background:var(--blue2)}
+.footer-bottom-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 52px;
+  font-size:12px;color:rgba(255,255,255,.25);
+}
+.footer-bottom-bar a{color:rgba(255,255,255,.3);text-decoration:none}
+.footer-bottom-bar a:hover{color:rgba(255,255,255,.6)}
+
+/* ═══════════════════════════
+   RÉALISATIONS
+═══════════════════════════ */
+#realisations{
+  padding:100px 0;
+  background:#080808;
+  overflow:hidden;
+}
+.real-header{
+  padding:0 52px;
+  margin-bottom:48px;
+}
+.real-eyebrow{
+  font-size:10px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;
+  color:rgba(255,255,255,.35);display:block;margin-bottom:14px;
+}
+.real-title{
+  font-family:var(--font-serif);font-weight:700;
+  font-size:clamp(32px,4vw,52px);line-height:1.1;color:#fff;margin-bottom:14px;
+}
+.real-title b{font-style:italic;font-weight:700}
+.real-desc{font-size:16px;color:rgba(255,255,255,.45);line-height:1.6;max-width:500px;margin-bottom:0}
+.real-strip-label{
+  padding:0 52px;margin-bottom:16px;
+  font-size:10px;font-weight:700;letter-spacing:.3em;color:rgba(255,255,255,.25);text-transform:uppercase;
+}
+.real-strip-outer{
+  overflow:hidden;position:relative;
+  cursor:grab;
+}
+.real-strip-outer:active{cursor:grabbing}
+.real-strip{
+  display:flex;gap:20px;
+  padding:20px 52px 40px;
+  width:max-content;
+  animation:realscroll 40s linear infinite;
+}
+.real-strip:hover{animation-play-state:paused}
+@keyframes realscroll{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+.real-card{
+  flex-shrink:0;width:320px;
+  background:#fff;border-radius:20px;
+  overflow:hidden;border:1px solid #e8e8e8;
+  box-shadow:0 4px 24px rgba(0,0,0,.06);
+  transition:transform .3s,box-shadow .3s;
+  cursor:pointer;
+}
+.real-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 16px 48px rgba(0,0,0,.12);
+}
+.real-preview{
+  width:100%;height:200px;
+  position:relative;overflow:hidden;
+  background:#f0f0f0;
+}
+.real-browser-bar{
+  position:absolute;top:0;left:0;right:0;height:28px;
+  background:rgba(255,255,255,.92);backdrop-filter:blur(4px);
+  display:flex;align-items:center;padding:0 10px;gap:5px;
+  border-bottom:1px solid rgba(0,0,0,.06);z-index:2;
+}
+.real-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.real-dot.r{background:#ff5f57}
+.real-dot.y{background:#ffbd2e}
+.real-dot.g{background:#28ca41}
+.real-url{
+  flex:1;height:14px;background:#eee;border-radius:4px;margin-left:8px;
+  display:flex;align-items:center;padding:0 6px;
+}
+.real-url span{font-size:8px;color:#aaa;font-family:monospace;white-space:nowrap;overflow:hidden}
+.real-screenshot{
+  position:absolute;top:28px;left:0;right:0;bottom:0;
+  overflow:hidden;
+}
+.real-info{
+  padding:16px 20px 20px;
+  display:flex;flex-direction:column;gap:2px;
+}
+.real-category{
+  font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#aaa;
+}
+.real-name{
+  font-size:17px;font-weight:700;color:#111;line-height:1.2;
+}
+.real-footer-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  margin-top:40px;margin-left:52px;
+  gap:8px;border:1.5px solid #ddd;border-radius:100px;
+  padding:12px 28px;font-size:13px;font-weight:600;color:#333;
+  background:#fff;cursor:pointer;transition:border-color .2s,color .2s;
+}
+.real-footer-btn:hover{border-color:#111;color:#111}
+/* Fake website building blocks */
+.fw-hero{width:100%;padding:16px 14px 12px;display:flex;flex-direction:column;gap:6px}
+.fw-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.fw-logo{width:50px;height:8px;border-radius:3px;background:currentColor;opacity:.3}
+.fw-nav-items{display:flex;gap:6px}
+.fw-ni{width:18px;height:5px;border-radius:2px;background:currentColor;opacity:.2}
+.fw-h1{width:80%;height:14px;border-radius:4px;background:currentColor;opacity:.55}
+.fw-h2{width:55%;height:10px;border-radius:3px;background:currentColor;opacity:.35}
+.fw-btn{width:70px;height:18px;border-radius:6px;background:currentColor;opacity:.5;margin-top:4px}
+.fw-img{width:100%;height:60px;border-radius:8px;background:currentColor;opacity:.15;margin-top:6px}
+.fw-grid{display:flex;gap:6px;margin-top:8px}
+.fw-col{flex:1;height:40px;border-radius:6px;background:currentColor;opacity:.1}
+.fw-text-block{display:flex;flex-direction:column;gap:4px;margin-top:8px}
+.fw-line{height:5px;border-radius:2px;background:currentColor;opacity:.2}
+
+/* Bottom */
+.footer-bottom{
+  border-top:1px solid var(--border);padding:22px 52px;
+  display:flex;justify-content:space-between;align-items:center;gap:24px;
+  font-size:11px;color:rgba(0,0,0,.3);
+}
+.footer-bottom a{color:rgba(0,0,0,.3);text-decoration:none;transition:color .2s}
+.footer-bottom a:hover{color:#111}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a href="#" class="nav-logo" style="text-decoration:none">
+    <svg width="160" height="44" viewBox="0 0 160 44" xmlns="http://www.w3.org/2000/svg">
+      <!-- Background V letters -->
+      <text x="-8" y="52" font-family="Georgia,serif" font-weight="900" font-size="62" fill="rgba(240,230,210,0.18)" transform="rotate(-15,10,30)">V</text>
+      <text x="128" y="58" font-family="Georgia,serif" font-weight="900" font-size="56" fill="rgba(240,230,210,0.14)" transform="rotate(18,140,30)">V</text>
+      <text x="50" y="68" font-family="Georgia,serif" font-weight="900" font-size="48" fill="rgba(240,230,210,0.1)" transform="rotate(-8,70,40)">V</text>
+      <!-- VISIONNARISTE text -->
+      <text x="4" y="22" font-family="Georgia,'Times New Roman',serif" font-weight="900" font-size="16" fill="#f0e6d2" letter-spacing="2">VISIONNARISTE</text>
+      <!-- MARKETING graffiti -->
+      <text x="4" y="40" font-family="Impact,Arial Black,sans-serif" font-weight="900" font-size="19" fill="#f0e6d2" letter-spacing="1.5" stroke="#080808" stroke-width="3" paint-order="stroke">MARKETING</text>
+    </svg>
+  </a>
+  <ul class="nav-pills">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#methode">Méthode</a></li>
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#footer-contact">Contact</a></li>
+  </ul>
+  <div class="nav-socials">
+    <a href="#" title="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.25 8.25 0 0 0 4.82 1.54V6.77a4.85 4.85 0 0 1-1.05-.08z"/></svg></a>
+    <a href="#" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+    <a href="#" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+    <a href="#" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-bg">
+    <span>V</span><span>V</span><span>V</span><span>V</span><span>V</span><span>V</span>
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Meta Ads · TikTok Ads · Performance</p>
+    <h1 class="hero-title">
+      L'Excellence<br/>
+      des <span>Grands Comptes</span><br/>
+      à votre service.
+    </h1>
+    <p class="hero-sub">J'applique les méthodologies d'acquisition des plus grandes marques mondiales pour scaler le ROI de votre e-commerce ou de votre business local.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">Meta Ads</span>
+      <span class="hero-pill">TikTok Ads</span>
+      <span class="hero-pill">Performance</span>
+      <span class="hero-pill">Luxe &amp; Beauté</span>
+    </div>
+    <a href="#footer-contact" class="hero-cta">Demander un audit gratuit</a>
+  </div>
+  <div class="scroll-hint"><span>Scroll</span></div>
+</section>
+
+<!-- ══ TILTED BAND — sous la bannière ══ -->
+<div class="tilted-wrap">
+  <div class="tilted-band">
+    <div class="tilted-inner">
+      <span class="tilted-item">Visionnariste Marketing</span><span class="tilted-sep"> ✦ </span>
+      <span class="tilted-item">Experte Grands Comptes</span><span class="tilted-sep"> ✦ </span>
+      <span class="tilted-item">Meta &amp; TikTok Ads</span><span class="tilted-sep"> ✦ </span>
+      <span class="tilted-item">Paris · France</span><span class="tilted-sep"> ✦ </span>
+      <span class="tilted-item">Audit Gratuit</span><span class="tilted-sep"> ✦ </span>
+      <span class="tilted-item">Scaling Premium</span><span class="tilted-sep"> ✦ </span>
+      <span class="tilted-item">Tracking RGPD</span><span class="tilted-sep"> ✦ </span>
+      <!-- repeat -->
+      <span class="tilted-item">Visionnariste Marketing</span><span class="tilted-sep"> ✦ </span>
+      <span class="tilted-item">Experte Grands Comptes</span><span class="tilted-sep"> ✦ </span>
+      <span class="tilted-item">Meta &amp; TikTok Ads</span><span class="tilted-sep"> ✦ </span>
+      <span class="tilted-item">Paris · France</span><span class="tilted-sep"> ✦ </span>
+      <span class="tilted-item">Audit Gratuit</span><span class="tilted-sep"> ✦ </span>
+      <span class="tilted-item">Scaling Premium</span><span class="tilted-sep"> ✦ </span>
+      <span class="tilted-item">Tracking RGPD</span><span class="tilted-sep"> ✦ </span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ WHITE MARQUEE — sous la bannière ══ -->
+<section id="white-band">
+  <div class="wband">
+    <span class="witem">Growth Marketing</span><span class="wdot"> ● </span>
+    <span class="witem">Grands Comptes</span><span class="wdot"> ● </span>
+    <span class="witem">Scaling</span><span class="wdot"> ● </span>
+    <span class="witem">Meta Ads</span><span class="wdot"> ● </span>
+    <span class="witem">TikTok Ads</span><span class="wdot"> ● </span>
+    <span class="witem">ROAS ×4.5</span><span class="wdot"> ● </span>
+    <!-- repeat -->
+    <span class="witem">Growth Marketing</span><span class="wdot"> ● </span>
+    <span class="witem">Grands Comptes</span><span class="wdot"> ● </span>
+    <span class="witem">Scaling</span><span class="wdot"> ● </span>
+    <span class="witem">Meta Ads</span><span class="wdot"> ● </span>
+    <span class="witem">TikTok Ads</span><span class="wdot"> ● </span>
+    <span class="witem">ROAS ×4.5</span><span class="wdot"> ● </span>
+  </div>
+</section>
+
+<!-- ══ POURQUOI VISIONNARISTE ══ -->
+<section id="pourquoi">
+  <div class="pourquoi-wrap">
+    <div class="pourquoi-left">
+      <span class="pourquoi-eyebrow">— Pourquoi Visionnariste</span>
+      <h2 class="pourquoi-title">Moins de promesses.<br/>Plus de résultats.</h2>
+      <p class="pourquoi-desc">Pas de jargon, pas de slide deck vide. Une méthode issue de la gestion de budgets Grands Comptes, appliquée avec la même rigueur à votre business.</p>
+    </div>
+    <div class="pourquoi-rows">
+      <div class="pourquoi-row">
+        <span class="pourquoi-num">01</span>
+        <div>
+          <h3>On commence par auditer votre compte</h3>
+          <p>Analyse de l'historique publicitaire, identification des fuites budgétaires et des opportunités non exploitées. On part de la réalité, jamais d'hypothèses.</p>
+        </div>
+      </div>
+      <div class="pourquoi-row">
+        <span class="pourquoi-num">02</span>
+        <div>
+          <h3>On structure pour performer</h3>
+          <p>Setup complet : audiences ciblées, tracking RGPD, créatifs testés — chaque élément est conçu pour collecter de la donnée utile et maximiser le ROAS dès le départ.</p>
+        </div>
+      </div>
+      <div class="pourquoi-row">
+        <span class="pourquoi-num">03</span>
+        <div>
+          <h3>On optimise chaque euro, chaque jour</h3>
+          <p>Suivi quotidien des metrics, A/B test continu, coupure des pubs non rentables et scaling agressif des gagnantes. Résultats mesurés chaque semaine.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ IMPACT / CHIFFRES ══ -->
+<section id="impact">
+  <div class="impact-header">
+    <span class="impact-eyebrow">— Impact</span>
+    <h2 class="impact-title">Les chiffres <span>qui comptent.</span></h2>
+  </div>
+  <div class="impact-grid">
+    <div class="impact-stat">
+      <span class="impact-num">+5M€</span>
+      <div class="impact-dash"></div>
+      <span class="impact-label">Budget publicitaire<br/>géré à l'année</span>
+    </div>
+    <div class="impact-stat">
+      <span class="impact-num">×4.5</span>
+      <div class="impact-dash"></div>
+      <span class="impact-label">ROAS moyen<br/>Luxe &amp; Beauté</span>
+    </div>
+    <div class="impact-stat">
+      <span class="impact-num">100%</span>
+      <div class="impact-dash"></div>
+      <span class="impact-label">Campagnes optimisées<br/>pour la conversion</span>
+    </div>
+    <div class="impact-stat">
+      <span class="impact-num">3</span>
+      <div class="impact-dash"></div>
+      <span class="impact-label">Plateformes maîtrisées<br/>Meta · TikTok · Google</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section id="services">
+  <div style="max-width:1200px;margin:0 auto">
+    <span class="sec-label">— Services</span>
+    <h2 class="sec-title">Tout votre digital,<br/>un seul interlocuteur.</h2>
+    <p class="sec-sub">Sites, publicité, automatisation et création de société — réunis au même endroit.</p>
+    <div class="services-grid">
+
+      <div class="scard">
+        <div class="scard-icon blue-icon">◆</div>
+        <h3 class="scard-title">Publicité &amp;<br/>Acquisition</h3>
+        <p class="scard-text">Meta, Google, TikTok, Snap — des campagnes qui ramènent des clients.</p>
+        <ul class="scard-list">
+          <li>Meta Ads (Facebook &amp; Instagram)</li>
+          <li>Google Ads</li>
+          <li>TikTok Ads</li>
+          <li>Snap Ads</li>
+        </ul>
+        <a href="#footer-contact" class="scard-cta">En savoir plus →</a>
+      </div>
+
+      <div class="scard">
+        <div class="scard-icon">☐</div>
+        <h3 class="scard-title">Sites &amp;<br/>Visibilité</h3>
+        <p class="scard-text">Sites, e-commerce, SEO et Google — pour être trouvé et convertir.</p>
+        <ul class="scard-list">
+          <li>Site vitrine ou e-commerce</li>
+          <li>Landing page de conversion</li>
+          <li>SEO &amp; référencement Google</li>
+          <li>Fiche Google My Business</li>
+        </ul>
+        <a href="#footer-contact" class="scard-cta">En savoir plus →</a>
+      </div>
+
+      <div class="scard">
+        <div class="scard-icon">▶</div>
+        <h3 class="scard-title">Contenu &amp;<br/>Automatisation</h3>
+        <p class="scard-text">Apps IA, vidéos, visuels, CRM et bots — votre business qui tourne tout seul.</p>
+        <ul class="scard-list">
+          <li>Montage vidéo &amp; UGC</li>
+          <li>Application web &amp; mobile IA</li>
+          <li>CRM &amp; automatisations</li>
+          <li>Automatisation WhatsApp</li>
+        </ul>
+        <a href="#footer-contact" class="scard-cta">En savoir plus →</a>
+      </div>
+
+      <div class="scard">
+        <div class="scard-icon">€</div>
+        <h3 class="scard-title">Société &amp;<br/>Fiscalité</h3>
+        <p class="scard-text">Création de société (LLC, offshore) et accompagnement fiscal.</p>
+        <ul class="scard-list">
+          <li>Création LLC (USA) &amp; offshore</li>
+          <li>Estonie, Wyoming, Hong Kong…</li>
+          <li>Fiscalité &amp; comptabilité</li>
+          <li>Un interlocuteur dédié</li>
+        </ul>
+        <a href="#footer-contact" class="scard-cta">En savoir plus →</a>
+      </div>
+
+    </div>
+    <div class="services-footer">
+      <a href="#footer-contact" class="services-btn">Voir tous les services →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES FAN ══ -->
+<section id="services-fan">
+  <span class="svc-eyebrow">— Nos services</span>
+  <div class="svc-title-row">
+    <span class="svc-adj prev" id="svcPrev"></span>
+    <div class="svc-big-wrap" id="svcBigWrap">
+      <span class="svc-big-title" id="svcBig"></span>
+    </div>
+    <span class="svc-adj next" id="svcNext"></span>
+  </div>
+  <div class="fan-stage" id="fanStage">
+    <div class="fan-track" id="fanTrack"></div>
+  </div>
+  <div class="fan-nav">
+    <button class="fan-arrow" id="fanPrev">‹</button>
+    <div class="fan-dots" id="fanDots"></div>
+    <button class="fan-arrow" id="fanNext">›</button>
+  </div>
+</section>
+
+<!-- ══ RÉALISATIONS ══ -->
+<section id="realisations">
+  <div class="real-header">
+    <span class="real-eyebrow">— Réalisations</span>
+    <h2 class="real-title">Réalisations</h2>
+    <p class="real-desc">Sites clients et visuels livrés, pour de <b>vrais commerces</b>. Survolez pour mettre en pause.</p>
+  </div>
+  <p class="real-strip-label">Sites clients — cliquez pour ouvrir</p>
+  <div class="real-strip-outer">
+    <div class="real-strip" id="realStrip">
+
+      <!-- Carte 1 : Boucherie -->
+      <div class="real-card">
+        <div class="real-preview" style="background:linear-gradient(135deg,#1a0a00 0%,#5c1a00 100%)">
+          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>boucherie-artisanale.fr</span></div></div>
+          <div class="real-screenshot" style="color:#fff;padding:10px">
+            <div class="fw-hero"><div class="fw-nav"><div class="fw-logo"></div><div class="fw-nav-items"><div class="fw-ni"></div><div class="fw-ni"></div><div class="fw-ni"></div></div></div><div style="background:#e63000;width:60px;height:6px;border-radius:2px;opacity:.7;margin-bottom:6px"></div><div class="fw-h1" style="width:85%"></div><div class="fw-h2" style="width:60%;margin-top:4px"></div><div class="fw-btn" style="background:#e63000;opacity:.8;margin-top:8px;border-radius:4px"></div><div class="fw-img" style="opacity:.25;background:linear-gradient(90deg,rgba(255,100,0,.4),transparent)"></div></div>
+          </div>
+        </div>
+        <div class="real-info"><span class="real-category">Boucherie · Paris</span><span class="real-name">La Maison Dubois</span></div>
+      </div>
+
+      <!-- Carte 2 : Cabinet dentaire -->
+      <div class="real-card">
+        <div class="real-preview" style="background:linear-gradient(135deg,#e8f4fd 0%,#c8e8f8 100%)">
+          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>cabinet-sourire-bordeaux.fr</span></div></div>
+          <div class="real-screenshot" style="color:#0066aa;padding:10px">
+            <div class="fw-hero"><div class="fw-nav"><div class="fw-logo"></div><div class="fw-nav-items"><div class="fw-ni"></div><div class="fw-ni"></div><div class="fw-ni"></div></div></div><div class="fw-h1" style="color:#0066aa;opacity:.6;width:70%"></div><div class="fw-h2" style="width:90%;margin-top:4px;opacity:.3"></div><div style="display:flex;gap:6px;margin-top:8px"><div style="background:#0066aa;opacity:.5;width:80px;height:18px;border-radius:20px"></div><div style="border:1.5px solid rgba(0,102,170,.4);width:90px;height:18px;border-radius:20px"></div></div><div class="fw-grid" style="margin-top:10px"><div class="fw-col" style="background:#0066aa;opacity:.08;height:45px;border-radius:10px"></div><div class="fw-col" style="background:#0066aa;opacity:.08;height:45px;border-radius:10px"></div><div class="fw-col" style="background:#0066aa;opacity:.08;height:45px;border-radius:10px"></div></div></div>
+          </div>
+        </div>
+        <div class="real-info"><span class="real-category">Dentiste · Bordeaux</span><span class="real-name">Cabinet Sourire</span></div>
+      </div>
+
+      <!-- Carte 3 : Barber -->
+      <div class="real-card">
+        <div class="real-preview" style="background:linear-gradient(135deg,#0d0d0d 0%,#1a1a1a 100%)">
+          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>hs-barber-thonon.fr</span></div></div>
+          <div class="real-screenshot" style="color:#c8a46e;padding:10px">
+            <div class="fw-hero"><div class="fw-nav"><div class="fw-logo"></div><div class="fw-nav-items"><div class="fw-ni"></div><div class="fw-ni"></div></div></div><div style="font-family:'Bodoni Moda',serif;color:#c8a46e;font-size:18px;font-weight:700;line-height:1.1;margin-top:8px;opacity:.9">Barber &amp;<br/>Coiffeur</div><div style="color:#888;font-size:8px;margin-top:4px;letter-spacing:.1em">THONON-LES-BAINS</div><div style="background:#c8a46e;width:70px;height:16px;border-radius:2px;opacity:.7;margin-top:10px"></div><div class="fw-img" style="background:linear-gradient(90deg,rgba(200,164,110,.2),transparent);margin-top:10px;border-radius:6px;height:45px"></div></div>
+          </div>
+        </div>
+        <div class="real-info"><span class="real-category">Barber · Thonon-les-Bains</span><span class="real-name">H&amp;S Barber Shop</span></div>
+      </div>
+
+      <!-- Carte 4 : Paysagiste -->
+      <div class="real-card">
+        <div class="real-preview" style="background:linear-gradient(135deg,#f0f8f0 0%,#d4eed4 100%)">
+          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>daniel-moquet-paysagiste.fr</span></div></div>
+          <div class="real-screenshot" style="color:#2d6a2d;padding:10px">
+            <div class="fw-hero"><div class="fw-nav"><div class="fw-logo" style="background:#2d6a2d;opacity:.5"></div><div class="fw-nav-items"><div class="fw-ni" style="background:#2d6a2d"></div><div class="fw-ni" style="background:#2d6a2d"></div><div class="fw-ni" style="background:#2d6a2d"></div><div class="fw-ni" style="background:#2d6a2d"></div></div></div><div style="display:flex;gap:4px;margin-bottom:8px"><div style="background:#2d6a2d;opacity:.5;padding:2px 6px;border-radius:3px;font-size:7px;color:#fff">Allées</div><div style="background:#f0a500;opacity:.8;padding:2px 6px;border-radius:3px;font-size:7px;color:#fff">Jardins</div><div style="background:#1a6aaa;opacity:.6;padding:2px 6px;border-radius:3px;font-size:7px;color:#fff">Piscines</div></div><div class="fw-h1" style="color:#2d6a2d;opacity:.7;width:75%"></div><div class="fw-h2" style="width:90%;color:#2d6a2d;opacity:.4;margin-top:4px"></div><div class="fw-grid" style="margin-top:10px"><div class="fw-col" style="background:#2d6a2d;opacity:.1;height:50px;border-radius:8px"></div><div class="fw-col" style="background:#2d6a2d;opacity:.1;height:50px;border-radius:8px"></div></div></div>
+          </div>
+        </div>
+        <div class="real-info"><span class="real-category">Paysagiste · France</span><span class="real-name">Daniel Moquet</span></div>
+      </div>
+
+      <!-- Carte 5 : Restaurant -->
+      <div class="real-card">
+        <div class="real-preview" style="background:linear-gradient(135deg,#1a0a05 0%,#3a1500 100%)">
+          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>cappadoce-restaurant-grenoble.fr</span></div></div>
+          <div class="real-screenshot" style="color:#f0c060;padding:10px">
+            <div class="fw-hero"><div class="fw-nav"><div class="fw-logo" style="background:#f0c060;opacity:.6"></div><div class="fw-nav-items"><div class="fw-ni" style="background:#f0c060"></div><div class="fw-ni" style="background:#f0c060"></div></div></div><div style="font-family:'Bodoni Moda',serif;color:#f0c060;font-size:20px;font-weight:700;opacity:.85;line-height:1;margin-top:8px">CAPPADOCE</div><div style="color:#c89840;font-size:7px;letter-spacing:.2em;margin-top:2px">RESTAURANT · GRILL</div><div style="background:#f0c060;opacity:.6;width:80px;height:14px;border-radius:2px;margin-top:10px"></div><div class="fw-img" style="background:linear-gradient(90deg,rgba(240,192,96,.15),transparent);height:50px;border-radius:6px;margin-top:8px"></div></div>
+          </div>
+        </div>
+        <div class="real-info"><span class="real-category">Restaurant · Grenoble</span><span class="real-name">Cappadoce</span></div>
+      </div>
+
+      <!-- Carte 6 : Garage auto -->
+      <div class="real-card">
+        <div class="real-preview" style="background:linear-gradient(135deg,#0a0a0a 0%,#1e1e1e 100%)">
+          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>garage-as-auto-thonon.fr</span></div></div>
+          <div class="real-screenshot" style="color:#fff;padding:10px">
+            <div class="fw-hero"><div class="fw-nav"><div class="fw-logo"></div><div class="fw-nav-items"><div class="fw-ni"></div><div class="fw-ni"></div><div class="fw-ni"></div></div></div><div style="color:#fff;font-size:20px;font-weight:800;line-height:1;margin-top:8px;opacity:.9">GARAGE<br/>AS AUTO</div><div style="color:#e00;font-size:8px;letter-spacing:.1em;margin-top:4px;opacity:.8">THONON-LES-BAINS</div><div style="background:#e00;opacity:.8;width:80px;height:16px;border-radius:3px;margin-top:10px"></div><div class="fw-grid" style="margin-top:8px"><div class="fw-col" style="background:#fff;opacity:.05;height:40px"></div><div class="fw-col" style="background:#fff;opacity:.05;height:40px"></div><div class="fw-col" style="background:#fff;opacity:.05;height:40px"></div></div></div>
+          </div>
+        </div>
+        <div class="real-info"><span class="real-category">Automobile · Thonon-les-Bains</span><span class="real-name">Garage AS Auto</span></div>
+      </div>
+
+      <!-- Carte 7 : Salon beauté -->
+      <div class="real-card">
+        <div class="real-preview" style="background:linear-gradient(135deg,#fdf0f5 0%,#f5d0e0 100%)">
+          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>studio-lumiere-beaute.fr</span></div></div>
+          <div class="real-screenshot" style="color:#9b2255;padding:10px">
+            <div class="fw-hero"><div class="fw-nav"><div class="fw-logo" style="background:#9b2255;opacity:.4"></div><div class="fw-nav-items"><div class="fw-ni" style="background:#9b2255"></div><div class="fw-ni" style="background:#9b2255"></div></div></div><div class="fw-h1" style="color:#9b2255;width:70%;opacity:.6;margin-top:8px"></div><div class="fw-h2" style="color:#9b2255;opacity:.3;margin-top:6px"></div><div style="display:flex;gap:6px;margin-top:8px"><div style="background:#9b2255;opacity:.6;width:80px;height:16px;border-radius:20px"></div></div><div class="fw-grid" style="margin-top:10px"><div class="fw-col" style="background:#9b2255;opacity:.06;height:45px;border-radius:10px"></div><div class="fw-col" style="background:#9b2255;opacity:.06;height:45px;border-radius:10px"></div><div class="fw-col" style="background:#9b2255;opacity:.06;height:45px;border-radius:10px"></div></div></div>
+          </div>
+        </div>
+        <div class="real-info"><span class="real-category">Beauté · Lyon</span><span class="real-name">Studio Lumière</span></div>
+      </div>
+
+      <!-- Carte 8 : Coach sportif -->
+      <div class="real-card">
+        <div class="real-preview" style="background:linear-gradient(135deg,#040814 0%,#0a1a3a 100%)">
+          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>coach-perf-elite.fr</span></div></div>
+          <div class="real-screenshot" style="color:#3a8eff;padding:10px">
+            <div class="fw-hero"><div class="fw-nav"><div class="fw-logo" style="background:#3a8eff;opacity:.5"></div><div class="fw-nav-items"><div class="fw-ni" style="background:#3a8eff"></div><div class="fw-ni" style="background:#3a8eff"></div><div class="fw-ni" style="background:#3a8eff"></div></div></div><div class="fw-h1" style="color:#fff;opacity:.8;width:80%;margin-top:8px"></div><div class="fw-h2" style="color:#3a8eff;opacity:.5;margin-top:4px;width:60%"></div><div style="background:#3a8eff;opacity:.8;width:80px;height:16px;border-radius:4px;margin-top:10px"></div><div style="display:flex;gap:4px;margin-top:8px"><div style="background:#3a8eff;opacity:.08;flex:1;height:48px;border-radius:8px"></div><div style="background:#3a8eff;opacity:.08;flex:1;height:48px;border-radius:8px"></div><div style="background:#3a8eff;opacity:.08;flex:1;height:48px;border-radius:8px"></div></div></div>
+          </div>
+        </div>
+        <div class="real-info"><span class="real-category">Fitness · Paris</span><span class="real-name">Coach Perf Élite</span></div>
+      </div>
+
+      <!-- Repeat for seamless scroll -->
+      <div class="real-card">
+        <div class="real-preview" style="background:linear-gradient(135deg,#1a0a00 0%,#5c1a00 100%)">
+          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>boucherie-artisanale.fr</span></div></div>
+          <div class="real-screenshot" style="color:#fff;padding:10px"><div class="fw-hero"><div class="fw-nav"><div class="fw-logo"></div><div class="fw-nav-items"><div class="fw-ni"></div><div class="fw-ni"></div><div class="fw-ni"></div></div></div><div style="background:#e63000;width:60px;height:6px;border-radius:2px;opacity:.7;margin-bottom:6px"></div><div class="fw-h1" style="width:85%"></div><div class="fw-h2" style="width:60%;margin-top:4px"></div><div class="fw-btn" style="background:#e63000;opacity:.8;margin-top:8px;border-radius:4px"></div><div class="fw-img" style="opacity:.25"></div></div></div>
+        </div>
+        <div class="real-info"><span class="real-category">Boucherie · Paris</span><span class="real-name">La Maison Dubois</span></div>
+      </div>
+      <div class="real-card">
+        <div class="real-preview" style="background:linear-gradient(135deg,#e8f4fd 0%,#c8e8f8 100%)">
+          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>cabinet-sourire-bordeaux.fr</span></div></div>
+          <div class="real-screenshot" style="color:#0066aa;padding:10px"><div class="fw-hero"><div class="fw-nav"><div class="fw-logo"></div><div class="fw-nav-items"><div class="fw-ni"></div><div class="fw-ni"></div><div class="fw-ni"></div></div></div><div class="fw-h1" style="color:#0066aa;opacity:.6;width:70%"></div><div class="fw-h2" style="width:90%;margin-top:4px;opacity:.3"></div><div style="display:flex;gap:6px;margin-top:8px"><div style="background:#0066aa;opacity:.5;width:80px;height:18px;border-radius:20px"></div></div></div></div>
+        </div>
+        <div class="real-info"><span class="real-category">Dentiste · Bordeaux</span><span class="real-name">Cabinet Sourire</span></div>
+      </div>
+      <div class="real-card">
+        <div class="real-preview" style="background:linear-gradient(135deg,#0d0d0d 0%,#1a1a1a 100%)">
+          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>hs-barber-thonon.fr</span></div></div>
+          <div class="real-screenshot" style="color:#c8a46e;padding:10px"><div class="fw-hero"><div class="fw-nav"><div class="fw-logo"></div><div class="fw-nav-items"><div class="fw-ni"></div><div class="fw-ni"></div></div></div><div style="font-family:'Bodoni Moda',serif;color:#c8a46e;font-size:18px;font-weight:700;line-height:1.1;margin-top:8px;opacity:.9">Barber &amp;<br/>Coiffeur</div><div style="background:#c8a46e;width:70px;height:16px;border-radius:2px;opacity:.7;margin-top:10px"></div></div></div>
+        </div>
+        <div class="real-info"><span class="real-category">Barber · Thonon-les-Bains</span><span class="real-name">H&amp;S Barber Shop</span></div>
+      </div>
+      <div class="real-card">
+        <div class="real-preview" style="background:linear-gradient(135deg,#1a0a05 0%,#3a1500 100%)">
+          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>cappadoce-restaurant-grenoble.fr</span></div></div>
+          <div class="real-screenshot" style="color:#f0c060;padding:10px"><div class="fw-hero"><div class="fw-nav"><div class="fw-logo" style="background:#f0c060;opacity:.6"></div></div><div style="font-family:'Bodoni Moda',serif;color:#f0c060;font-size:20px;font-weight:700;opacity:.85;line-height:1;margin-top:8px">CAPPADOCE</div><div style="color:#c89840;font-size:7px;letter-spacing:.2em;margin-top:2px">RESTAURANT · GRILL</div><div style="background:#f0c060;opacity:.6;width:80px;height:14px;border-radius:2px;margin-top:10px"></div></div></div>
+        </div>
+        <div class="real-info"><span class="real-category">Restaurant · Grenoble</span><span class="real-name">Cappadoce</span></div>
+      </div>
+
+    </div>
+  </div>
+  <button class="real-footer-btn" id="realToggle">Réduire ↑</button>
+</section>
+
+<!-- ══ BIG TEXT ══ -->
+<section id="big-text">
+  <div class="big-txt">Acquisition.</div>
+  <div class="big-txt bright">Performance.</div>
+
+  <div class="float-cards">
+    <div class="fcard">
+      <div class="fcard-label">ROAS Moyen</div>
+      <div class="fcard-val">×4.5</div>
+      <div class="fcard-sub">Luxe &amp; Beauté</div>
+      <div class="fcard-bar"><div class="fcard-bar-fill" style="width:82%"></div></div>
+    </div>
+    <div class="fcard">
+      <div class="fcard-label">Budget géré</div>
+      <div class="fcard-val">+5M€</div>
+      <div class="fcard-sub">à l'année</div>
+      <div class="fcard-bar"><div class="fcard-bar-fill" style="width:100%"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ METHODOLOGIE ══ -->
+<section id="methode">
+  <div class="methode-wrap">
+    <div>
+      <span class="sec-label">— Ma méthode</span>
+      <h2 class="sec-title" style="margin-bottom:44px">Trois étapes.<br/>Zéro improvisation.</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <div><h3>L'Audit</h3><p>Analyse approfondie de l'historique publicitaire et cartographie de la concurrence. On part de données réelles, jamais d'hypothèses.</p></div>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <div><h3>Le Setup</h3><p>Audiences, tracking pixel propre, copywriting des publicités. Chaque élément est pensé pour maximiser la donnée collectée.</p></div>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <div><h3>L'Optimisation</h3><p>Suivi quotidien des metrics, coupure des pubs non rentables, scaling agressif des gagnantes. Résultats mesurés chaque semaine.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="methode-right">
+      <blockquote class="big-quote">"Chaque euro investi<br/>doit <em>travailler</em> pour vous."</blockquote>
+      <p class="quote-note">Méthodologie issue de la gestion de budgets Grands Comptes — appliquée avec la même rigueur aux marques e-commerce et business locaux ambitieux.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ À PROPOS ══ -->
+<section id="apropos" style="padding:100px 52px;background:var(--bg2)">
+  <div style="max-width:900px;margin:0 auto">
+    <span class="sec-label">— Qui suis-je</span>
+    <p style="font-size:clamp(26px,3.2vw,42px);font-weight:700;line-height:1.25;color:#111;margin-bottom:28px;letter-spacing:-.02em">Passionnée par l'acquisition et le growth marketing.</p>
+    <p class="apropos-body">Je pilote au quotidien les stratégies d'acquisition de grandes marques internationales de luxe au sein d'un grand groupe de communication mondial. Aujourd'hui, je mets cette rigueur et ces compétences au service de marques ambitieuses qui veulent franchir un cap.</p>
+    <p class="apropos-body">Pas d'improvisation. Pas de jargon. Chaque euro géré comme s'il était le mien.</p>
+    <div class="epills" style="margin-top:36px">
+      <span class="epill">Meta Ads</span>
+      <span class="epill">TikTok Ads</span>
+      <span class="epill">Google Ads</span>
+      <span class="epill">Growth Marketing</span>
+      <span class="epill">Luxe &amp; Beauté</span>
+      <span class="epill">Tracking &amp; CAPI</span>
+      <span class="epill">UGC Créatif</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCESSUS ADS ══ -->
+<section id="processus">
+  <div class="proc-header">
+    <span class="proc-eyebrow">— Notre processus</span>
+    <h2 class="proc-title">Ce qui se passe<br/>après votre audit.</h2>
+    <p class="proc-sub">Simple, structuré, transparent. Voici exactement ce à quoi vous attendre quand on lance ensemble vos campagnes.</p>
+  </div>
+  <div class="proc-grid">
+    <div class="proc-card">
+      <span class="proc-num">01</span>
+      <h3>Audit &amp; Diagnostic</h3>
+      <p>Analyse complète de vos comptes publicitaires, pixel, historique des dépenses et positionnement concurrent. On part de vos données réelles, jamais d'hypothèses.</p>
+      <span class="proc-card-tag">Gratuit · Sous 48h</span>
+    </div>
+    <div class="proc-card">
+      <span class="proc-num">02</span>
+      <h3>Stratégie &amp; Structure</h3>
+      <p>Définition des objectifs ROAS, segmentation audiences, arborescence des campagnes (CBO/ABO), brief créatif et setup du tracking CAPI. Rien n'est laissé au hasard.</p>
+      <span class="proc-card-tag">Semaine 1</span>
+    </div>
+    <div class="proc-card">
+      <span class="proc-num">03</span>
+      <h3>Lancement &amp; Tests</h3>
+      <p>Mise en ligne des campagnes, phase de learning algorithmique, A/B test des créatifs et des audiences, collecte de data. Premiers résultats mesurables en 7 à 14 jours.</p>
+      <span class="proc-card-tag">Semaines 2–3</span>
+    </div>
+    <div class="proc-card">
+      <span class="proc-num">04</span>
+      <h3>Optimisation &amp; Scaling</h3>
+      <p>Suivi quotidien des metrics, coupure des pubs non rentables, scaling agressif des gagnantes. Rapport hebdomadaire envoyé chaque lundi avec les KPIs clés.</p>
+      <span class="proc-card-tag">En continu</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TARIFS ══ -->
+<section id="tarifs">
+  <div class="tarifs-header">
+    <span class="tarifs-eyebrow">— Tarifs</span>
+    <h2 class="tarifs-title">Choisissez votre pack.</h2>
+    <p class="tarifs-sub">Un devis clair après audit. Chaque euro de votre budget pub travaille pour vous.</p>
+  </div>
+  <div class="tarifs-grid">
+    <!-- Starter -->
+    <div class="tcard">
+      <p class="tcard-for">Lancer ses premières campagnes</p>
+      <p class="tcard-name">Starter</p>
+      <p class="tcard-budget">Budget pub conseillé : 500€–2 000€/mois</p>
+      <p class="tcard-price">590€<span style="font-size:16px;font-weight:600;opacity:.5">/mois</span></p>
+      <div class="tcard-sep"></div>
+      <ul class="tcard-features">
+        <li>Setup initial des campagnes</li>
+        <li>1 plateforme (Meta ou TikTok)</li>
+        <li>Optimisation hebdomadaire</li>
+        <li>Rapport mensuel détaillé</li>
+        <li>Accès espace client</li>
+      </ul>
+      <a href="#footer-contact" class="tcard-cta">Démarrer →</a>
+    </div>
+    <!-- Growth -->
+    <div class="tcard featured">
+      <span class="tcard-badge">⭐ Le plus choisi</span>
+      <p class="tcard-for">Scaler et multiplier son ROAS</p>
+      <p class="tcard-name">Growth</p>
+      <p class="tcard-budget">Budget pub conseillé : 2 000€–10 000€/mois</p>
+      <p class="tcard-price">990€<span style="font-size:16px;font-weight:600;opacity:.5">/mois</span></p>
+      <div class="tcard-sep"></div>
+      <ul class="tcard-features">
+        <li>Multi-plateforme (Meta + TikTok + Google)</li>
+        <li>Optimisation &amp; tests quotidiens</li>
+        <li>Tracking CAPI &amp; Pixel avancé</li>
+        <li>Rapport hebdomadaire</li>
+        <li>WhatsApp direct — réponse &lt;24h</li>
+        <li>Brief créatifs UGC inclus</li>
+      </ul>
+      <a href="#footer-contact" class="tcard-cta">Démarrer →</a>
+    </div>
+    <!-- Grand Compte -->
+    <div class="tcard">
+      <p class="tcard-for">Budgets ambitieux &amp; hypercroissance</p>
+      <p class="tcard-name">Grand Compte</p>
+      <p class="tcard-budget">Budget pub : 10 000€+/mois</p>
+      <p class="tcard-price" style="color:#111">Sur devis</p>
+      <div class="tcard-sep"></div>
+      <ul class="tcard-features">
+        <li>Gestion dédiée multi-plateforme</li>
+        <li>Stratégie créative complète</li>
+        <li>Reporting temps réel (dashboard live)</li>
+        <li>Accompagnement stratégique illimité</li>
+        <li>Comité de pilotage mensuel</li>
+      </ul>
+      <a href="#footer-contact" class="tcard-cta">Discuter du projet →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section id="faq">
+  <div class="faq-header" style="text-align:center">
+    <span class="faq-eyebrow">— FAQ</span>
+    <h2 class="faq-title">Vos questions,<br/>nos réponses.</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q"><span class="faq-q-text">Quel budget minimum pour lancer des campagnes ?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Je recommande un budget publicitaire minimum de 500€/mois pour avoir suffisamment de data et optimiser efficacement. En dessous, l'algorithme Meta manque de signal pour sortir de la phase d'apprentissage. Idéalement, prévoir 1 000€/mois dès le départ pour des résultats significatifs.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span class="faq-q-text">En combien de temps voit-on des résultats concrets ?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Les premières données arrivent dès la première semaine. La phase de learning dure 7 à 14 jours — c'est le temps nécessaire pour que l'algorithme identifie votre audience cible. Des résultats stables et optimisés se constatent généralement entre la 3e et la 6e semaine de campagne.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span class="faq-q-text">Vous gérez quelles plateformes publicitaires ?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Meta Ads (Facebook + Instagram), TikTok Ads, Google Ads (Search, Shopping, Display) et Snapchat Ads. Selon votre cible et votre secteur, je recommande la combinaison la plus adaptée — certains business performent mieux sur Meta, d'autres explosent sur TikTok.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span class="faq-q-text">Est-ce que vous créez les visuels publicitaires ?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Je fournis des briefs créatifs détaillés et des recommandations de formats. Pour les pack Growth et Grand Compte, j'inclus l'accompagnement créatif UGC (brief + direction artistique). La production vidéo et les shootings peuvent être pris en charge en option.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span class="faq-q-text">Comment suivre les performances de mes campagnes ?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Vous recevez un rapport hebdomadaire chaque lundi avec les KPIs clés : dépenses, impressions, ROAS, CPA, clics. Pour les clients Grand Compte, un dashboard live est mis en place pour un suivi en temps réel. Transparence totale, zéro zone d'ombre.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span class="faq-q-text">Pourquoi Visionnariste plutôt qu'une autre agence ?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Je pilote au quotidien des budgets Grands Comptes pour des marques internationales de luxe — puis j'applique exactement cette même rigueur à votre business. Pas d'account manager junior, pas de process automatisés. Vous parlez directement avec la stratège qui gère vos campagnes, tous les jours.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span class="faq-q-text">C'est quoi concrètement un audit gratuit ?</span><span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Un appel de 15 à 30 minutes où j'analyse votre compte publicitaire actuel, identifie les fuites budgétaires et les opportunités non exploitées. À l'issue, vous repartez avec un plan d'action clair — que vous décidiez de travailler avec moi ou non. Sans engagement.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BAND 2 — défile vers la gauche, texte différent ══ -->
+<div class="band">
+  <div class="band-inner rev">
+    <span class="band-item">Audit Gratuit</span><span class="band-sep"> ◆ </span>
+    <span class="band-item">Appel 15 min</span><span class="band-sep"> ◆ </span>
+    <span class="band-item">Sans engagement</span><span class="band-sep"> ◆ </span>
+    <span class="band-item">Consultante Senior</span><span class="band-sep"> ◆ </span>
+    <span class="band-item">Méthode Grands Comptes</span><span class="band-sep"> ◆ </span>
+    <span class="band-item">Résultats mesurables</span><span class="band-sep"> ◆ </span>
+    <span class="band-item">Reporting transparent</span><span class="band-sep"> ◆ </span>
+    <span class="band-item">ROI garanti</span><span class="band-sep"> ◆ </span>
+    <!-- repeat -->
+    <span class="band-item">Audit Gratuit</span><span class="band-sep"> ◆ </span>
+    <span class="band-item">Appel 15 min</span><span class="band-sep"> ◆ </span>
+    <span class="band-item">Sans engagement</span><span class="band-sep"> ◆ </span>
+    <span class="band-item">Consultante Senior</span><span class="band-sep"> ◆ </span>
+    <span class="band-item">Méthode Grands Comptes</span><span class="band-sep"> ◆ </span>
+    <span class="band-item">Résultats mesurables</span><span class="band-sep"> ◆ </span>
+    <span class="band-item">Reporting transparent</span><span class="band-sep"> ◆ </span>
+    <span class="band-item">ROI garanti</span><span class="band-sep"> ◆ </span>
+  </div>
+</div>
+
+<!-- ══ FOOTER / CONTACT ══ -->
+<section id="footer-contact">
+  <div class="footer-headline-wrap">
+    <div class="footer-headline">Acquisition.</div>
+    <div class="footer-headline">Performance.</div>
+  </div>
+
+  <div class="footer-main">
+    <!-- LEFT -->
+    <div class="footer-left">
+      <div class="footer-info">
+        <p><a href="mailto:contact@visionnariste.com">contact@visionnariste.com</a></p>
+        <p>Paris, France</p>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#methode">Méthode</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#footer-contact" class="hl">Contact</a></li>
+      </ul>
+      <div class="fsocials">
+        <a href="#" title="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.25 8.25 0 0 0 4.82 1.54V6.77a4.85 4.85 0 0 1-1.05-.08z"/></svg></a>
+        <a href="#" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+        <a href="#" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="#" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+      </div>
+    </div>
+
+    <!-- RIGHT — white card form -->
+    <div class="footer-card">
+      <p class="fc-title">Prêt à collaborer ?</p>
+      <p class="fc-sub">Discutons de votre projet lors d'un appel stratégique de 15 minutes. Audit de votre compte publicitaire offert.</p>
+      <form class="fc-form" onsubmit="return false;">
+        <div class="fc-row">
+          <div class="fc-field"><label>Prénom *</label><input type="text" placeholder="Votre prénom"/></div>
+          <div class="fc-field"><label>Nom *</label><input type="text" placeholder="Votre nom"/></div>
+        </div>
+        <div class="fc-field"><label>Nom du projet / Entreprise</label><input type="text" placeholder="Ex : Ma Marque Paris"/></div>
+        <div class="fc-field"><label>Courriel *</label><input type="email" placeholder="allo@example.com"/></div>
+        <div class="fc-field"><label>Message *</label><textarea placeholder="Décrivez votre projet, vos objectifs, votre budget actuel..."></textarea></div>
+        <button type="submit" class="fc-btn">Envoyer</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>[Nom / Raison sociale] — Micro-entreprise — SIRET : [à compléter]</span>
+    <span><a href="#">Mentions légales</a> &nbsp;·&nbsp; <a href="#">RGPD</a></span>
+  </div>
+</section>
+
+<script>
+/* ── NAV scroll ── */
+const nav = document.querySelector('nav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled', window.scrollY > 80);
+},{passive:true});
+
+/* ── SERVICES FAN ── */
+(function(){
+  const SERVICES = [
+    {
+      bigTitle:'PUBLICITÉ & ACQUISITION',
+      shortName:'Publicité',
+      name:'Publicité &amp; Acquisition',
+      tags:'Meta · TikTok · Google · Snap',
+      badge:'×4.5 ROAS',
+      bg:'linear-gradient(160deg,#04070f 0%,#0b1640 100%)',
+      art:`<svg viewBox="0 0 196 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+        <rect x="20" y="110" width="22" height="50" rx="3" fill="#1a3ff0" opacity=".9"/>
+        <rect x="52" y="80" width="22" height="80" rx="3" fill="#3558f4" opacity=".85"/>
+        <rect x="84" y="50" width="22" height="110" rx="3" fill="#1a3ff0"/>
+        <rect x="116" y="65" width="22" height="95" rx="3" fill="#3558f4" opacity=".85"/>
+        <rect x="148" y="30" width="22" height="130" rx="3" fill="#1a3ff0"/>
+        <polyline points="31,110 63,80 95,50 127,65 159,30" fill="none" stroke="#6b9fff" stroke-width="2" stroke-dasharray="4 3"/>
+        <rect x="8" y="16" width="50" height="22" rx="11" fill="rgba(26,63,240,.7)"/>
+        <text x="33" y="31" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="#fff" letter-spacing="1">META</text>
+        <rect x="68" y="16" width="52" height="22" rx="11" fill="rgba(0,0,0,.5)"/>
+        <text x="94" y="31" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="#fff" letter-spacing="1">TIKTOK</text>
+        <rect x="130" y="16" width="56" height="22" rx="11" fill="rgba(26,63,240,.45)"/>
+        <text x="158" y="31" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="#fff" letter-spacing="1">GOOGLE</text>
+      </svg>`
+    },
+    {
+      bigTitle:'SITES & VISIBILITÉ',
+      shortName:'Sites',
+      name:'Sites &amp; Visibilité',
+      tags:'Vitrine · SEO · Google Business',
+      badge:'Top 3 Google',
+      bg:'linear-gradient(160deg,#eef1ff 0%,#d5dcff 100%)',
+      art:`<svg viewBox="0 0 196 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+        <rect x="20" y="30" width="156" height="110" rx="10" fill="rgba(255,255,255,.8)" stroke="#c5ceff" stroke-width="1.5"/>
+        <rect x="20" y="30" width="156" height="24" rx="10" fill="#1a3ff0"/>
+        <circle cx="36" cy="42" r="4" fill="rgba(255,255,255,.5)"/>
+        <circle cx="52" cy="42" r="4" fill="rgba(255,255,255,.5)"/>
+        <circle cx="68" cy="42" r="4" fill="rgba(255,255,255,.5)"/>
+        <rect x="85" y="36" width="70" height="12" rx="6" fill="rgba(255,255,255,.2)"/>
+        <rect x="32" y="66" width="90" height="8" rx="4" fill="#1a3ff0" opacity=".7"/>
+        <rect x="32" y="82" width="130" height="5" rx="2.5" fill="#111" opacity=".12"/>
+        <rect x="32" y="94" width="110" height="5" rx="2.5" fill="#111" opacity=".12"/>
+        <rect x="32" y="106" width="55" height="18" rx="9" fill="#1a3ff0"/>
+        <text x="59" y="119" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#fff">Découvrir</text>
+        <text x="158" y="155" text-anchor="end" font-family="sans-serif" font-size="22" font-weight="900" fill="#1a3ff0" opacity=".6">G</text>
+        <text x="145" y="162" text-anchor="end" font-family="sans-serif" font-size="9" font-weight="700" fill="#1a3ff0" opacity=".5">★★★★★</text>
+      </svg>`
+    },
+    {
+      bigTitle:'CONTENU & AUTOMATION',
+      shortName:'Contenu',
+      name:'Contenu &amp; Automation',
+      tags:'Vidéo · UGC · Automation',
+      badge:'1M+ vues',
+      bg:'linear-gradient(160deg,#0d0a06 0%,#1d1000 100%)',
+      art:`<svg viewBox="0 0 196 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+        <rect x="14" y="20" width="78" height="60" rx="8" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
+        <polygon points="42,40 42,64 64,52" fill="rgba(255,255,255,.6)"/>
+        <rect x="104" y="20" width="78" height="60" rx="8" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
+        <polygon points="132,40 132,64 154,52" fill="rgba(255,255,255,.6)"/>
+        <rect x="14" y="92" width="78" height="60" rx="8" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
+        <polygon points="42,112 42,136 64,124" fill="rgba(255,255,255,.6)"/>
+        <rect x="104" y="92" width="78" height="60" rx="8" fill="rgba(26,63,240,.35)" stroke="rgba(26,63,240,.5)" stroke-width="1"/>
+        <text x="143" y="122" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="rgba(255,255,255,.7)">UGC</text>
+        <text x="143" y="136" text-anchor="middle" font-family="sans-serif" font-size="9" fill="rgba(255,255,255,.4)">+430k vues</text>
+      </svg>`
+    },
+    {
+      bigTitle:'SOCIÉTÉ & FISCALITÉ',
+      shortName:'Société',
+      name:'Société &amp; Fiscalité',
+      tags:'LLC · Estonie · Structuration',
+      badge:'EU Legal',
+      bg:'linear-gradient(160deg,#0c0b08 0%,#1a1500 100%)',
+      art:`<svg viewBox="0 0 196 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+        <rect x="38" y="28" width="120" height="150" rx="8" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.1)" stroke-width="1.5"/>
+        <rect x="48" y="46" width="80" height="8" rx="4" fill="rgba(255,255,255,.5)"/>
+        <rect x="48" y="62" width="60" height="5" rx="2.5" fill="rgba(255,255,255,.2)"/>
+        <rect x="48" y="74" width="70" height="5" rx="2.5" fill="rgba(255,255,255,.2)"/>
+        <rect x="48" y="86" width="50" height="5" rx="2.5" fill="rgba(255,255,255,.2)"/>
+        <rect x="48" y="104" width="100" height="1" fill="rgba(255,255,255,.08)"/>
+        <text x="98" y="124" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="rgba(255,255,255,.4)" letter-spacing="2">LLC • EUROPE</text>
+        <circle cx="98" cy="148" r="14" fill="rgba(255,200,0,.12)" stroke="rgba(255,200,0,.3)" stroke-width="1.5"/>
+        <text x="98" y="153" text-anchor="middle" font-family="sans-serif" font-size="13">★</text>
+        <circle cx="62" cy="20" r="6" fill="rgba(255,200,0,.6)"/>
+        <circle cx="80" cy="14" r="6" fill="rgba(255,200,0,.6)"/>
+        <circle cx="98" cy="12" r="6" fill="rgba(255,200,0,.6)"/>
+        <circle cx="116" cy="14" r="6" fill="rgba(255,200,0,.6)"/>
+        <circle cx="134" cy="20" r="6" fill="rgba(255,200,0,.6)"/>
+      </svg>`
+    },
+  ];
+
+  let current = 0;
+  let lastTitle = '';
+  const stage = document.getElementById('fanStage');
+  const track = document.getElementById('fanTrack');
+  const dotsEl = document.getElementById('fanDots');
+  const bigWrap = document.getElementById('svcBigWrap');
+  const prevAdj = document.getElementById('svcPrev');
+  const nextAdj = document.getElementById('svcNext');
+
+  function updateTitle(idx) {
+    const s = SERVICES[idx];
+    if(s.bigTitle === lastTitle) return;
+    lastTitle = s.bigTitle;
+    const old = bigWrap.querySelector('.svc-big-title');
+    if(old) {
+      old.style.animation = 'svcOut .32s cubic-bezier(.22,1,.36,1) both';
+      setTimeout(() => old.remove(), 340);
+    }
+    const el = document.createElement('span');
+    el.className = 'svc-big-title';
+    el.textContent = s.bigTitle;
+    el.style.animation = 'svcIn .48s cubic-bezier(.22,1,.36,1) both';
+    bigWrap.appendChild(el);
+    const pi = (idx - 1 + SERVICES.length) % SERVICES.length;
+    const ni = (idx + 1) % SERVICES.length;
+    prevAdj.textContent = SERVICES[pi].shortName;
+    nextAdj.textContent = SERVICES[ni].shortName;
+  }
+
+  /* Build cards */
+  const cardEls = SERVICES.map((s, i) => {
+    const el = document.createElement('div');
+    el.className = 'fan-card';
+    el.innerHTML = `
+      <div class="fan-card-inner" style="background:${s.bg}">
+        <div class="fan-card-badge">${s.badge}</div>
+        <div class="svc-card-art">${s.art}</div>
+        <div class="svc-card-info">
+          <div class="svc-card-name">${s.name}</div>
+          <div class="svc-card-tags">${s.tags}</div>
+        </div>
+      </div>`;
+    el.addEventListener('click', () => { current = i; render(); });
+    track.appendChild(el);
+    return el;
+  });
+
+  /* Build dots */
+  SERVICES.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'fan-dot' + (i === current ? ' active' : '');
+    d.addEventListener('click', () => { current = i; render(); });
+    dotsEl.appendChild(d);
+  });
+
+  /* Fan positions — 4 cards */
+  const OFFSETS = [
+    {rot:-22, tx:-200, ty:40, sc:0.8,  op:0.72},
+    {rot:-11, tx:-105, ty:12, sc:0.92, op:0.88},
+    {rot:0,   tx:0,    ty:0,  sc:1,    op:1},
+    {rot:11,  tx:105,  ty:12, sc:0.92, op:0.88},
+    {rot:22,  tx:200,  ty:40, sc:0.8,  op:0.72},
+  ];
+
+  function render(mx, my) {
+    const n = SERVICES.length;
+    const dots = dotsEl.querySelectorAll('.fan-dot');
+    dots.forEach((d,i) => d.classList.toggle('active', i === current));
+
+    updateTitle(current);
+
+    cardEls.forEach((el, i) => {
+      let offset = i - current;
+      if(offset > n/2) offset -= n;
+      if(offset < -n/2) offset += n;
+      const abs = Math.abs(offset);
+
+      if(abs > 2){ el.style.opacity = '0'; el.style.pointerEvents = 'none'; return; }
+      el.style.pointerEvents = 'auto';
+
+      const pos = OFFSETS[offset + 2];
+      let extraX = 0, extraY = 0;
+
+      if(abs === 0 && mx !== undefined) {
+        const rect = el.getBoundingClientRect();
+        const cx = rect.left + rect.width/2;
+        const cy = rect.top + rect.height/2;
+        const dx = mx - cx, dy = my - cy;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if(dist < 220) {
+          const force = (1 - dist/220) * 18;
+          extraX = -(dx/dist) * force;
+          extraY = -(dy/dist) * force;
+        }
+      }
+
+      el.style.transform = `translateX(${pos.tx + extraX}px) translateY(${pos.ty + extraY}px) rotate(${pos.rot}deg) scale(${pos.sc})`;
+      el.style.opacity = pos.op;
+      el.style.zIndex = 10 - abs;
+      el.style.boxShadow = abs === 0
+        ? '0 28px 70px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.06)'
+        : `0 ${8 + abs*4}px ${20 + abs*10}px rgba(0,0,0,.3)`;
+    });
+  }
+
+  render();
+
+  stage.addEventListener('mousemove', e => { render(e.clientX, e.clientY); }, {passive:true});
+  stage.addEventListener('mouseleave', () => render());
+
+  document.getElementById('fanPrev').addEventListener('click', () => {
+    current = (current - 1 + SERVICES.length) % SERVICES.length; render();
+  });
+  document.getElementById('fanNext').addEventListener('click', () => {
+    current = (current + 1) % SERVICES.length; render();
+  });
+
+  document.addEventListener('keydown', e => {
+    if(e.key === 'ArrowLeft'){ current = (current-1+SERVICES.length)%SERVICES.length; render(); }
+    if(e.key === 'ArrowRight'){ current = (current+1)%SERVICES.length; render(); }
+  });
+
+  /* FAQ accordion */
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+})();
+
+/* ── RÉALISATIONS toggle ── */
+(function(){
+  const btn = document.getElementById('realToggle');
+  const strip = document.querySelector('.real-strip-outer');
+  let expanded = true;
+  if(!btn) return;
+  btn.addEventListener('click', () => {
+    expanded = !expanded;
+    strip.style.maxHeight = expanded ? '' : '0';
+    strip.style.overflow = expanded ? 'hidden' : 'hidden';
+    strip.style.transition = 'max-height .5s ease';
+    btn.textContent = expanded ? 'Réduire ↑' : 'Agrandir ↓';
+  });
+})();
+</script>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="footer-logo">V</span>
+      <p class="footer-tagline">Publicité digitale stratégique pour PME ambitieuses. Nous transformons vos budgets en résultats mesurables.</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" aria-label="TikTok">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.28 6.28 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.77a4.85 4.85 0 0 1-1.02-.08z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">Navigation</h4>
+      <ul class="footer-links">
+        <li><a href="#pourquoi">Pourquoi Visionnariste</a></li>
+        <li><a href="#impact">Résultats</a></li>
+        <li><a href="#services-fan">Services</a></li>
+        <li><a href="#realisations">Réalisations</a></li>
+        <li><a href="#processus">Processus</a></li>
+        <li><a href="#tarifs">Tarifs</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">Services</h4>
+      <ul class="footer-links">
+        <li><a href="#services-fan">Meta Ads</a></li>
+        <li><a href="#services-fan">TikTok Ads</a></li>
+        <li><a href="#services-fan">Google Ads</a></li>
+        <li><a href="#services-fan">Site vitrine &amp; SEO</a></li>
+        <li><a href="#services-fan">Contenu &amp; UGC</a></li>
+        <li><a href="#services-fan">LLC &amp; Fiscalité</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">Contact</h4>
+      <ul class="footer-links footer-contact-list">
+        <li><span>📍</span> Paris &amp; remote international</li>
+        <li><span>✉️</span> hello@visionnariste.fr</li>
+        <li><span>📲</span> WhatsApp sur demande</li>
+      </ul>
+      <a href="#footer-contact" class="footer-cta-btn">Audit gratuit →</a>
+    </div>
+  </div>
+  <div class="footer-bottom-bar">
+    <span>© 2025 Visionnariste Marketing. Tous droits réservés.</span>
+    <span style="display:flex;gap:20px"><a href="#" style="color:inherit;text-decoration:none">Mentions légales</a><a href="#" style="color:inherit;text-decoration:none">Politique de confidentialité</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
