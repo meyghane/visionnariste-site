@@ -164,6 +164,14 @@ h1.hero-title span{
   display:flex;align-items:center;justify-content:center;flex-shrink:0;
 }
 .hero-cta-secondary .arrow-circle svg{width:14px;height:14px;display:block}
+.platforms-strip{margin-top:44px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.platforms-label{font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.platforms-logos{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center}
+.plat-pill{background:#fff;border-radius:14px;padding:9px 18px;display:flex;align-items:center;justify-content:center;height:52px;transition:transform .2s}
+.plat-pill:hover{transform:translateY(-2px)}
+.plat-pill img{height:26px;width:auto;object-fit:contain;display:block}
+.plat-pill.snap{background:#FFFC00;padding:8px 16px}
+.plat-pill.snap img{height:30px}
 .scroll-hint{
   position:absolute;bottom:36px;left:50%;transform:translateX(-50%);
   display:flex;flex-direction:column;align-items:center;gap:8px;
@@ -1101,6 +1109,14 @@ footer.site-footer{
           </svg>
         </span>
       </a>
+    </div>
+    <div class="platforms-strip">
+      <span class="platforms-label">Plateformes certifiées</span>
+      <div class="platforms-logos">
+        <div class="plat-pill"><img src="assets/meta-ads.png" alt="Meta Ads"/></div>
+        <div class="plat-pill"><img src="assets/tiktok-ads.png" alt="TikTok Ads"/></div>
+        <div class="plat-pill snap"><img src="assets/snapchat-ads.png" alt="Snapchat Ads"/></div>
+      </div>
     </div>
   </div>
   <div class="scroll-hint"><span>Scroll</span></div>
