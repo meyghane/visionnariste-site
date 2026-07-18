@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Tarifs — Visionnariste Marketing</title>
+<meta name="description" content="Nos tarifs après audit. Devis personnalisé selon votre commerce, sans engagement. Calculez votre manque à gagner en publicité locale."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--blue:#1a3ff0;--font:'Plus Jakarta Sans','Inter',sans-serif}
+body{background:#fff;color:#111;font-family:var(--font);font-weight:400;overflow-x:hidden;line-height:1.6}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:16px 52px;background:rgba(7,7,7,.97);backdrop-filter:blur(20px)}
+.nav-logo{display:flex;flex-direction:column;line-height:1;text-decoration:none;gap:1px}
+.nav-logo .ls{font-family:var(--font);font-weight:900;font-size:17px;letter-spacing:.15em;text-transform:uppercase;color:#fff}
+.nav-logo .lg{font-size:11px;letter-spacing:.2em;color:#fff;opacity:.6}
+.nav-pills{display:flex;gap:8px;list-style:none}
+.nav-pills a{display:block;background:#fff;border-radius:100px;padding:9px 22px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#080808;text-decoration:none;transition:background .2s,color .2s}
+.nav-pills a:hover,.nav-pills a.active{background:var(--blue);color:#fff}
+/* HERO TARIFS */
+.tarifs-hero{padding:160px 52px 80px;max-width:1200px;margin:0 auto}
+.tarifs-eyebrow{font-size:11px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:rgba(0,0,0,.35);display:block;margin-bottom:20px}
+.tarifs-title{font-size:clamp(42px,6vw,80px);font-weight:900;line-height:1;letter-spacing:-.04em;margin-bottom:20px}
+.tarifs-sub{font-size:18px;color:#555;max-width:520px;line-height:1.6}
+.tarifs-sub b{color:#111;font-weight:700}
+/* LAYOUT */
+.tarifs-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;max-width:1200px;margin:0 auto;padding:60px 52px 120px}
+/* FEATURES */
+.features-list{list-style:none;margin:40px 0 32px;display:flex;flex-direction:column;gap:16px}
+.features-list li{display:flex;align-items:center;gap:12px;font-size:16px;font-weight:500}
+.features-list li::before{content:"✓";width:22px;height:22px;background:#111;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0}
+.whatsapp-link{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:800;color:#111;text-decoration:none;border-bottom:2px solid #111;padding-bottom:4px;transition:color .2s,border-color .2s}
+.whatsapp-link:hover{color:var(--blue);border-color:var(--blue)}
+/* FORM */
+.devis-form{background:#f7f6f2;border-radius:24px;padding:44px 40px}
+.form-field{margin-bottom:20px}
+.form-label{display:block;font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#888;margin-bottom:8px}
+.form-label span{font-size:9px;font-weight:500;letter-spacing:.1em;opacity:.7;margin-left:6px}
+.form-input,.form-select,.form-textarea{width:100%;padding:16px 18px;background:#fff;border:1.5px solid #e8e8e8;border-radius:12px;font-family:var(--font);font-size:14px;color:#111;outline:none;transition:border-color .2s}
+.form-input::placeholder,.form-textarea::placeholder{color:#bbb}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:#111}
+.form-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;cursor:pointer}
+.form-textarea{resize:vertical;min-height:100px}
+.form-submit{width:100%;padding:20px;background:#111;color:#fff;border:none;border-radius:100px;font-family:var(--font);font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .2s,transform .2s}
+.form-submit:hover{background:#000;transform:translateY(-2px)}
+
+/* ── CALCULATEUR MANQUE À GAGNER ── */
+.calc-section{background:#080808;color:#fff;padding:100px 52px}
+.calc-inner{max-width:900px;margin:0 auto}
+.calc-eyebrow{font-size:11px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:rgba(255,255,255,.35);display:block;margin-bottom:20px}
+.calc-title{font-size:clamp(32px,4.5vw,56px);font-weight:900;line-height:1.1;letter-spacing:-.03em;margin-bottom:12px}
+.calc-sub{font-size:16px;color:rgba(255,255,255,.5);margin-bottom:56px}
+.calc-form{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:40px}
+.calc-field label{display:block;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:10px}
+.calc-input,.calc-select-dark{width:100%;padding:18px 20px;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);border-radius:12px;font-family:var(--font);font-size:15px;font-weight:600;color:#fff;outline:none;transition:border-color .2s;-webkit-appearance:none}
+.calc-input:focus,.calc-select-dark:focus{border-color:rgba(255,255,255,.35)}
+.calc-input::placeholder{color:rgba(255,255,255,.25)}
+.calc-select-dark option{background:#111;color:#fff}
+.calc-full{grid-column:1/-1}
+.calc-btn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#111;border:none;border-radius:100px;padding:18px 48px;font-family:var(--font);font-size:13px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(255,255,255,.15)}
+/* Résultats */
+.calc-result{display:none;margin-top:48px;border-top:1px solid rgba(255,255,255,.1);padding-top:48px}
+.calc-result.show{display:block}
+.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:40px}
+.result-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:28px 24px}
+.result-label{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:10px}
+.result-value{font-size:clamp(24px,3vw,38px);font-weight:900;letter-spacing:-.03em;color:#fff}
+.result-value.highlight{color:#4ade80}
+.result-note{font-size:11px;color:rgba(255,255,255,.3);margin-top:6px}
+.result-cta{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;border-radius:100px;padding:18px 40px;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:background .2s}
+.result-cta:hover{background:#3558f4}
+.result-msg{font-size:18px;font-weight:700;margin-bottom:24px;line-height:1.4}
+
+/* FOOTER MINI */
+footer{background:#080808;color:rgba(255,255,255,.4);text-align:center;padding:40px 52px;font-size:13px}
+footer a{color:rgba(255,255,255,.6);text-decoration:none}
+
+@media(max-width:768px){
+  .tarifs-grid{grid-template-columns:1fr;padding:40px 24px 80px}
+  .calc-form{grid-template-columns:1fr}
+  .calc-full{grid-column:1}
+  .result-grid{grid-template-columns:1fr}
+  nav{padding:14px 20px}
+  .tarifs-hero{padding:120px 24px 60px}
+  .calc-section{padding:80px 24px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <span class="ls">Visionnariste</span>
+    <span class="lg">Marketing</span>
+  </a>
+  <ul class="nav-pills">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#methode">Méthode</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="tarifs.html" class="active">Tarifs</a></li>
+    <li><a href="index.html#footer-contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="tarifs-hero">
+  <span class="tarifs-eyebrow">— Investissement</span>
+  <h1 class="tarifs-title">Nos tarifs</h1>
+  <p class="tarifs-sub">Un devis clair, <b>après audit</b>. Dites-nous votre besoin, on revient vers vous avec une proposition adaptée — pas de tarif au hasard.</p>
+</div>
+
+<div class="tarifs-grid">
+  <div>
+    <ul class="features-list">
+      <li>Devis personnalisé selon votre besoin réel</li>
+      <li>Sans engagement, réponse rapide</li>
+      <li>Un seul interlocuteur du début à la fin</li>
+    </ul>
+    <a href="https://wa.me/33600000000" class="whatsapp-link" target="_blank">
+      WhatsApp direct &nbsp;→
+    </a>
+  </div>
+
+  <form class="devis-form" onsubmit="return false;">
+    <div class="form-field">
+      <label class="form-label">Nom</label>
+      <input type="text" class="form-input" placeholder="Votre nom"/>
+    </div>
+    <div class="form-field">
+      <label class="form-label">Email ou Téléphone</label>
+      <input type="text" class="form-input" placeholder="Email ou numéro"/>
+    </div>
+    <div class="form-field">
+      <label class="form-label">Service souhaité</label>
+      <select class="form-select form-input">
+        <option value="">Choisir un service...</option>
+        <option>Publicité Meta / TikTok / Google</option>
+        <option>Site vitrine</option>
+        <option>Contenu & Réseaux sociaux</option>
+        <option>Création de société / Fiscalité</option>
+        <option>Pack complet</option>
+      </select>
+    </div>
+    <div class="form-field">
+      <label class="form-label">Budget indicatif <span>(optionnel)</span></label>
+      <select class="form-select form-input">
+        <option>Préfère ne pas préciser</option>
+        <option>Moins de 500€/mois</option>
+        <option>500 – 1 000€/mois</option>
+        <option>1 000 – 2 500€/mois</option>
+        <option>Plus de 2 500€/mois</option>
+      </select>
+    </div>
+    <div class="form-field">
+      <label class="form-label">Votre projet <span>(optionnel)</span></label>
+      <textarea class="form-textarea" placeholder="Quelques mots sur votre commerce et votre besoin..."></textarea>
+    </div>
+    <button type="submit" class="form-submit">Recevoir mon devis &nbsp;→</button>
+  </form>
+</div>
+
+<!-- ══ CALCULATEUR MANQUE À GAGNER ══ -->
+<section class="calc-section">
+  <div class="calc-inner">
+    <span class="calc-eyebrow">— Simulateur</span>
+    <h2 class="calc-title">Combien vous perdez<br/>chaque mois sans pub ?</h2>
+    <p class="calc-sub">Renseignez votre activité en 30 secondes. On calcule votre manque à gagner réel.</p>
+
+    <div class="calc-form">
+      <div class="calc-field">
+        <label>Secteur d'activité</label>
+        <select class="calc-select-dark" id="cSecteur">
+          <option value="restaurant">Restaurant / Bar</option>
+          <option value="beaute">Salon de beauté / Coiffeur</option>
+          <option value="commerce">Commerce / Boutique</option>
+          <option value="sante">Santé / Bien-être</option>
+          <option value="auto">Automobile / Garage</option>
+          <option value="service">Services B2B / Artisan</option>
+          <option value="ecom">E-commerce</option>
+        </select>
+      </div>
+      <div class="calc-field">
+        <label>Ticket moyen (€)</label>
+        <input type="number" class="calc-input" id="cTicket" placeholder="ex: 45" min="1"/>
+      </div>
+      <div class="calc-field">
+        <label>Clients actuels / mois</label>
+        <input type="number" class="calc-input" id="cClients" placeholder="ex: 80" min="1"/>
+      </div>
+      <div class="calc-field">
+        <label>Votre ville</label>
+        <input type="text" class="calc-input" id="cVille" placeholder="ex: Lyon"/>
+      </div>
+      <div class="calc-field calc-full">
+        <label>Présence digitale actuelle</label>
+        <select class="calc-select-dark" id="cPresence">
+          <option value="0">Aucune (pas de pub, pas de site)</option>
+          <option value="1">Fiche Google seulement</option>
+          <option value="2">Site vitrine sans pub</option>
+          <option value="3">Quelques posts réseaux sociaux</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="calculer()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      Calculer mon manque à gagner
+    </button>
+
+    <div class="calc-result" id="calcResult">
+      <p class="result-msg" id="resultMsg"></p>
+      <div class="result-grid">
+        <div class="result-card">
+          <div class="result-label">CA mensuel actuel estimé</div>
+          <div class="result-value" id="rCA">—</div>
+          <div class="result-note">Basé sur votre activité déclarée</div>
+        </div>
+        <div class="result-card">
+          <div class="result-label">CA potentiel avec visibilité</div>
+          <div class="result-value" id="rPotentiel">—</div>
+          <div class="result-note">Avec campagnes pub + SEO local actifs</div>
+        </div>
+        <div class="result-card">
+          <div class="result-label">Manque à gagner / mois</div>
+          <div class="result-value highlight" id="rManque">—</div>
+          <div class="result-note">Ce que vous laissez à vos concurrents</div>
+        </div>
+      </div>
+      <a href="#" onclick="document.querySelector('.devis-form').scrollIntoView({behavior:'smooth'});return false;" class="result-cta">
+        Récupérer ces clients maintenant →
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Visionnariste Marketing · <a href="index.html">Accueil</a> · <a href="blog.html">Blog</a></p>
+</footer>
+
+<script>
+const MULTIPLICATEURS = {
+  restaurant:{base:2.8,label:"restaurant"},
+  beaute:{base:3.2,label:"salon"},
+  commerce:{base:2.5,label:"commerce"},
+  sante:{base:3.6,label:"cabinet"},
+  auto:{base:2.2,label:"garage"},
+  service:{base:4.0,label:"activité"},
+  ecom:{base:5.5,label:"boutique en ligne"},
+};
+const PRESENCE_MALUS = [1, 0.85, 0.7, 0.5];
+
+function fmt(n){ return new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n); }
+
+function calculer(){
+  const secteur = document.getElementById('cSecteur').value;
+  const ticket  = parseFloat(document.getElementById('cTicket').value) || 0;
+  const clients = parseFloat(document.getElementById('cClients').value) || 0;
+  const ville   = document.getElementById('cVille').value.trim() || 'votre ville';
+  const presence= parseInt(document.getElementById('cPresence').value);
+
+  if(!ticket || !clients){ alert('Merci de renseigner le ticket moyen et le nombre de clients.'); return; }
+
+  const m = MULTIPLICATEURS[secteur];
+  const caActuel = ticket * clients;
+  const malus = PRESENCE_MALUS[presence];
+  const caPotentiel = Math.round(caActuel * m.base * (1 - malus * 0.4 + 1));
+  const manque = caPotentiel - caActuel;
+
+  document.getElementById('rCA').textContent = fmt(caActuel);
+  document.getElementById('rPotentiel').textContent = fmt(caPotentiel);
+  document.getElementById('rManque').textContent = fmt(manque);
+  document.getElementById('resultMsg').textContent =
+    `Votre ${m.label} à ${ville} génère environ ${fmt(caActuel)}/mois. Avec une visibilité digitale correcte, ce chiffre pourrait atteindre ${fmt(caPotentiel)}. Vous laissez ${fmt(manque)} sur la table chaque mois.`;
+
+  const el = document.getElementById('calcResult');
+  el.classList.add('show');
+  el.scrollIntoView({behavior:'smooth', block:'start'});
+}
+</script>
+</body>
+</html>

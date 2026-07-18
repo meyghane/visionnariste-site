@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Blog — Stratégies marketing pour commerces locaux · Visionnariste</title>
+<meta name="description" content="Conseils marketing pour commerces locaux : Meta Ads, Google Business, TikTok, SEO local. Testés sur le terrain par Visionnariste Marketing."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--blue:#1a3ff0;--font:'Plus Jakarta Sans','Inter',sans-serif}
+body{background:#fff;color:#111;font-family:var(--font);line-height:1.6}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:16px 52px;background:rgba(7,7,7,.97);backdrop-filter:blur(20px)}
+.nav-logo{display:flex;flex-direction:column;line-height:1;text-decoration:none;gap:1px}
+.nav-logo .ls{font-weight:900;font-size:17px;letter-spacing:.15em;text-transform:uppercase;color:#fff}
+.nav-logo .lg{font-size:11px;letter-spacing:.2em;color:rgba(255,255,255,.6)}
+.nav-pills{display:flex;gap:8px;list-style:none}
+.nav-pills a{display:block;background:#fff;border-radius:100px;padding:9px 22px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#080808;text-decoration:none;transition:background .2s,color .2s}
+.nav-pills a:hover,.nav-pills a.active{background:var(--blue);color:#fff}
+/* HERO */
+.blog-hero{padding:160px 52px 80px;border-bottom:1px solid #f0f0f0}
+.blog-eyebrow{font-size:11px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:rgba(0,0,0,.35);display:block;margin-bottom:24px}
+.blog-title{font-size:clamp(48px,7vw,96px);font-weight:900;line-height:.95;letter-spacing:-.05em;margin-bottom:28px}
+.blog-desc{font-size:18px;color:#666;max-width:560px;line-height:1.65}
+/* GRID */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1300px;margin:0 auto;padding:72px 52px 120px}
+.blog-card{border:1.5px solid #efefef;border-radius:20px;padding:36px 32px;cursor:pointer;transition:border-color .25s,transform .25s,box-shadow .25s;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.blog-card:hover{border-color:#111;transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.07)}
+.card-cat{font-size:10px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:rgba(0,0,0,.35);margin-bottom:16px;display:block}
+.card-title{font-size:20px;font-weight:800;line-height:1.25;letter-spacing:-.02em;margin-bottom:12px;flex:1}
+.card-excerpt{font-size:14px;color:#777;line-height:1.6;margin-bottom:24px}
+.card-meta{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#bbb;margin-top:auto}
+footer{background:#080808;color:rgba(255,255,255,.4);text-align:center;padding:40px 52px;font-size:13px}
+footer a{color:rgba(255,255,255,.6);text-decoration:none}
+@media(max-width:900px){.blog-grid{grid-template-columns:1fr;padding:48px 24px 80px}.blog-hero{padding:120px 24px 60px}nav{padding:14px 20px}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><span class="ls">Visionnariste</span><span class="lg">Marketing</span></a>
+  <ul class="nav-pills">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#methode">Méthode</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="tarifs.html">Tarifs</a></li>
+    <li><a href="index.html#footer-contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="blog-hero">
+  <span class="blog-eyebrow">— Le Blog</span>
+  <h1 class="blog-title">Stratégies digitales<br/>pour commerces locaux</h1>
+  <p class="blog-desc">Articles sourcés et testés sur le terrain. Meta Ads, TikTok, Google Business, SEO local — tout ce qui fait vraiment rentrer des clients.</p>
+</div>
+
+<div class="blog-grid">
+
+  <a href="blog/meta-ads-commerce-local.html" class="blog-card">
+    <span class="card-cat">Publicité Locale</span>
+    <h2 class="card-title">Meta Ads pour commerces locaux : comment obtenir 4x votre investissement</h2>
+    <p class="card-excerpt">Structure de compte, ciblage géographique, créatives qui convertissent. La méthode Visionnariste appliquée à 30+ commerces français.</p>
+    <div class="card-meta"><span>18 juil. 2026</span><span>9 min</span></div>
+  </a>
+
+  <a href="blog/google-business-profile-2026.html" class="blog-card">
+    <span class="card-cat">Google Business</span>
+    <h2 class="card-title">Google Business Profile 2026 : le guide complet pour dominer le local</h2>
+    <p class="card-excerpt">Création, optimisation, gestion des avis, posts hebdomadaires, photos qui convertissent. Tout pour apparaître en top 3 Maps dans votre ville.</p>
+    <div class="card-meta"><span>15 juil. 2026</span><span>11 min</span></div>
+  </a>
+
+  <a href="blog/tiktok-ads-pme-france.html" class="blog-card">
+    <span class="card-cat">TikTok Ads</span>
+    <h2 class="card-title">TikTok Ads : comment une PME locale génère des clients avec 10€/jour</h2>
+    <p class="card-excerpt">TikTok n'est plus réservé aux grandes marques. Structure de campagne, formats qui cartonnent et ciblage local pour moins de 300€/mois.</p>
+    <div class="card-meta"><span>10 juil. 2026</span><span>8 min</span></div>
+  </a>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 Visionnariste Marketing · <a href="index.html">Accueil</a> · <a href="tarifs.html">Tarifs</a></p>
+</footer>
+</body>
+</html>

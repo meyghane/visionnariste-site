@@ -80,9 +80,9 @@ nav.scrolled{
 @keyframes vf6{0%,100%{transform:rotate(25deg) translateY(0px)}50%{transform:rotate(24deg) translateY(14px)}}
 
 #hero{
-  position:relative;min-height:72vh;
+  position:relative;min-height:56vh;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:120px 48px 80px;overflow:hidden;
+  text-align:center;padding:90px 48px 56px;overflow:hidden;
   background:#080808;
 }
 /* Subtle grain overlay */
@@ -135,13 +135,35 @@ h1.hero-title span{
   font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#fff;
   backdrop-filter:blur(8px);
 }
-.hero-cta{
-  display:inline-block;background:#fff;color:#080808;border-radius:100px;
-  padding:17px 48px;font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;
+.hero-btns{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center}
+.hero-cta-primary{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;
+  background:#111;color:#fff;border-radius:100px;
+  padding:20px 52px;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
   text-decoration:none;transition:background .2s,transform .2s,box-shadow .2s;
-  box-shadow:0 4px 28px rgba(255,255,255,.18);
+  box-shadow:0 4px 32px rgba(0,0,0,.45);
 }
-.hero-cta:hover{background:var(--cream);transform:translateY(-2px);box-shadow:0 8px 40px rgba(255,255,255,.28)}
+.hero-cta-primary:hover{background:#000;transform:translateY(-2px);box-shadow:0 8px 40px rgba(0,0,0,.6)}
+.hero-badge-gratuit{
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  background:#111;border:2px solid rgba(255,255,255,.15);color:#fff;
+  font-size:9px;font-weight:900;letter-spacing:.22em;text-transform:uppercase;
+  padding:5px 14px;border-radius:100px;white-space:nowrap;
+}
+.hero-cta-secondary{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,.08);color:#fff;border-radius:100px;
+  border:1.5px solid rgba(255,255,255,.25);
+  padding:18px 32px 18px 40px;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  text-decoration:none;transition:background .2s,transform .2s,border-color .2s;
+  backdrop-filter:blur(8px);
+}
+.hero-cta-secondary:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.45);transform:translateY(-2px)}
+.hero-cta-secondary .arrow-circle{
+  width:34px;height:34px;border-radius:50%;background:#fff;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.hero-cta-secondary .arrow-circle svg{width:14px;height:14px;display:block}
 .scroll-hint{
   position:absolute;bottom:36px;left:50%;transform:translateX(-50%);
   display:flex;flex-direction:column;align-items:center;gap:8px;
@@ -953,6 +975,7 @@ footer.site-footer{
   position:relative;overflow:hidden;
   background:#f0f0f0;
 }
+.real-img{width:100%;height:172px;object-fit:cover;object-position:top;display:block;margin-top:28px}
 .real-browser-bar{
   position:absolute;top:0;left:0;right:0;height:28px;
   background:rgba(255,255,255,.92);backdrop-filter:blur(4px);
@@ -1034,7 +1057,8 @@ footer.site-footer{
   <ul class="nav-pills">
     <li><a href="#services">Services</a></li>
     <li><a href="#methode">Méthode</a></li>
-    <li><a href="#apropos">À propos</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="tarifs.html">Tarifs</a></li>
     <li><a href="#footer-contact">Contact</a></li>
   </ul>
   <div class="nav-socials">
@@ -1064,7 +1088,20 @@ footer.site-footer{
       <span class="hero-pill">Performance</span>
       <span class="hero-pill">Luxe &amp; Beauté</span>
     </div>
-    <a href="#footer-contact" class="hero-cta">Demander un audit gratuit</a>
+    <div class="hero-btns">
+      <a href="#footer-contact" class="hero-cta-primary">
+        <span class="hero-badge-gratuit">Gratuit</span>
+        Démarrer mon audit
+      </a>
+      <a href="#services-fan" class="hero-cta-secondary">
+        Nos services
+        <span class="arrow-circle">
+          <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 7h10M7 2l5 5-5 5" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </a>
+    </div>
   </div>
   <div class="scroll-hint"><span>Scroll</span></div>
 </section>
@@ -1273,37 +1310,31 @@ footer.site-footer{
   <div class="real-strip-outer">
     <div class="real-strip" id="realStrip">
 
-      <!-- Carte 1 : Boucherie -->
-      <div class="real-card">
-        <div class="real-preview" style="background:linear-gradient(135deg,#1a0a00 0%,#5c1a00 100%)">
-          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>boucherie-artisanale.fr</span></div></div>
-          <div class="real-screenshot" style="color:#fff;padding:10px">
-            <div class="fw-hero"><div class="fw-nav"><div class="fw-logo"></div><div class="fw-nav-items"><div class="fw-ni"></div><div class="fw-ni"></div><div class="fw-ni"></div></div></div><div style="background:#e63000;width:60px;height:6px;border-radius:2px;opacity:.7;margin-bottom:6px"></div><div class="fw-h1" style="width:85%"></div><div class="fw-h2" style="width:60%;margin-top:4px"></div><div class="fw-btn" style="background:#e63000;opacity:.8;margin-top:8px;border-radius:4px"></div><div class="fw-img" style="opacity:.25;background:linear-gradient(90deg,rgba(255,100,0,.4),transparent)"></div></div>
-          </div>
+      <!-- Carte 1 : Hermood (réel) -->
+      <div class="real-card" onclick="window.open('https://hermood.fr','_blank')">
+        <div class="real-preview">
+          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>hermood.fr</span></div></div>
+          <img src="assets/hermood-thumb.jpg" class="real-img" alt="Hermood — E-commerce bien-être"/>
         </div>
-        <div class="real-info"><span class="real-category">Boucherie · Paris</span><span class="real-name">La Maison Dubois</span></div>
+        <div class="real-info"><span class="real-category">E-commerce · Bien-être</span><span class="real-name">Hermood</span></div>
       </div>
 
-      <!-- Carte 2 : Cabinet dentaire -->
-      <div class="real-card">
-        <div class="real-preview" style="background:linear-gradient(135deg,#e8f4fd 0%,#c8e8f8 100%)">
-          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>cabinet-sourire-bordeaux.fr</span></div></div>
-          <div class="real-screenshot" style="color:#0066aa;padding:10px">
-            <div class="fw-hero"><div class="fw-nav"><div class="fw-logo"></div><div class="fw-nav-items"><div class="fw-ni"></div><div class="fw-ni"></div><div class="fw-ni"></div></div></div><div class="fw-h1" style="color:#0066aa;opacity:.6;width:70%"></div><div class="fw-h2" style="width:90%;margin-top:4px;opacity:.3"></div><div style="display:flex;gap:6px;margin-top:8px"><div style="background:#0066aa;opacity:.5;width:80px;height:18px;border-radius:20px"></div><div style="border:1.5px solid rgba(0,102,170,.4);width:90px;height:18px;border-radius:20px"></div></div><div class="fw-grid" style="margin-top:10px"><div class="fw-col" style="background:#0066aa;opacity:.08;height:45px;border-radius:10px"></div><div class="fw-col" style="background:#0066aa;opacity:.08;height:45px;border-radius:10px"></div><div class="fw-col" style="background:#0066aa;opacity:.08;height:45px;border-radius:10px"></div></div></div>
-          </div>
+      <!-- Carte 2 : Al-Wasil (réel) -->
+      <div class="real-card" onclick="window.open('https://al-wasil.fr','_blank')">
+        <div class="real-preview">
+          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>al-wasil.fr</span></div></div>
+          <img src="assets/alwasil-thumb.jpg" class="real-img" alt="Al-Wasil — Plateforme communautaire"/>
         </div>
-        <div class="real-info"><span class="real-category">Dentiste · Bordeaux</span><span class="real-name">Cabinet Sourire</span></div>
+        <div class="real-info"><span class="real-category">Tech · Communauté</span><span class="real-name">Al-Wasil</span></div>
       </div>
 
-      <!-- Carte 3 : Barber -->
-      <div class="real-card">
-        <div class="real-preview" style="background:linear-gradient(135deg,#0d0d0d 0%,#1a1a1a 100%)">
-          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>hs-barber-thonon.fr</span></div></div>
-          <div class="real-screenshot" style="color:#c8a46e;padding:10px">
-            <div class="fw-hero"><div class="fw-nav"><div class="fw-logo"></div><div class="fw-nav-items"><div class="fw-ni"></div><div class="fw-ni"></div></div></div><div style="font-family:'Bodoni Moda',serif;color:#c8a46e;font-size:18px;font-weight:700;line-height:1.1;margin-top:8px;opacity:.9">Barber &amp;<br/>Coiffeur</div><div style="color:#888;font-size:8px;margin-top:4px;letter-spacing:.1em">THONON-LES-BAINS</div><div style="background:#c8a46e;width:70px;height:16px;border-radius:2px;opacity:.7;margin-top:10px"></div><div class="fw-img" style="background:linear-gradient(90deg,rgba(200,164,110,.2),transparent);margin-top:10px;border-radius:6px;height:45px"></div></div>
-          </div>
+      <!-- Carte 3 : Orion SaaS (réel) -->
+      <div class="real-card" onclick="window.open('https://orion-saas.vercel.app','_blank')">
+        <div class="real-preview">
+          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>orion-saas.vercel.app</span></div></div>
+          <img src="assets/orion-thumb.jpg" class="real-img" alt="Orion — SaaS Dashboard"/>
         </div>
-        <div class="real-info"><span class="real-category">Barber · Thonon-les-Bains</span><span class="real-name">H&amp;S Barber Shop</span></div>
+        <div class="real-info"><span class="real-category">SaaS · Dashboard</span><span class="real-name">Orion</span></div>
       </div>
 
       <!-- Carte 4 : Paysagiste -->
@@ -1871,6 +1902,7 @@ window.addEventListener('scroll',()=>{
       el.style.transform = `translateX(${pos.tx + extraX}px) translateY(${pos.ty + extraY}px) rotate(${pos.rot}deg) scale(${pos.sc})`;
       el.style.opacity = pos.op;
       el.style.zIndex = 10 - abs;
+      el.style.filter = abs === 0 ? 'grayscale(0) saturate(1)' : `grayscale(0.85) saturate(.4) brightness(.9)`;
       el.style.boxShadow = abs === 0
         ? '0 28px 70px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.06)'
         : `0 ${8 + abs*4}px ${20 + abs*10}px rgba(0,0,0,.3)`;
