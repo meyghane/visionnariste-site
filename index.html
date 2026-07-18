@@ -118,16 +118,16 @@ nav.scrolled{
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
   opacity:.04;pointer-events:none;z-index:0;
 }
-/* V bg letters, animated white */
+/* V bg letters — serif élégant style Bodoni */
 .hero-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
 .hero-bg span{
-  position:absolute;font-family:var(--font-graffiti);font-weight:400;
-  color:rgba(255,255,255,0.07);line-height:1;letter-spacing:-.02em;user-select:none;
+  position:absolute;font-family:serif;font-weight:900;
+  color:rgba(255,255,255,0.07);line-height:1;letter-spacing:-.04em;user-select:none;
   pointer-events:auto;
   transition:color .6s ease,text-shadow .6s ease;
 }
 .hero-bg span:hover{
-  color:rgba(255,255,255,0.32);
+  color:rgba(255,255,255,0.30);
   text-shadow:0 0 120px rgba(255,255,255,0.18),0 0 50px rgba(255,255,255,0.10);
   animation-play-state:paused;
 }
@@ -1182,27 +1182,102 @@ footer.site-footer{
 .versus-col.good .versus-text{color:rgba(255,255,255,.85)}
 
 /* ═══════════════════════════
-   MOBILE RESPONSIVE
+   HAMBURGER MENU
+═══════════════════════════ */
+.nav-hamburger{
+  display:none;flex-direction:column;gap:5px;cursor:pointer;
+  background:none;border:none;padding:4px;z-index:300;
+}
+.nav-hamburger span{
+  display:block;width:24px;height:2px;background:#fff;border-radius:2px;
+  transition:transform .3s,opacity .3s;
+}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Mobile drawer */
+.nav-mobile-drawer{
+  display:none;position:fixed;inset:0;top:0;z-index:250;
+  background:rgba(7,7,7,.98);backdrop-filter:blur(20px);
+  flex-direction:column;align-items:center;justify-content:center;gap:28px;
+  padding:100px 32px 48px;
+}
+.nav-mobile-drawer.open{display:flex}
+.nav-mobile-drawer a{
+  font-size:22px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  color:#fff;text-decoration:none;opacity:.7;transition:opacity .2s;
+}
+.nav-mobile-drawer a:hover{opacity:1}
+.nav-mobile-cta{
+  margin-top:16px;padding:16px 40px;background:var(--blue);color:#fff;
+  border-radius:100px;font-size:13px;font-weight:800;letter-spacing:.12em;
+  text-transform:uppercase;text-decoration:none;
+}
+
+/* ═══════════════════════════
+   MOBILE RESPONSIVE (≤ 768px)
 ═══════════════════════════ */
 @media(max-width:768px){
+  /* Nav */
   nav{padding:14px 20px}
-  #hero{padding:48px 20px 28px}
-  .pourquoi-wrap{grid-template-columns:1fr;gap:40px}
-  #pourquoi,#impact,#services,#services-fan,#realisations,#methode,#apropos,#processus,#tarifs,#faq,#ads-orbs,#versus{padding-left:20px;padding-right:20px}
-  .services-grid{grid-template-columns:1fr 1fr}
+  .nav-pills{display:none}
+  .nav-socials{display:none}
+  .nav-hamburger{display:flex}
+
+  /* Hero */
+  #hero{padding:96px 20px 40px}
+  .hero-bg span:nth-child(1){font-size:260px}
+  .hero-bg span:nth-child(2){font-size:220px}
+  .hero-bg span:nth-child(3){font-size:180px}
+  .hero-bg span:nth-child(4){font-size:150px}
+  .hero-bg span:nth-child(5){font-size:110px}
+  .hero-bg span:nth-child(6){font-size:90px}
+  .hero-ctas{flex-direction:column;align-items:flex-start;gap:12px}
+
+  /* All sections horizontal padding */
+  #pourquoi,#impact,#services,#services-fan,#realisations,#methode,
+  #apropos,#processus,#tarifs,#faq,#ads-orbs,#versus,#footer-contact{
+    padding-left:20px;padding-right:20px
+  }
+
+  /* Grids */
+  .pourquoi-wrap{grid-template-columns:1fr;gap:32px}
+  .services-grid{grid-template-columns:1fr}
   .tarifs-grid{grid-template-columns:1fr;gap:16px}
   .tcard.featured{transform:scale(1)}
   .impact-grid{grid-template-columns:1fr 1fr;gap:0}
-  .impact-stat{padding:28px 20px}
+  .impact-stat{padding:28px 16px}
   .impact-stat:nth-child(even){border-right:none}
   .proc-grid{grid-template-columns:1fr}
   .methode-wrap{grid-template-columns:1fr}
   .versus-grid{grid-template-columns:1fr}
   .versus-col.bad{border-bottom:1px solid rgba(0,0,0,.08)}
+
+  /* Real cards */
+  .real-cards{flex-direction:column;gap:16px}
+  .real-card{width:100%}
+
+  /* FAQ */
   .faq-title{font-size:28px}
+
+  /* Contact form */
+  .fc-grid{grid-template-columns:1fr}
+
+  /* Footer */
   .footer-main{flex-direction:column;gap:40px}
   .footer-headline{font-size:clamp(48px,14vw,100px)}
   .float-cards{display:none}
+
+  /* Ads orbs / platform logos */
+  .orbs-inner{gap:16px}
+  .orb{width:52px;height:52px}
+}
+
+@media(max-width:480px){
+  .impact-grid{grid-template-columns:1fr}
+  .impact-stat:nth-child(even){border-right:1px solid rgba(255,255,255,.07)}
+  .ads-orbs-title{font-size:clamp(24px,8vw,40px)}
 }
 
 /* ═══════════════════════════
@@ -1250,7 +1325,18 @@ h1,h2,h3{text-wrap:balance}
     <li><a href="tarifs.html">Tarifs</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile drawer -->
+<div class="nav-mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Navigation mobile">
+  <a href="services.html" class="mobile-nav-link">Services</a>
+  <a href="blog.html" class="mobile-nav-link">Blog</a>
+  <a href="tarifs.html" class="mobile-nav-link">Tarifs</a>
+  <a href="contact.html" class="nav-mobile-cta">Contact →</a>
+</div>
 
 <!-- ══ HERO ══ -->
 <section id="hero">
@@ -1814,7 +1900,7 @@ h1,h2,h3{text-wrap:balance}
     </div>
     <!-- Growth -->
     <div class="tcard featured">
-      <span class="tcard-badge">⭐ Le plus choisi</span>
+      <span class="tcard-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Le plus choisi</span>
       <p class="tcard-for">Scaler et multiplier son ROAS</p>
       <p class="tcard-name">Growth</p>
       <p class="tcard-budget">Budget pub conseillé : 2 000€–10 000€/mois</p>
@@ -2021,6 +2107,24 @@ window.addEventListener('scroll',()=>{
   nav.classList.toggle('scrolled', window.scrollY > 80);
   if(stickyCta) stickyCta.classList.toggle('visible', window.scrollY > 400);
 },{passive:true});
+
+/* ── Hamburger menu ── */
+const hamburger = document.getElementById('hamburger');
+const mobileDrawer = document.getElementById('mobile-drawer');
+hamburger.addEventListener('click', () => {
+  const isOpen = mobileDrawer.classList.toggle('open');
+  hamburger.classList.toggle('open', isOpen);
+  hamburger.setAttribute('aria-expanded', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+mobileDrawer.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileDrawer.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  });
+});
 
   /* FAQ accordion */
   document.querySelectorAll('.faq-q').forEach(btn => {
