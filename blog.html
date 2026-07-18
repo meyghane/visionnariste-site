@@ -2,85 +2,341 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8"/>
+<link rel="icon" href="assets/favicon.png?v=3" type="image/png"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Blog — Stratégies marketing pour commerces locaux · Visionnariste</title>
-<meta name="description" content="Conseils marketing pour commerces locaux : Meta Ads, Google Business, TikTok, SEO local. Testés sur le terrain par Visionnariste Marketing."/>
+<title>Blog · Paid Ads, Scaling et Performance Digitale · Visionnariste</title>
+<meta name="description" content="Stratégies Meta Ads, TikTok Ads, Google Ads et Snapchat pour e-commerces et marques en croissance. Méthodes issues des Grands Comptes, appliquées à votre business."/>
+<link rel="canonical" href="https://visionnariste-site.vercel.app/blog.html"/>
+<meta property="og:title" content="Blog Visionnariste, Paid Ads et Performance pour marques ambitieuses"/>
+<meta property="og:description" content="Meta Ads, TikTok Ads, Google Shopping, Snapchat, stratégie créative. Tout ce qui fait vraiment croître une marque en 2026."/>
+<meta property="og:type" content="website"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Blog Visionnariste Marketing","description":"Stratégies paid media et performance digitale pour marques en croissance","url":"https://visionnariste-site.vercel.app/blog.html","publisher":{"@type":"Person","name":"Visionnariste Marketing"}}</script>
 <style>
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.semibold.otf') format('opentype');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.heavy.otf') format('opentype');font-weight:800 900;font-style:normal;font-display:swap}
+
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--blue:#1a3ff0;--font:'Plus Jakarta Sans','Inter',sans-serif}
+:root{--blue:#1a3ff0;--bg2:#f7f6f2;--font:'Aileron','Plus Jakarta Sans','Inter',sans-serif;--serif:'Aileron','Plus Jakarta Sans','Inter',sans-serif}
 body{background:#fff;color:#111;font-family:var(--font);line-height:1.6}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:16px 52px;background:rgba(7,7,7,.97);backdrop-filter:blur(20px)}
-.nav-logo{display:flex;flex-direction:column;line-height:1;text-decoration:none;gap:1px}
-.nav-logo .ls{font-weight:900;font-size:17px;letter-spacing:.15em;text-transform:uppercase;color:#fff}
-.nav-logo .lg{font-size:11px;letter-spacing:.2em;color:rgba(255,255,255,.6)}
-.nav-pills{display:flex;gap:8px;list-style:none}
-.nav-pills a{display:block;background:#fff;border-radius:100px;padding:9px 22px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#080808;text-decoration:none;transition:background .2s,color .2s}
-.nav-pills a:hover,.nav-pills a.active{background:var(--blue);color:#fff}
+.nav-logo{display:flex;align-items:center;text-decoration:none;align-self:flex-start}.nav-logo .logo-wordmark{height:54px;width:auto;display:block}
+.nav-pills{display:flex;gap:8px;list-style:none;}
+.nav-pills a{display:block;background:transparent;border-radius:100px;padding:9px 22px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.7);text-decoration:none;transition:background .2s,color .2s}
+.nav-pills a:hover,.nav-pills a.active{background:#fff;color:#080808}
 /* HERO */
 .blog-hero{padding:160px 52px 80px;border-bottom:1px solid #f0f0f0}
 .blog-eyebrow{font-size:11px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:rgba(0,0,0,.35);display:block;margin-bottom:24px}
-.blog-title{font-size:clamp(48px,7vw,96px);font-weight:900;line-height:.95;letter-spacing:-.05em;margin-bottom:28px}
-.blog-desc{font-size:18px;color:#666;max-width:560px;line-height:1.65}
+.blog-title{font-family:var(--serif);font-size:clamp(48px,7vw,92px);font-weight:900;line-height:.95;letter-spacing:-.03em;margin-bottom:28px}
+.blog-desc{font-size:18px;color:#666;max-width:580px;line-height:1.65}
+/* FILTER */
+.blog-filter{padding:24px 52px;border-bottom:1px solid #f0f0f0;display:flex;gap:8px;flex-wrap:wrap}
+.bf-tab{border:1.5px solid #e0e0e0;border-radius:100px;padding:8px 20px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#666;background:#fff;cursor:pointer;transition:all .2s;text-decoration:none}
+.bf-tab:hover,.bf-tab.active{background:#111;color:#fff;border-color:#111}
 /* GRID */
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1300px;margin:0 auto;padding:72px 52px 120px}
-.blog-card{border:1.5px solid #efefef;border-radius:20px;padding:36px 32px;cursor:pointer;transition:border-color .25s,transform .25s,box-shadow .25s;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1300px;margin:0 auto;padding:64px 52px 120px}
+.blog-card{border:1.5px solid #efefef;border-radius:20px;overflow:hidden;cursor:pointer;transition:border-color .25s,transform .25s,box-shadow .25s;text-decoration:none;color:inherit;display:flex;flex-direction:column;background:#fff}
 .blog-card:hover{border-color:#111;transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.07)}
-.card-cat{font-size:10px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:rgba(0,0,0,.35);margin-bottom:16px;display:block}
-.card-title{font-size:20px;font-weight:800;line-height:1.25;letter-spacing:-.02em;margin-bottom:12px;flex:1}
-.card-excerpt{font-size:14px;color:#777;line-height:1.6;margin-bottom:24px}
-.card-meta{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#bbb;margin-top:auto}
+.blog-card.featured{border-color:#111;background:#111;color:#fff}
+.card-visual{height:160px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:64px;font-weight:900;letter-spacing:-.04em;text-transform:uppercase;color:rgba(255,255,255,.15)}
+.card-visual.ads{background:linear-gradient(135deg,#1a3ff0,#3d5eff)}
+.card-visual.tiktok{background:linear-gradient(135deg,#010101,#2d2d2d)}
+.card-visual.google{background:linear-gradient(135deg,#ea4335,#c62828)}
+.card-visual.snap{background:linear-gradient(135deg,#FFFC00,#e6e300);color:rgba(0,0,0,.1)}
+.card-visual.strategy{background:linear-gradient(135deg,#111,#333)}
+.card-visual.intl{background:linear-gradient(135deg,#0d47a1,#1565c0)}
+.card-visual.creative{background:linear-gradient(135deg,#6a0dad,#9c27b0)}
+.card-visual.data{background:linear-gradient(135deg,#004d40,#00695c)}
+.card-body{padding:28px 28px 24px;flex:1;display:flex;flex-direction:column}
+.card-cat{font-size:10px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:rgba(0,0,0,.35);margin-bottom:14px;display:block}
+.blog-card.featured .card-cat{color:rgba(255,255,255,.4)}
+.card-title{font-family:var(--serif);font-size:18px;font-weight:700;line-height:1.25;letter-spacing:-.01em;margin-bottom:10px;flex:1}
+.blog-card.featured .card-title{color:#fff}
+.card-excerpt{font-size:13px;color:#888;line-height:1.6;margin-bottom:20px}
+.blog-card.featured .card-excerpt{color:rgba(255,255,255,.5)}
+.card-meta{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#bbb;margin-top:auto}
+.blog-card.featured .card-meta{color:rgba(255,255,255,.35)}
 footer{background:#080808;color:rgba(255,255,255,.4);text-align:center;padding:40px 52px;font-size:13px}
 footer a{color:rgba(255,255,255,.6);text-decoration:none}
-@media(max-width:900px){.blog-grid{grid-template-columns:1fr;padding:48px 24px 80px}.blog-hero{padding:120px 24px 60px}nav{padding:14px 20px}}
+@media(max-width:1000px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.blog-grid{grid-template-columns:1fr;padding:48px 20px 80px}.blog-hero{padding:120px 20px 60px}nav{padding:14px 20px}.blog-filter{padding:16px 20px}}
 </style>
 </head>
 <body>
 <nav>
-  <a href="index.html" class="nav-logo"><span class="ls">Visionnariste</span><span class="lg">Marketing</span></a>
+  <a href="index.html" class="nav-logo"><img src="assets/logo-visionnariste-transparent.png" alt="Visionnariste Marketing" class="logo-wordmark" loading="eager"/></a>
   <ul class="nav-pills">
-    <li><a href="index.html#services">Services</a></li>
-    <li><a href="index.html#methode">Méthode</a></li>
+    <li><a href="services.html">Services</a></li>
     <li><a href="blog.html" class="active">Blog</a></li>
     <li><a href="tarifs.html">Tarifs</a></li>
-    <li><a href="index.html#footer-contact">Contact</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
 <div class="blog-hero">
-  <span class="blog-eyebrow">— Le Blog</span>
-  <h1 class="blog-title">Stratégies digitales<br/>pour commerces locaux</h1>
-  <p class="blog-desc">Articles sourcés et testés sur le terrain. Meta Ads, TikTok, Google Business, SEO local — tout ce qui fait vraiment rentrer des clients.</p>
+  <span class="blog-eyebrow">Le Blog</span>
+  <h1 class="blog-title">Paid Ads,<br/>Scaling, Performance.</h1>
+  <p class="blog-desc">Stratégies Meta Ads, TikTok Ads, Google et Snapchat pour e-commerces et marques ambitieuses. Méthodes issues des plus grandes campagnes du marché, appliquées à votre croissance.</p>
+</div>
+
+<div class="blog-filter">
+  <a href="#" class="bf-tab active">Tous</a>
+  <a href="#" class="bf-tab">Meta Ads</a>
+  <a href="#" class="bf-tab">TikTok Ads</a>
+  <a href="#" class="bf-tab">Google Ads</a>
+  <a href="#" class="bf-tab">Snapchat Ads</a>
+  <a href="#" class="bf-tab">Stratégie</a>
+  <a href="#" class="bf-tab">International</a>
 </div>
 
 <div class="blog-grid">
 
-  <a href="blog/meta-ads-commerce-local.html" class="blog-card">
-    <span class="card-cat">Publicité Locale</span>
-    <h2 class="card-title">Meta Ads pour commerces locaux : comment obtenir 4x votre investissement</h2>
-    <p class="card-excerpt">Structure de compte, ciblage géographique, créatives qui convertissent. La méthode Visionnariste appliquée à 30+ commerces français.</p>
-    <div class="card-meta"><span>18 juil. 2026</span><span>9 min</span></div>
+  <a href="blog/meta-ads-ecommerce-scaling.html" class="blog-card featured">
+    <div class="card-visual ads">META</div>
+    <div class="card-body">
+      <span class="card-cat">Meta Ads</span>
+      <h2 class="card-title">Meta Ads e-commerce : scaler de 0 à 50K€/mois sans brûler son budget</h2>
+      <p class="card-excerpt">Structure Advantage+, audiences froides vs retargeting, budget pacing. La méthode qui tient à l'échelle.</p>
+      <div class="card-meta"><span>18 juil. 2026</span><span>10 min</span></div>
+    </div>
   </a>
 
-  <a href="blog/google-business-profile-2026.html" class="blog-card">
-    <span class="card-cat">Google Business</span>
-    <h2 class="card-title">Google Business Profile 2026 : le guide complet pour dominer le local</h2>
-    <p class="card-excerpt">Création, optimisation, gestion des avis, posts hebdomadaires, photos qui convertissent. Tout pour apparaître en top 3 Maps dans votre ville.</p>
-    <div class="card-meta"><span>15 juil. 2026</span><span>11 min</span></div>
+  <a href="blog/tiktok-ads-mode-beaute-2026.html" class="blog-card">
+    <div class="card-visual tiktok">TIK</div>
+    <div class="card-body">
+      <span class="card-cat">TikTok Ads</span>
+      <h2 class="card-title">TikTok Ads pour marques mode et beauté : la stratégie créative 2026</h2>
+      <p class="card-excerpt">Formats qui convertissent, angles créatifs, structure de test. Pourquoi TikTok est devenu incontournable pour les marques fashion.</p>
+      <div class="card-meta"><span>15 juil. 2026</span><span>9 min</span></div>
+    </div>
   </a>
 
-  <a href="blog/tiktok-ads-pme-france.html" class="blog-card">
-    <span class="card-cat">TikTok Ads</span>
-    <h2 class="card-title">TikTok Ads : comment une PME locale génère des clients avec 10€/jour</h2>
-    <p class="card-excerpt">TikTok n'est plus réservé aux grandes marques. Structure de campagne, formats qui cartonnent et ciblage local pour moins de 300€/mois.</p>
-    <div class="card-meta"><span>10 juil. 2026</span><span>8 min</span></div>
+  <a href="blog/google-ads-shopping-roas-maximum.html" class="blog-card">
+    <div class="card-visual google">SHOP</div>
+    <div class="card-body">
+      <span class="card-cat">Google Ads</span>
+      <h2 class="card-title">Google Ads Shopping : maximiser son ROAS avec une structure de compte optimisée</h2>
+      <p class="card-excerpt">Performance Max vs Standard Shopping, segmentation par marge, scripts d'enchères. Tout ce que les agences ne vous disent pas.</p>
+      <div class="card-meta"><span>12 juil. 2026</span><span>11 min</span></div>
+    </div>
+  </a>
+
+  <a href="blog/snapchat-ads-guide-complet-2026.html" class="blog-card">
+    <div class="card-visual snap">SNAP</div>
+    <div class="card-body">
+      <span class="card-cat">Snapchat Ads</span>
+      <h2 class="card-title">Snapchat Ads 2026 : le canal sous-estimé pour toucher les 18-34 ans</h2>
+      <p class="card-excerpt">CPM bas, audience jeune et engagée, formats dynamiques. Pourquoi Snapchat est la meilleure opportunité paid media du moment.</p>
+      <div class="card-meta"><span>8 juil. 2026</span><span>8 min</span></div>
+    </div>
+  </a>
+
+  <a href="blog/strategie-multi-plateforme-meta-tiktok-google.html" class="blog-card">
+    <div class="card-visual strategy">MIX</div>
+    <div class="card-body">
+      <span class="card-cat">Stratégie</span>
+      <h2 class="card-title">Stratégie multi-plateforme : Meta + TikTok + Google, comment tout orchestrer</h2>
+      <p class="card-excerpt">Attribution, budgets croisés, séquençage des messages. Arrêtez de cloisonner vos canaux et commencez à les faire travailler ensemble.</p>
+      <div class="card-meta"><span>5 juil. 2026</span><span>12 min</span></div>
+    </div>
+  </a>
+
+  <a href="blog/meta-ads-marche-americain.html" class="blog-card">
+    <div class="card-visual intl">USA</div>
+    <div class="card-body">
+      <span class="card-cat">International</span>
+      <h2 class="card-title">Lancer ses Meta Ads sur le marché américain : ce qui change vraiment</h2>
+      <p class="card-excerpt">Compte publicitaire US, ciblage, copies localisées, checkout. Le guide complet pour une marque française qui veut conquérir les États-Unis.</p>
+      <div class="card-meta"><span>1 juil. 2026</span><span>10 min</span></div>
+    </div>
+  </a>
+
+  <a href="blog/creative-brief-publicite-digitale.html" class="blog-card">
+    <div class="card-visual creative">ART</div>
+    <div class="card-body">
+      <span class="card-cat">Créatif</span>
+      <h2 class="card-title">Brief créatif pour publicités qui convertissent : la méthode complète</h2>
+      <p class="card-excerpt">Hook, structure narrative, appel à l'action, format par plateforme. Le template que j'utilise pour produire des créas performantes à grande échelle.</p>
+      <div class="card-meta"><span>28 juin 2026</span><span>9 min</span></div>
+    </div>
+  </a>
+
+  <a href="blog/roas-vs-poas-quelle-metrique.html" class="blog-card">
+    <div class="card-visual data">ROI</div>
+    <div class="card-body">
+      <span class="card-cat">Data et mesure</span>
+      <h2 class="card-title">ROAS vs POAS : quelle métrique piloter pour votre e-commerce en 2026</h2>
+      <p class="card-excerpt">Le ROAS ment. Voici pourquoi piloter par marge brute change tout, et comment configurer votre attribution pour ne plus perdre d'argent sans le savoir.</p>
+      <div class="card-meta"><span>22 juin 2026</span><span>8 min</span></div>
+    </div>
+  </a>
+
+  <a href="blog/meta-ads-bresil-guide-2026.html" class="blog-card">
+    <div class="card-visual intl">BR</div>
+    <div class="card-body">
+      <span class="card-cat">International</span>
+      <h2 class="card-title">Meta Ads au Brésil : opportunités et stratégies pour marques françaises</h2>
+      <p class="card-excerpt">CPM parmi les plus bas du monde, taux d'engagement record, achat mobile dominant. Comment une marque mode française peut exploser au Brésil.</p>
+      <div class="card-meta"><span>18 juin 2026</span><span>9 min</span></div>
+    </div>
+  </a>
+
+  <a href="blog/attribution-multi-touch-ecommerce.html" class="blog-card">
+    <div class="card-visual data">ATT</div>
+    <div class="card-body">
+      <span class="card-cat">Data et mesure</span>
+      <h2 class="card-title">Attribution multi-touch : d'où viennent vraiment vos ventes en 2026</h2>
+      <p class="card-excerpt">Last-click est mort. Data-driven attribution, iOS 17, Conversions API, modèles mixtes. Comment reconstituer une vision juste de votre tunnel.</p>
+      <div class="card-meta"><span>12 juin 2026</span><span>11 min</span></div>
+    </div>
+  </a>
+
+
+  <a href="blog/scaling-budget-pub-sans-perdre-roas.html" class="blog-card">
+    <div class="card-visual strategy">SCA</div>
+    <div class="card-body">
+      <span class="card-cat">Stratégie</span>
+      <h2 class="card-title">Scaler son budget pub sans perdre son ROAS : la méthode 2026</h2>
+      <p class="card-excerpt">Pourquoi votre ROAS s'effondre quand vous augmentez votre budget, et comment scaler progressivement sans réinitialiser votre phase d'apprentissage.</p>
+      <div class="card-meta"><span>5 juin 2026</span><span>9 min</span></div>
+    </div>
+  </a>
+
+  <a href="blog/audit-compte-meta-ads-checklist.html" class="blog-card">
+    <div class="card-visual ads">AUD</div>
+    <div class="card-body">
+      <span class="card-cat">Meta Ads</span>
+      <h2 class="card-title">Audit compte Meta Ads : la checklist complète pour trouver les fuites de budget</h2>
+      <p class="card-excerpt">Tracking, structure, audiences, créatifs, enchères. Les 30 points que je vérifie en premier quand j'audite un compte qui sous-performe.</p>
+      <div class="card-meta"><span>28 mai 2026</span><span>10 min</span></div>
+    </div>
+  </a>
+
+  <a href="blog/campagnes-conversion-structure-optimisation.html" class="blog-card">
+    <div class="card-visual ads">CNV</div>
+    <div class="card-body">
+      <span class="card-cat">Stratégie</span>
+      <h2 class="card-title">Campagnes conversion : structure, pixel, CAPI et enchères pour performer vraiment</h2>
+      <p class="card-excerpt">Règle des 50 événements, ensembles de publicités, stratégies d'enchères, MER vs ROAS. La méthode complète pour des campagnes conversion qui tiennent à l'échelle.</p>
+      <div class="card-meta"><span>18 juil. 2026</span><span>12 min</span></div>
+    </div>
+  </a>
+
+  <a href="blog/notoriete-brand-awareness-paid-media.html" class="blog-card">
+    <div class="card-visual strategy">NOT</div>
+    <div class="card-body">
+      <span class="card-cat">Stratégie</span>
+      <h2 class="card-title">Notoriété de marque en paid media : mesurer ce qu'on ne voit pas dans le dashboard</h2>
+      <p class="card-excerpt">Brand Lift, Search Lift, fréquence optimale, règle 60/40. Comment les grandes marques construisent leur awareness et le mesurent scientifiquement.</p>
+      <div class="card-meta"><span>18 juil. 2026</span><span>10 min</span></div>
+    </div>
+  </a>
+
+  <a href="blog/consideration-milieu-funnel-paid-ads.html" class="blog-card">
+    <div class="card-visual data">FNL</div>
+    <div class="card-body">
+      <span class="card-cat">Stratégie</span>
+      <h2 class="card-title">Le milieu du funnel est le cimetière des budgets mal alloués</h2>
+      <p class="card-excerpt">Segmentation par intention, fenêtres de retargeting, séquençage créatif. Comment récupérer 20 à 35% de revenus supplémentaires sur les prospects qui ont déjà signalé leur intérêt.</p>
+      <div class="card-meta"><span>18 juil. 2026</span><span>9 min</span></div>
+    </div>
+  </a>
+
+  <a href="blog/engagement-communaute-social-ads.html" class="blog-card">
+    <div class="card-visual creative">ENG</div>
+    <div class="card-body">
+      <span class="card-cat">Stratégie</span>
+      <h2 class="card-title">Campagnes engagement : construire une communauté qui convertit vraiment</h2>
+      <p class="card-excerpt">Partages vs likes, UGC, retargeting sur engagement, ratio Partages+Sauvegardes. L'engagement qui a une valeur commerciale réelle.</p>
+      <div class="card-meta"><span>18 juil. 2026</span><span>9 min</span></div>
+    </div>
+  </a>
+
+  <a href="blog/meta-ads-marche-uk-angleterre.html" class="blog-card">
+    <div class="card-visual intl">UK</div>
+    <div class="card-body">
+      <span class="card-cat">International</span>
+      <h2 class="card-title">Meta Ads sur le marché UK : CPM, comportements d'achat et codes créatifs</h2>
+      <p class="card-excerpt">UK GDPR, CPM 8-18£, Trustpilot obligatoire, British understatement, Boxing Day. Le guide complet pour performer en Angleterre.</p>
+      <div class="card-meta"><span>18 juil. 2026</span><span>11 min</span></div>
+    </div>
+  </a>
+
+  <a href="blog/snapchat-abonnes-croissance-strategie.html" class="blog-card">
+    <div class="card-visual snap">SNP</div>
+    <div class="card-body">
+      <span class="card-cat">Snapchat Ads</span>
+      <h2 class="card-title">Générer des abonnés Snapchat à ultra-bas CPM : la stratégie broad + insights</h2>
+      <p class="card-excerpt">CPM 0,50€ à 3€ en France, Public Profile Promotion, phases d'exploration broad, lecture des insights et exploitation ciblée. La méthode pour scaler les abonnés Snap.</p>
+      <div class="card-meta"><span>18 juil. 2026</span><span>10 min</span></div>
+    </div>
+  </a>
+
+  <a href="blog/paid-ads-europe-differences-marches.html" class="blog-card">
+    <div class="card-visual intl">EU</div>
+    <div class="card-body">
+      <span class="card-cat">International</span>
+      <h2 class="card-title">Paid Ads en Europe : adapter votre stratégie marché par marché</h2>
+      <p class="card-excerpt">Allemagne, Espagne, Italie, Pays-Bas : tableau CPM, comportements d'achat, Impressum, iDEAL, modes de paiement locaux. Ce qui change vraiment d'un marché à l'autre.</p>
+      <div class="card-meta"><span>18 juil. 2026</span><span>13 min</span></div>
+    </div>
+  </a>
+
+  <a href="blog/paid-ads-moyen-orient-mena.html" class="blog-card">
+    <div class="card-visual intl">GCC</div>
+    <div class="card-body">
+      <span class="card-cat">International</span>
+      <h2 class="card-title">Paid Ads au Moyen-Orient : l'opportunité inexploitée pour les marques mode et luxe</h2>
+      <p class="card-excerpt">Snapchat dominant en Arabie Saoudite, CPM Snap 0,30€-1,50€, Ramadan, codes culturels, logistique MENA. Tout ce que vous devez savoir pour vous lancer dans le Golfe.</p>
+      <div class="card-meta"><span>18 juil. 2026</span><span>11 min</span></div>
+    </div>
   </a>
 
 </div>
 
 <footer>
-  <p>&copy; 2026 Visionnariste Marketing · <a href="index.html">Accueil</a> · <a href="tarifs.html">Tarifs</a></p>
+  <p>&copy; 2026 Visionnariste Marketing · <a href="index.html">Accueil</a> · <a href="tarifs.html">Tarifs</a> · <a href="services.html">Services</a></p>
 </footer>
+
+<script>
+/* ── FILTRE BLOG ── */
+(function(){
+  /* Catégories regroupées sous "Stratégie" : tout ce qui n'a pas d'onglet dédié */
+  var strategieCats = ['strategie','creatif','data et mesure'];
+
+  var norm = function(s){ return s.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); };
+
+  var tabs  = document.querySelectorAll('.bf-tab');
+  var cards = document.querySelectorAll('.blog-card');
+
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(e){
+      e.preventDefault();
+      /* activer l'onglet cliqué */
+      tabs.forEach(function(t){ t.classList.remove('active'); });
+      tab.classList.add('active');
+
+      var filter = norm(tab.textContent);
+
+      cards.forEach(function(card){
+        if(filter === 'tous'){
+          card.style.display = '';
+          return;
+        }
+        var catEl = card.querySelector('.card-cat');
+        var cat = catEl ? norm(catEl.textContent) : '';
+        var show = (filter === 'strategie')
+          ? strategieCats.indexOf(cat) !== -1
+          : cat === filter;
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>

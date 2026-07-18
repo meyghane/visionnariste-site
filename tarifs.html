@@ -2,22 +2,31 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8"/>
+<link rel="icon" href="assets/favicon.png?v=3" type="image/png"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Tarifs — Visionnariste Marketing</title>
-<meta name="description" content="Nos tarifs après audit. Devis personnalisé selon votre commerce, sans engagement. Calculez votre manque à gagner en publicité locale."/>
+<title>Tarifs · Visionnariste Marketing | Gestion Ads dès 590€/mois</title>
+<meta name="description" content="Packs Meta Ads, TikTok Ads, Google Ads dès 590€/mois. Audit gratuit avant toute collaboration. Marchés UE, US et Brésil. Transparence totale, zéro engagement."/>
+<link rel="canonical" href="https://visionnariste-site.vercel.app/tarifs.html"/>
+<meta property="og:title" content="Tarifs Visionnariste, Paid Ads dès 590€/mois"/>
+<meta property="og:description" content="Packs Ads clairs dès 590€/mois. Audit gratuit inclus. Marchés UE, US, Brésil."/>
+<meta property="og:url" content="https://visionnariste-site.vercel.app/tarifs.html"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.semibold.otf') format('opentype');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.heavy.otf') format('opentype');font-weight:800 900;font-style:normal;font-display:swap}
+
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--blue:#1a3ff0;--font:'Plus Jakarta Sans','Inter',sans-serif}
+:root{--blue:#1a3ff0;--font:'Aileron','Plus Jakarta Sans','Inter',sans-serif}
 body{background:#fff;color:#111;font-family:var(--font);font-weight:400;overflow-x:hidden;line-height:1.6}
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:16px 52px;background:rgba(7,7,7,.97);backdrop-filter:blur(20px)}
-.nav-logo{display:flex;flex-direction:column;line-height:1;text-decoration:none;gap:1px}
-.nav-logo .ls{font-family:var(--font);font-weight:900;font-size:17px;letter-spacing:.15em;text-transform:uppercase;color:#fff}
-.nav-logo .lg{font-size:11px;letter-spacing:.2em;color:#fff;opacity:.6}
-.nav-pills{display:flex;gap:8px;list-style:none}
+.nav-logo{display:flex;align-items:center;text-decoration:none;align-self:flex-start}
+.nav-logo .logo-wordmark{height:54px;width:auto;display:block}
+.nav-pills{display:flex;gap:8px;list-style:none;}
 .nav-pills a{display:block;background:#fff;border-radius:100px;padding:9px 22px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#080808;text-decoration:none;transition:background .2s,color .2s}
 .nav-pills a:hover,.nav-pills a.active{background:var(--blue);color:#fff}
 /* HERO TARIFS */
@@ -94,22 +103,20 @@ footer a{color:rgba(255,255,255,.6);text-decoration:none}
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <span class="ls">Visionnariste</span>
-    <span class="lg">Marketing</span>
+    <img src="assets/logo-visionnariste-transparent.png" alt="Visionnariste Marketing" class="logo-wordmark" loading="eager"/>
   </a>
   <ul class="nav-pills">
-    <li><a href="index.html#services">Services</a></li>
-    <li><a href="index.html#methode">Méthode</a></li>
+    <li><a href="services.html">Services</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="tarifs.html" class="active">Tarifs</a></li>
-    <li><a href="index.html#footer-contact">Contact</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
 <div class="tarifs-hero">
-  <span class="tarifs-eyebrow">— Investissement</span>
+  <span class="tarifs-eyebrow">, Investissement</span>
   <h1 class="tarifs-title">Nos tarifs</h1>
-  <p class="tarifs-sub">Un devis clair, <b>après audit</b>. Dites-nous votre besoin, on revient vers vous avec une proposition adaptée — pas de tarif au hasard.</p>
+  <p class="tarifs-sub">Un devis clair, <b>après audit</b>. Dites-nous votre besoin, on revient vers vous avec une proposition adaptée, pas de tarif au hasard.</p>
 </div>
 
 <div class="tarifs-grid">
@@ -165,7 +172,7 @@ footer a{color:rgba(255,255,255,.6);text-decoration:none}
 <!-- ══ CALCULATEUR MANQUE À GAGNER ══ -->
 <section class="calc-section">
   <div class="calc-inner">
-    <span class="calc-eyebrow">— Simulateur</span>
+    <span class="calc-eyebrow">, Simulateur</span>
     <h2 class="calc-title">Combien vous perdez<br/>chaque mois sans pub ?</h2>
     <p class="calc-sub">Renseignez votre activité en 30 secondes. On calcule votre manque à gagner réel.</p>
 
@@ -215,17 +222,17 @@ footer a{color:rgba(255,255,255,.6);text-decoration:none}
       <div class="result-grid">
         <div class="result-card">
           <div class="result-label">CA mensuel actuel estimé</div>
-          <div class="result-value" id="rCA">—</div>
+          <div class="result-value" id="rCA">·</div>
           <div class="result-note">Basé sur votre activité déclarée</div>
         </div>
         <div class="result-card">
           <div class="result-label">CA potentiel avec visibilité</div>
-          <div class="result-value" id="rPotentiel">—</div>
+          <div class="result-value" id="rPotentiel">·</div>
           <div class="result-note">Avec campagnes pub + SEO local actifs</div>
         </div>
         <div class="result-card">
           <div class="result-label">Manque à gagner / mois</div>
-          <div class="result-value highlight" id="rManque">—</div>
+          <div class="result-value highlight" id="rManque">·</div>
           <div class="result-note">Ce que vous laissez à vos concurrents</div>
         </div>
       </div>

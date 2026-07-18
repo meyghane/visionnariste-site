@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8"/>
+<link rel="icon" href="../assets/favicon.png?v=3" type="image/png"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>TikTok Ads : comment une PME locale génère des clients avec 10€/jour · Visionnariste</title>
 <meta name="description" content="TikTok Ads pour PME et commerces locaux en France : structure campagne, formats qui cartonnent, ciblage local, budget 300€/mois. Guide pratique 2026."/>
@@ -13,13 +14,16 @@
 {"@context":"https://schema.org","@type":"Article","headline":"TikTok Ads : comment une PME locale génère des clients avec 10€/jour","author":{"@type":"Organization","name":"Visionnariste Marketing"},"publisher":{"@type":"Organization","name":"Visionnariste Marketing","url":"https://visionnariste-site.vercel.app"},"datePublished":"2026-07-10","dateModified":"2026-07-10","description":"Guide TikTok Ads pour PME et commerces locaux : structure, formats, ciblage local, budget 300€/mois."}
 </script>
 <style>
+@font-face{font-family:'Aileron';src:url('../assets/fonts/aileron.regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('../assets/fonts/aileron.semibold.otf') format('opentype');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('../assets/fonts/aileron.bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('../assets/fonts/aileron.heavy.otf') format('opentype');font-weight:800 900;font-style:normal;font-display:swap}
+
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--blue:#1a3ff0;--tiktok:#ff0050;--font:'Plus Jakarta Sans','Inter',sans-serif}
+:root{--blue:#1a3ff0;--tiktok:#ff0050;--font:'Aileron','Plus Jakarta Sans','Inter',sans-serif}
 body{background:#fff;color:#111;font-family:var(--font);line-height:1.7}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:16px 52px;background:rgba(7,7,7,.97);backdrop-filter:blur(20px)}
-.nav-logo{display:flex;flex-direction:column;line-height:1;text-decoration:none;gap:1px}
-.nav-logo .ls{font-weight:900;font-size:17px;letter-spacing:.15em;text-transform:uppercase;color:#fff}
-.nav-logo .lg{font-size:11px;letter-spacing:.2em;color:rgba(255,255,255,.6)}
+.nav-logo{display:flex;align-items:center;text-decoration:none;align-self:flex-start}.nav-logo .logo-wordmark{height:54px;width:auto;display:block}
 .nav-pills{display:flex;gap:8px;list-style:none}
 .nav-pills a{display:block;background:#fff;border-radius:100px;padding:9px 22px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#080808;text-decoration:none;transition:background .2s,color .2s}
 .nav-pills a:hover,.nav-pills a.active{background:var(--blue);color:#fff}
@@ -59,11 +63,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 footer{background:#080808;color:rgba(255,255,255,.4);text-align:center;padding:40px 52px;font-size:13px}
 footer a{color:rgba(255,255,255,.6);text-decoration:none}
 @media(max-width:768px){nav{padding:14px 20px}.article-wrap{padding:120px 20px 80px}.stat-box{grid-template-columns:1fr}.format-grid{grid-template-columns:1fr}}
+
+.art-featured{
+  max-width:820px;margin:0 auto;padding:0 52px 48px;
+}
+.art-featured img{
+  width:100%;height:400px;object-fit:cover;border-radius:16px;display:block;
+}
+.art-featured-credit{
+  font-size:11px;color:#aaa;margin-top:8px;text-align:right;
+}
 </style>
 </head>
 <body>
 <nav>
-  <a href="../index.html" class="nav-logo"><span class="ls">Visionnariste</span><span class="lg">Marketing</span></a>
+  <a href="../index.html" class="nav-logo"><img src="../assets/logo-visionnariste-transparent.png" alt="Visionnariste Marketing" class="logo-wordmark" loading="eager"/></a>
   <ul class="nav-pills">
     <li><a href="../index.html#services">Services</a></li>
     <li><a href="../blog.html" class="active">Blog</a></li>
@@ -84,7 +98,7 @@ footer a{color:rgba(255,255,255,.6);text-decoration:none}
 
   <div class="article-body">
 
-    <p>"TikTok c'est pour les jeunes qui dansent" — si vous pensez encore ça en 2026, vous laissez une mine d'or à vos concurrents. TikTok compte aujourd'hui <strong>plus de 21 millions d'utilisateurs actifs en France</strong>, avec un âge moyen de 32 ans sur l'app. Ce n'est plus une plateforme pour adolescents — c'est une plateforme de découverte massivement sous-exploitée par les PME locales.</p>
+    <p>"TikTok c'est pour les jeunes qui dansent", si vous pensez encore ça en 2026, vous laissez une mine d'or à vos concurrents. TikTok compte aujourd'hui <strong>plus de 21 millions d'utilisateurs actifs en France</strong>, avec un âge moyen de 32 ans sur l'app. Ce n'est plus une plateforme pour adolescents, c'est une plateforme de découverte massivement sous-exploitée par les PME locales.</p>
 
     <p>Et contrairement à Meta où les CPM (coût pour mille impressions) ont explosé ces dernières années, TikTok Ads reste <strong>2 à 3 fois moins cher</strong> à ciblage équivalent. Pour un commerce local avec un petit budget, c'est l'opportunité du moment.</p>
 
@@ -98,7 +112,7 @@ footer a{color:rgba(255,255,255,.6);text-decoration:none}
 
     <p>Sur Meta, vous <em>interrompez</em> les gens entre deux posts de leurs amis. Sur TikTok, vous <em>apparaissez</em> dans un flux où les gens cherchent activement à être surpris et divertis. Le mindset utilisateur est radicalement différent.</p>
 
-    <p>Conséquence directe : les codes créatifs changent complètement. Ce qui marche sur Meta — beau visuel produit, logo en haut à gauche, texte clair — tombe à plat sur TikTok. Ce qui marche sur TikTok — authenticité, spontanéité, storytelling rapide — semble cheap sur Meta.</p>
+    <p>Conséquence directe : les codes créatifs changent complètement. Ce qui marche sur Meta, beau visuel produit, logo en haut à gauche, texte clair, tombe à plat sur TikTok. Ce qui marche sur TikTok, authenticité, spontanéité, storytelling rapide, semble cheap sur Meta.</p>
 
     <div class="callout">
       <p><strong>La règle fondamentale TikTok :</strong> Si votre pub ressemble à une pub, elle est morte. Si elle ressemble à un TikTok organique qui se trouve aussi promouvoir quelque chose, elle cartonne.</p>
@@ -111,7 +125,7 @@ footer a{color:rgba(255,255,255,.6);text-decoration:none}
     <h3>Niveau Campagne :</h3>
     <ul>
       <li><strong>Objectif :</strong> "Leads" si vous voulez des contacts directs, "Trafic" si vous avez une page de vente, "Notoriété Locale" si vous démarrez.</li>
-      <li>Pour un premier test : commencez avec l'objectif "Leads" et le formulaire natif TikTok — vous évitez le coût d'une landing page et les conversions sont généralement moins chères.</li>
+      <li>Pour un premier test : commencez avec l'objectif "Leads" et le formulaire natif TikTok, vous évitez le coût d'une landing page et les conversions sont généralement moins chères.</li>
     </ul>
 
     <h3>Niveau Ad Group :</h3>
@@ -138,12 +152,12 @@ footer a{color:rgba(255,255,255,.6);text-decoration:none}
       <div class="format-card">
         <span class="tag">Fort</span>
         <h4>Coulisses / Behind the scenes</h4>
-        <p>"Comment on fait notre pizza napolitaine en 90 secondes" — montrez le savoir-faire, pas juste le produit final. L'authenticité des coulisses performe très bien en local.</p>
+        <p>"Comment on fait notre pizza napolitaine en 90 secondes", montrez le savoir-faire, pas juste le produit final. L'authenticité des coulisses performe très bien en local.</p>
       </div>
       <div class="format-card">
         <span class="tag">Fort</span>
         <h4>Question-réponse</h4>
-        <p>"Vous ne savez pas encore que vous pouvez [bénéfice] sans [douleur classique]" — format question directe, réponse immédiate en vidéo. Très bon pour les services (avocat, comptable, coach).</p>
+        <p>"Vous ne savez pas encore que vous pouvez [bénéfice] sans [douleur classique]", format question directe, réponse immédiate en vidéo. Très bon pour les services (avocat, comptable, coach).</p>
       </div>
     </div>
 
@@ -158,7 +172,7 @@ footer a{color:rgba(255,255,255,.6);text-decoration:none}
     </ul>
 
     <div class="callout">
-      <p><strong>Astuce Visionnariste :</strong> Filmez 5-6 hooks différents pour le même service sur la même journée. Testez-les tous simultanément avec un petit budget (5€/jour chacun) pendant 5 jours. Le winner s'impose toujours — doublez dessus.</p>
+      <p><strong>Astuce Visionnariste :</strong> Filmez 5-6 hooks différents pour le même service sur la même journée. Testez-les tous simultanément avec un petit budget (5€/jour chacun) pendant 5 jours. Le winner s'impose toujours, doublez dessus.</p>
     </div>
 
     <h2>5. Budget réaliste et résultats attendus</h2>
@@ -180,7 +194,7 @@ footer a{color:rgba(255,255,255,.6);text-decoration:none}
     <h2>6. Les erreurs qui brûlent le budget</h2>
 
     <ol>
-      <li><strong>Recycler des visuels Meta.</strong> Un visuel fait pour Instagram — horizontal, logo, beaux visuels — est invisble sur TikTok. Vous avez besoin de contenu vidéo vertical natif.</li>
+      <li><strong>Recycler des visuels Meta.</strong> Un visuel fait pour Instagram, horizontal, logo, beaux visuels, est invisble sur TikTok. Vous avez besoin de contenu vidéo vertical natif.</li>
       <li><strong>Ciblage trop précis au démarrage.</strong> Laissez TikTok apprendre. Avec moins de 3 000€/mois de budget, le Smart Targeting automatique de TikTok surperforme souvent le ciblage manuel.</li>
       <li><strong>Ne pas utiliser le Pixel.</strong> Installez le TikTok Pixel sur votre site dès le départ. Sans lui, vous ne pouvez pas optimiser pour les conversions et vous perdez les données de retargeting.</li>
       <li><strong>CTA générique.</strong> "En savoir plus" tue le taux de clics. Sur TikTok, le CTA doit matcher l'urgence du hook : "Réservez avant vendredi", "Places limitées", "Accès gratuit jusqu'à dimanche".</li>
@@ -194,7 +208,7 @@ footer a{color:rgba(255,255,255,.6);text-decoration:none}
     <p>Dans 18 à 24 mois, cette fenêtre se fermera comme elle s'est fermée sur Meta en 2019-2020. Ceux qui y vont maintenant verrouillent leur audience locale à bas coût, construisent une communauté, et quand les prix montent, ils scalent depuis une base déjà profitable.</p>
 
     <div class="callout dark">
-      <p><strong>Ce que Visionnariste fait pour vous :</strong> On crée vos vidéos TikTok Ads, on configure vos campagnes, on gère les tests et l'optimisation semaine après semaine. Vous n'avez pas besoin de toucher à TikTok Manager — vous recevez des leads.</p>
+      <p><strong>Ce que Visionnariste fait pour vous :</strong> On crée vos vidéos TikTok Ads, on configure vos campagnes, on gère les tests et l'optimisation semaine après semaine. Vous n'avez pas besoin de toucher à TikTok Manager, vous recevez des leads.</p>
     </div>
 
     <a href="../tarifs.html" class="cta-inline">Lancer mes TikTok Ads →</a>
@@ -205,5 +219,12 @@ footer a{color:rgba(255,255,255,.6);text-decoration:none}
 <footer>
   <p>&copy; 2026 Visionnariste Marketing · <a href="../blog.html">Blog</a> · <a href="../tarifs.html">Tarifs</a></p>
 </footer>
+<script>
+window.addEventListener('scroll',function(){
+  var n=document.querySelector('nav');
+  if(!n)return;
+  n.style.padding=window.scrollY>60?'10px 52px':'16px 52px';
+},{passive:true});
+</script>
 </body>
 </html>

@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8"/>
+<link rel="icon" href="../assets/favicon.png?v=3" type="image/png"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Google Business Profile 2026 : guide complet pour dominer le local · Visionnariste</title>
 <meta name="description" content="Guide complet Google Business Profile 2026 : création, optimisation, gestion des avis, posts, photos. Tout pour apparaître en Top 3 Google Maps dans votre ville."/>
@@ -10,13 +11,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
+@font-face{font-family:'Aileron';src:url('../assets/fonts/aileron.regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('../assets/fonts/aileron.semibold.otf') format('opentype');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('../assets/fonts/aileron.bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('../assets/fonts/aileron.heavy.otf') format('opentype');font-weight:800 900;font-style:normal;font-display:swap}
+
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--blue:#1a3ff0;--font:'Plus Jakarta Sans','Inter',sans-serif}
+:root{--blue:#1a3ff0;--font:'Aileron','Plus Jakarta Sans','Inter',sans-serif}
 body{background:#fff;color:#111;font-family:var(--font);line-height:1.7}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:16px 52px;background:rgba(7,7,7,.97);backdrop-filter:blur(20px)}
-.nav-logo{display:flex;flex-direction:column;line-height:1;text-decoration:none;gap:1px}
-.nav-logo .ls{font-weight:900;font-size:17px;letter-spacing:.15em;text-transform:uppercase;color:#fff}
-.nav-logo .lg{font-size:11px;letter-spacing:.2em;color:rgba(255,255,255,.6)}
+.nav-logo{display:flex;align-items:center;text-decoration:none;align-self:flex-start}.nav-logo .logo-wordmark{height:54px;width:auto;display:block}
 .nav-pills{display:flex;gap:8px;list-style:none}
 .nav-pills a{display:block;background:#fff;border-radius:100px;padding:9px 22px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#080808;text-decoration:none;transition:background .2s,color .2s}
 .nav-pills a:hover,.nav-pills a.active{background:var(--blue);color:#fff}
@@ -49,11 +53,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 footer{background:#080808;color:rgba(255,255,255,.4);text-align:center;padding:40px 52px;font-size:13px}
 footer a{color:rgba(255,255,255,.6);text-decoration:none}
 @media(max-width:768px){nav{padding:14px 20px}.article-wrap{padding:120px 20px 80px}.stat-box{grid-template-columns:1fr}}
+
+.art-featured{
+  max-width:820px;margin:0 auto;padding:0 52px 48px;
+}
+.art-featured img{
+  width:100%;height:400px;object-fit:cover;border-radius:16px;display:block;
+}
+.art-featured-credit{
+  font-size:11px;color:#aaa;margin-top:8px;text-align:right;
+}
 </style>
 </head>
 <body>
 <nav>
-  <a href="../index.html" class="nav-logo"><span class="ls">Visionnariste</span><span class="lg">Marketing</span></a>
+  <a href="../index.html" class="nav-logo"><img src="../assets/logo-visionnariste-transparent.png" alt="Visionnariste Marketing" class="logo-wordmark" loading="eager"/></a>
   <ul class="nav-pills">
     <li><a href="../index.html#services">Services</a></li>
     <li><a href="../blog.html" class="active">Blog</a></li>
@@ -74,7 +88,7 @@ footer a{color:rgba(255,255,255,.6);text-decoration:none}
 
   <div class="article-body">
 
-    <p>Quand quelqu'un cherche "restaurant japonais Lyon" ou "plombier urgence Bordeaux" sur Google, les 3 premiers résultats qui apparaissent dans l'encadré carte capturent <strong>85% des clics</strong>. Ce trio s'appelle le Local Pack — et y entrer ne coûte rien si votre fiche Google Business Profile est correctement optimisée.</p>
+    <p>Quand quelqu'un cherche "restaurant japonais Lyon" ou "plombier urgence Bordeaux" sur Google, les 3 premiers résultats qui apparaissent dans l'encadré carte capturent <strong>85% des clics</strong>. Ce trio s'appelle le Local Pack, et y entrer ne coûte rien si votre fiche Google Business Profile est correctement optimisée.</p>
 
     <p>En 2026, Google Business Profile (anciennement Google My Business) reste l'outil numéro un du référencement local en France. Pourtant, 7 commerces sur 10 ont une fiche incomplète ou abandonnée. C'est votre avantage concurrentiel.</p>
 
@@ -84,18 +98,18 @@ footer a{color:rgba(255,255,255,.6);text-decoration:none}
       <div class="stat"><div class="stat-num">76%</div><div class="stat-label">Recherches locales → visite dans 24h</div></div>
     </div>
 
-    <h2>1. Créer et revendiquer votre fiche — les bases</h2>
+    <h2>1. Créer et revendiquer votre fiche, les bases</h2>
 
     <p>Si vous n'avez pas encore de fiche, rendez-vous sur <strong>business.google.com</strong> et créez-en une. Si elle existe déjà (Google les crée parfois automatiquement), cliquez sur "Revendiquer cette fiche" et vérifiez-la par courrier postal, téléphone ou vidéo selon les options disponibles.</p>
 
-    <p>La vérification est obligatoire pour modifier votre fiche. Elle prend 1 à 5 jours. Ne la négligez pas — une fiche non vérifiée peut être modifiée par n'importe qui.</p>
+    <p>La vérification est obligatoire pour modifier votre fiche. Elle prend 1 à 5 jours. Ne la négligez pas, une fiche non vérifiée peut être modifiée par n'importe qui.</p>
 
     <h2>2. Les 10 éléments qui font la différence</h2>
 
     <div class="checklist">
       <h4>Checklist optimisation complète</h4>
       <ul>
-        <li>Nom d'entreprise exact (même orthographe partout — site, réseaux, fiche)</li>
+        <li>Nom d'entreprise exact (même orthographe partout, site, réseaux, fiche)</li>
         <li>Catégorie principale précise + 3 catégories secondaires pertinentes</li>
         <li>Adresse complète + code postal vérifié sur Maps</li>
         <li>Numéro de téléphone local (pas de numéro surtaxé)</li>
@@ -108,9 +122,9 @@ footer a{color:rgba(255,255,255,.6);text-decoration:none}
       </ul>
     </div>
 
-    <h2>3. Les photos — l'élément le plus sous-estimé</h2>
+    <h2>3. Les photos, l'élément le plus sous-estimé</h2>
 
-    <p>Les fiches avec plus de 100 photos reçoivent <strong>520% plus d'appels</strong> et <strong>2 035% plus de demandes d'itinéraire</strong> que les fiches avec peu de visuels. Ce n'est pas une exagération — c'est une donnée Google.</p>
+    <p>Les fiches avec plus de 100 photos reçoivent <strong>520% plus d'appels</strong> et <strong>2 035% plus de demandes d'itinéraire</strong> que les fiches avec peu de visuels. Ce n'est pas une exagération, c'est une donnée Google.</p>
 
     <h3>Quelles photos uploader :</h3>
     <ul>
@@ -126,9 +140,9 @@ footer a{color:rgba(255,255,255,.6);text-decoration:none}
       <p><strong>Astuce Visionnariste :</strong> Ajoutez systématiquement votre ville et département dans les noms de fichier avant upload (ex: "restaurant-japonais-lyon-salle.jpg"). Google indexe les métadonnées des images.</p>
     </div>
 
-    <h2>4. Les avis clients — votre levier le plus puissant</h2>
+    <h2>4. Les avis clients, votre levier le plus puissant</h2>
 
-    <p>Les avis Google représentent <strong>17% du score de classement local</strong> selon les dernières études Whitespark. Mais ce n'est pas que la quantité qui compte — c'est la régularité et la façon dont vous y répondez.</p>
+    <p>Les avis Google représentent <strong>17% du score de classement local</strong> selon les dernières études Whitespark. Mais ce n'est pas que la quantité qui compte, c'est la régularité et la façon dont vous y répondez.</p>
 
     <h3>Comment obtenir plus d'avis (légalement) :</h3>
     <ul>
@@ -138,12 +152,12 @@ footer a{color:rgba(255,255,255,.6);text-decoration:none}
       <li>Formez votre équipe à demander verbalement : "Si vous êtes satisfait, un avis Google nous aide beaucoup"</li>
     </ul>
 
-    <h3>Répondre aux avis — la règle d'or :</h3>
+    <h3>Répondre aux avis, la règle d'or :</h3>
     <p>Répondez à <strong>100% des avis</strong>, positifs et négatifs, dans les 48h. Pour les avis positifs : remerciez, mentionnez le service utilisé, invitez à revenir. Pour les avis négatifs : excusez-vous sans vous justifier, proposez une solution en privé, montrez que vous prenez en compte le retour.</p>
 
-    <h2>5. Les Posts Google — l'arme secrète des fiches qui progressent</h2>
+    <h2>5. Les Posts Google, l'arme secrète des fiches qui progressent</h2>
 
-    <p>Les Posts GBP sont des mini-publications qui apparaissent directement sur votre fiche. La plupart des commerces n'en font pas — c'est votre avantage.</p>
+    <p>Les Posts GBP sont des mini-publications qui apparaissent directement sur votre fiche. La plupart des commerces n'en font pas, c'est votre avantage.</p>
 
     <p>Publiez <strong>1 à 2 posts par semaine</strong> avec :</p>
     <ul>
@@ -181,5 +195,12 @@ footer a{color:rgba(255,255,255,.6);text-decoration:none}
 <footer>
   <p>&copy; 2026 Visionnariste Marketing · <a href="../blog.html">Blog</a> · <a href="../tarifs.html">Tarifs</a></p>
 </footer>
+<script>
+window.addEventListener('scroll',function(){
+  var n=document.querySelector('nav');
+  if(!n)return;
+  n.style.padding=window.scrollY>60?'10px 52px':'16px 52px';
+},{passive:true});
+</script>
 </body>
 </html>

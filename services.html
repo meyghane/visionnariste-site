@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<link rel="icon" href="assets/favicon.png?v=3" type="image/png"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Services · Visionnariste Marketing</title>
+<meta name="description" content="Publicité Ads, sites web, automatisation et création de société. Tous les services Visionnariste au même endroit, un seul interlocuteur."/>
+<link rel="canonical" href="https://visionnariste-site.vercel.app/services.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.semibold.otf') format('opentype');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.heavy.otf') format('opentype');font-weight:800 900;font-style:normal;font-display:swap}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --blue:#1a3ff0;
+  --bg:#fff;
+  --bg2:#f7f6f2;
+  --border:rgba(0,0,0,.08);
+  --muted:rgba(0,0,0,.45);
+  --font:'Aileron','Plus Jakarta Sans','Inter',sans-serif;
+  --serif:'Aileron','Plus Jakarta Sans','Inter',sans-serif;
+}
+body{background:var(--bg);color:#111;font-family:var(--font);line-height:1.6}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 52px;background:rgba(7,7,7,.97);backdrop-filter:blur(20px);
+}
+.nav-logo{display:flex;align-items:center;text-decoration:none;align-self:flex-start}.nav-logo .logo-wordmark{height:54px;width:auto;display:block}
+.nav-pills{display:flex;gap:8px;list-style:none;}
+.nav-pills a{
+  display:block;background:transparent;border-radius:100px;
+  padding:9px 22px;font-size:11px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(255,255,255,.7);text-decoration:none;
+  transition:background .2s,color .2s;
+}
+.nav-pills a:hover,.nav-pills a.active{background:#fff;color:#080808}
+.nav-socials{display:flex;gap:16px}
+.nav-socials a{color:rgba(255,255,255,.55);transition:color .2s;display:flex}
+.nav-socials a:hover{color:#fff}
+.nav-socials svg{width:17px;height:17px}
+
+/* HERO */
+.svc-hero{
+  padding:140px 52px 80px;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+}
+.svc-hero-eyebrow{
+  font-size:10px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;
+  color:var(--blue);display:block;margin-bottom:20px;
+}
+.svc-hero-title{
+  font-family:var(--serif);font-size:clamp(42px,6vw,88px);
+  font-weight:900;line-height:1.02;letter-spacing:-.03em;
+  color:#111;max-width:900px;margin-bottom:24px;
+}
+.svc-hero-sub{
+  font-size:17px;color:#666;max-width:540px;line-height:1.7;
+}
+
+/* FILTER TABS */
+.filter-wrap{
+  padding:32px 52px;background:#fff;
+  border-bottom:1px solid var(--border);
+  position:sticky;top:72px;z-index:100;
+  backdrop-filter:blur(12px);
+}
+.filter-tabs{
+  display:flex;gap:8px;flex-wrap:wrap;
+}
+.filter-tab{
+  display:inline-flex;align-items:center;gap:6px;
+  border:1.5px solid #e0e0e0;border-radius:100px;
+  padding:10px 22px;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;
+  color:#555;background:#fff;cursor:pointer;
+  transition:all .2s;
+}
+.filter-tab:hover{border-color:#111;color:#111}
+.filter-tab.active{background:#111;color:#fff;border-color:#111}
+.filter-tab .lock{font-size:13px;opacity:.6}
+
+/* CATEGORY SECTIONS */
+.category-section{
+  padding:80px 52px;
+  border-bottom:1px solid var(--border);
+}
+.category-section:nth-child(even){background:var(--bg2)}
+.category-header{margin-bottom:48px}
+.cat-label{
+  font-size:10px;font-weight:800;letter-spacing:.32em;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 14px;border-radius:100px;margin-bottom:16px;
+  font-size:10px;
+}
+.cat-label.ads{background:rgba(26,63,240,.1);color:var(--blue)}
+.cat-label.sites{background:rgba(16,185,129,.1);color:#059669}
+.cat-label.content{background:rgba(245,158,11,.1);color:#d97706}
+.cat-label.societe{background:rgba(139,92,246,.1);color:#7c3aed}
+.cat-label.exclusif{background:#111;color:#fff}
+
+.cat-title{
+  font-family:var(--serif);font-size:clamp(28px,3.5vw,48px);
+  font-weight:800;line-height:1.1;letter-spacing:-.02em;color:#111;
+  margin-bottom:10px;
+}
+.cat-desc{font-size:16px;color:#666;max-width:560px;line-height:1.7}
+
+/* SERVICE CARDS GRID */
+.svc-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+@media(max-width:1100px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.svc-grid{grid-template-columns:1fr}}
+
+.svc-card{
+  background:#fff;border-radius:20px;
+  border:1px solid var(--border);
+  overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:transform .25s,box-shadow .25s;
+}
+.svc-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 48px rgba(0,0,0,.1);
+}
+
+/* Card visual */
+.card-visual{
+  height:200px;display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  font-family:var(--font);font-size:72px;font-weight:900;
+  letter-spacing:-.04em;text-transform:uppercase;
+  color:rgba(255,255,255,.15);
+  text-align:center;line-height:1;
+}
+.card-visual-tag{
+  position:absolute;top:16px;left:16px;
+  background:rgba(255,255,255,.18);backdrop-filter:blur(8px);
+  border-radius:100px;padding:5px 14px;
+  font-family:var(--font);font-size:10px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(255,255,255,.9);
+}
+.card-visual-word{
+  font-family:var(--serif);
+  font-size:clamp(52px,7vw,80px);font-weight:900;
+  letter-spacing:-.04em;text-transform:uppercase;
+  color:rgba(255,255,255,.18);position:absolute;
+  bottom:-10px;right:-8px;line-height:1;
+}
+
+/* Colors per category */
+.vis-ads{background:linear-gradient(135deg,#080a2e 0%,#1a3ff0 100%)}
+.vis-sites{background:linear-gradient(135deg,#064e3b 0%,#059669 100%)}
+.vis-content{background:linear-gradient(135deg,#451a03 0%,#d97706 100%)}
+.vis-societe{background:linear-gradient(135deg,#2e1065 0%,#7c3aed 100%)}
+.vis-exclusif{background:linear-gradient(135deg,#1a1a1a 0%,#444 100%)}
+
+/* Icon circle in visual */
+.card-visual-icon{
+  width:72px;height:72px;border-radius:50%;
+  background:rgba(255,255,255,.15);backdrop-filter:blur(4px);
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;flex-shrink:0;
+  position:relative;z-index:1;
+}
+
+/* Card body */
+.card-body{padding:24px 24px 20px;flex:1;display:flex;flex-direction:column}
+.card-name{font-size:18px;font-weight:800;color:#111;line-height:1.2;margin-bottom:8px}
+.card-desc{font-size:14px;color:#666;line-height:1.7;margin-bottom:16px;flex:1}
+.card-price{
+  font-size:13px;font-weight:700;color:#111;
+  margin-bottom:16px;
+}
+.card-price span{font-size:11px;font-weight:500;color:#999;margin-left:4px}
+.card-cta{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--blue);text-decoration:none;
+  transition:gap .2s;
+}
+.card-cta:hover{gap:10px}
+
+/* Exclusif section */
+.exclusif-wrap{
+  background:#111;border-radius:24px;padding:52px;
+  color:#fff;
+}
+.exclusif-title{
+  font-family:var(--serif);font-size:clamp(28px,3vw,42px);
+  font-weight:900;line-height:1.1;margin-bottom:16px;
+}
+.exclusif-sub{font-size:16px;color:rgba(255,255,255,.6);margin-bottom:40px;max-width:480px}
+.exclusif-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.excl-item{
+  background:rgba(255,255,255,.06);border-radius:16px;padding:28px 24px;
+  border:1px solid rgba(255,255,255,.08);
+  transition:background .2s;
+}
+.excl-item:hover{background:rgba(255,255,255,.1)}
+.excl-icon{font-size:24px;margin-bottom:14px}
+.excl-name{font-size:16px;font-weight:800;color:#fff;margin-bottom:8px}
+.excl-desc{font-size:13px;color:rgba(255,255,255,.55);line-height:1.6}
+.excl-cta{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:14px;font-size:12px;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:rgba(255,255,255,.7);text-decoration:none;
+  transition:color .2s;
+}
+.excl-cta:hover{color:#fff}
+
+/* CTA section */
+.cta-section{
+  padding:100px 52px;text-align:center;background:#fff;
+}
+.cta-title{
+  font-family:var(--serif);font-size:clamp(32px,4vw,56px);
+  font-weight:900;line-height:1.1;letter-spacing:-.03em;
+  color:#111;margin-bottom:20px;
+}
+.cta-sub{font-size:17px;color:#666;margin-bottom:48px}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:#111;color:#fff;border-radius:100px;
+  padding:18px 48px;font-size:14px;font-weight:800;
+  letter-spacing:.1em;text-transform:uppercase;text-decoration:none;
+  transition:background .2s,transform .2s;
+}
+.cta-btn:hover{background:var(--blue);transform:translateY(-2px)}
+.cta-btn .badge{
+  background:#fff;color:#111;border-radius:100px;
+  padding:4px 12px;font-size:10px;font-weight:900;letter-spacing:.1em;
+}
+
+footer{
+  background:#080808;color:rgba(255,255,255,.4);
+  text-align:center;padding:40px 52px;font-size:13px;
+}
+footer a{color:rgba(255,255,255,.6);text-decoration:none}
+
+@media(max-width:768px){
+  nav{padding:14px 20px}
+  .svc-hero,.filter-wrap,.category-section,.cta-section{padding-left:20px;padding-right:20px}
+  .svc-hero{padding-top:110px}
+  .exclusif-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="assets/logo-visionnariste-transparent.png" alt="Visionnariste Marketing" class="logo-wordmark" loading="eager"/>
+  </a>
+  <ul class="nav-pills">
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="tarifs.html">Tarifs</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="svc-hero">
+  <span class="svc-hero-eyebrow">Services</span>
+  <h1 class="svc-hero-title">Tout ce dont votre business a besoin, un seul interlocuteur.</h1>
+  <p class="svc-hero-sub">Publicité, sites, automatisation et création de société. Des méthodes Grands Comptes appliquées avec la même rigueur à votre business.</p>
+</section>
+
+<!-- FILTER TABS -->
+<div class="filter-wrap">
+  <div class="filter-tabs">
+    <button class="filter-tab active" data-cat="all">Tous</button>
+    <button class="filter-tab" data-cat="ads">Publicité &amp; Acquisition</button>
+    <button class="filter-tab" data-cat="sites">Sites &amp; Visibilité</button>
+    <button class="filter-tab" data-cat="content">Contenu &amp; Automatisation</button>
+    <button class="filter-tab" data-cat="societe">Société &amp; Fiscalité</button>
+    <button class="filter-tab" data-cat="exclusif"><span class="lock">🔒</span> Services exclusifs</button>
+  </div>
+</div>
+
+<!-- 1. PUBLICITÉ & ACQUISITION -->
+<section class="category-section" data-section="ads">
+  <div class="category-header">
+    <div class="cat-label ads">Publicité &amp; Acquisition</div>
+    <h2 class="cat-title">Des campagnes qui ramènent de vrais clients.</h2>
+    <p class="cat-desc">Meta, Google, TikTok, Snap. Des budgets structurés, trackés et optimisés quotidiennement pour maximiser votre ROAS.</p>
+  </div>
+  <div class="svc-grid">
+
+    <div class="svc-card">
+      <div class="card-visual vis-ads">
+        <div class="card-visual-tag">Publicité &amp; Acquisition</div>
+        <div class="card-visual-icon">📘</div>
+        <span class="card-visual-word">META</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Meta Ads (Facebook &amp; Instagram)</div>
+        <div class="card-desc">Campagnes de prospection, retargeting et remarketing sur Meta. Audiences lookalike, créatifs testés, tracking pixel RGPD. La plateforme la plus puissante pour les e-commerces et marques mode/beauté.</div>
+        <div class="card-price">À partir de 490€/mois <span>+ budget publicitaire</span></div>
+        <a href="devis.html" class="card-cta">Demander un devis →</a>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="card-visual vis-ads">
+        <div class="card-visual-tag">Publicité &amp; Acquisition</div>
+        <div class="card-visual-icon">🔍</div>
+        <span class="card-visual-word">GOOGLE</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Google Ads (Search, Shopping, Display)</div>
+        <div class="card-desc">Capturer l'intention d'achat au bon moment. Campagnes Search, Performance Max, Shopping et Display. Tracking conversions GA4, optimisation CPA et ROAS cible. Certifiée Google Ads.</div>
+        <div class="card-price">À partir de 490€/mois <span>+ budget publicitaire</span></div>
+        <a href="devis.html" class="card-cta">Demander un devis →</a>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="card-visual vis-ads">
+        <div class="card-visual-tag">Publicité &amp; Acquisition</div>
+        <div class="card-visual-icon">🎵</div>
+        <span class="card-visual-word">TIKTOK</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">TikTok Ads</div>
+        <div class="card-desc">La plateforme qui explose pour les marques e-commerce. TopView, In-Feed, Spark Ads. Créatifs UGC-style, tests A/B rapides et scaling agressif sur les audiences qui convertissent.</div>
+        <div class="card-price">À partir de 490€/mois <span>+ budget publicitaire</span></div>
+        <a href="devis.html" class="card-cta">Demander un devis →</a>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="card-visual vis-ads">
+        <div class="card-visual-tag">Publicité &amp; Acquisition</div>
+        <div class="card-visual-icon">👻</div>
+        <span class="card-visual-word">SNAP</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Snapchat Ads</div>
+        <div class="card-desc">Toucher une audience 13-34 ans très engagée à faible CPM. Snap Ads, Collection Ads et Dynamic Ads pour e-commerce. Idéal en complément Meta pour diversifier vos sources d'acquisition.</div>
+        <div class="card-price">À partir de 390€/mois <span>+ budget publicitaire</span></div>
+        <a href="devis.html" class="card-cta">Demander un devis →</a>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="card-visual vis-ads">
+        <div class="card-visual-tag">Offre de bienvenue</div>
+        <div class="card-visual-icon">🎯</div>
+        <span class="card-visual-word">AUDIT</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Audit publicitaire complet</div>
+        <div class="card-desc">Analyse approfondie de vos comptes Meta, Google ou TikTok existants. Identification des fuites budgétaires, audiences sous-exploitées et créatifs à tester. Livrable écrit avec plan d'action priorisé.</div>
+        <div class="card-price">Gratuit <span>pour tout nouveau client</span></div>
+        <a href="devis.html" class="card-cta">Demander un devis →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 2. SITES & VISIBILITÉ -->
+<section class="category-section" data-section="sites">
+  <div class="category-header">
+    <div class="cat-label sites">Sites &amp; Visibilité</div>
+    <h2 class="cat-title">Être trouvé. Convertir. Dominer votre marché.</h2>
+    <p class="cat-desc">Sites web performants, landing pages à fort taux de conversion et référencement Google pour générer du trafic organique durable.</p>
+  </div>
+  <div class="svc-grid">
+
+    <div class="svc-card">
+      <div class="card-visual vis-sites">
+        <div class="card-visual-tag">Sites &amp; Visibilité</div>
+        <div class="card-visual-icon">🖥️</div>
+        <span class="card-visual-word">SITE</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Site vitrine &amp; e-commerce</div>
+        <div class="card-desc">Site web rapide, mobile-first, pensé pour transformer les visiteurs en clients. Design sur-mesure, référencement local intégré et expérience utilisateur optimisée pour convertir.</div>
+        <div class="card-price">1 500€ – 5 000€ <span>selon projet</span></div>
+        <a href="devis.html" class="card-cta">Demander un devis →</a>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="card-visual vis-sites">
+        <div class="card-visual-tag">Sites &amp; Visibilité</div>
+        <div class="card-visual-icon">🚀</div>
+        <span class="card-visual-word">LANDING</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Landing page de conversion</div>
+        <div class="card-desc">Une seule page, un seul objectif : convertir. Chaque section pousse le visiteur vers l'action. L'arme idéale pour amplifier l'efficacité de vos campagnes publicitaires.</div>
+        <div class="card-price">À partir de 490€ <span>livraison 5-7 jours</span></div>
+        <a href="devis.html" class="card-cta">Demander un devis →</a>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="card-visual vis-sites">
+        <div class="card-visual-tag">Sites &amp; Visibilité</div>
+        <div class="card-visual-icon">📈</div>
+        <span class="card-visual-word">SEO</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">SEO &amp; référencement Google</div>
+        <div class="card-desc">Apparaître en haut de Google sans payer chaque clic. Audit SEO, optimisation technique, création de contenu stratégique et netlinking. Des résultats durables mois après mois.</div>
+        <div class="card-price">Dès 490€/mois <span>engagement 3 mois min.</span></div>
+        <a href="devis.html" class="card-cta">Demander un devis →</a>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="card-visual vis-sites">
+        <div class="card-visual-tag">Sites &amp; Visibilité</div>
+        <div class="card-visual-icon">📍</div>
+        <span class="card-visual-word">LOCAL</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Google Business Profile</div>
+        <div class="card-desc">Dominer le Local Pack (Top 3 Maps). Création, optimisation complète de votre fiche GMB, gestion des avis, posts réguliers et suivi des performances locales.</div>
+        <div class="card-price">À partir de 290€ <span>+ 150€/mois gestion</span></div>
+        <a href="devis.html" class="card-cta">Demander un devis →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 3. CONTENU & AUTOMATISATION -->
+<section class="category-section" data-section="content">
+  <div class="category-header">
+    <div class="cat-label content">Contenu &amp; Automatisation</div>
+    <h2 class="cat-title">Votre business qui tourne, même quand vous dormez.</h2>
+    <p class="cat-desc">Vidéos, visuels, applications IA et automatisations CRM. Tout ce qui amplifie votre présence et réduit votre charge de travail.</p>
+  </div>
+  <div class="svc-grid">
+
+    <div class="svc-card">
+      <div class="card-visual vis-content">
+        <div class="card-visual-tag">Contenu &amp; Automatisation</div>
+        <div class="card-visual-icon">🎬</div>
+        <span class="card-visual-word">VIDEO</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Montage vidéo</div>
+        <div class="card-desc">Vidéos courtes optimisées Reels, TikTok et Shorts. Montage de créatifs publicitaires qui performent en campagne paid. Livraison rapide, formats adaptés à chaque plateforme.</div>
+        <div class="card-price">À partir de 290€ <span>par pack de vidéos</span></div>
+        <a href="devis.html" class="card-cta">Demander un devis →</a>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="card-visual vis-content">
+        <div class="card-visual-tag">Contenu &amp; Automatisation</div>
+        <div class="card-visual-icon">🤖</div>
+        <span class="card-visual-word">IA APP</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Application web &amp; mobile IA</div>
+        <div class="card-desc">Développement d'outils et d'applications sur-mesure intégrant l'intelligence artificielle. Automatisation de process, chatbots intelligents, outils d'analyse et dashboards métier.</div>
+        <div class="card-price">Sur devis <span>selon complexité</span></div>
+        <a href="devis.html" class="card-cta">Demander un devis →</a>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="card-visual vis-content">
+        <div class="card-visual-tag">Contenu &amp; Automatisation</div>
+        <div class="card-visual-icon">⚡</div>
+        <span class="card-visual-word">CRM</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">CRM &amp; automatisations</div>
+        <div class="card-desc">Mise en place et paramétrage de votre CRM (Hubspot, Brevo, Klaviyo…). Séquences email automatisées, nurturing clients, reporting automatique. Votre pipeline commercial qui tourne seul.</div>
+        <div class="card-price">À partir de 590€/mois <span>setup + gestion</span></div>
+        <a href="devis.html" class="card-cta">Demander un devis →</a>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="card-visual vis-content">
+        <div class="card-visual-tag">Contenu &amp; Automatisation</div>
+        <div class="card-visual-icon">💬</div>
+        <span class="card-visual-word">WHATSAPP</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Automatisation WhatsApp Business</div>
+        <div class="card-desc">Chatbots WhatsApp pour répondre aux prospects 24h/24, qualifier les leads et relancer automatiquement. Intégration avec votre CRM et vos campagnes publicitaires Meta.</div>
+        <div class="card-price">À partir de 390€/mois <span>setup inclus</span></div>
+        <a href="devis.html" class="card-cta">Demander un devis →</a>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="card-visual vis-content">
+        <div class="card-visual-tag">Créatifs publicitaires</div>
+        <div class="card-visual-icon">🎨</div>
+        <span class="card-visual-word">CRÉA</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Création de visuels &amp; flyers publicitaires</div>
+        <div class="card-desc">Visuels statiques, carrousels et flyers pensés pour performer en paid media. Chaque créatif est conçu avec les codes de votre secteur (mode, beauté, e-commerce) pour capter l'attention et générer le clic.</div>
+        <div class="card-price">Sur devis <span>selon volume et format</span></div>
+        <a href="devis.html" class="card-cta">Demander un devis →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 4. SOCIÉTÉ & FISCALITÉ -->
+<section class="category-section" data-section="societe">
+  <div class="category-header">
+    <div class="cat-label societe">Société &amp; Fiscalité</div>
+    <h2 class="cat-title">Structurez votre business pour payer moins d'impôts, légalement.</h2>
+    <p class="cat-desc">Création de sociétés offshore, LLC américaines et accompagnement fiscal international. Un interlocuteur dédié du début à la fin.</p>
+  </div>
+  <div class="svc-grid">
+
+    <div class="svc-card">
+      <div class="card-visual vis-societe">
+        <div class="card-visual-tag">Société &amp; Fiscalité</div>
+        <div class="card-visual-icon">🇺🇸</div>
+        <span class="card-visual-word">LLC USA</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Création LLC (Wyoming, Delaware)</div>
+        <div class="card-desc">LLC américaine enregistrée en quelques jours. Wyoming ou Delaware selon votre activité. Compte bancaire aux USA, EIN obtenu, structure fiscalement avantageuse pour les activités digitales.</div>
+        <div class="card-price">À partir de 1 490€ <span>tout compris</span></div>
+        <a href="devis.html" class="card-cta">Demander un devis →</a>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="card-visual vis-societe">
+        <div class="card-visual-tag">Société &amp; Fiscalité</div>
+        <div class="card-visual-icon">🌍</div>
+        <span class="card-visual-word">OFFSHORE</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Société offshore (Estonie, Hong Kong…)</div>
+        <div class="card-desc">Estonie (e-Residency), Hong Kong, Dubaï. Sociétés à fiscalité optimisée pour entrepreneurs digitaux. Accompagnement complet : choix de la juridiction, immatriculation, conformité légale.</div>
+        <div class="card-price">À partir de 1 490€ <span>selon pays</span></div>
+        <a href="devis.html" class="card-cta">Demander un devis →</a>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="card-visual vis-societe">
+        <div class="card-visual-tag">Société &amp; Fiscalité</div>
+        <div class="card-visual-icon">📊</div>
+        <span class="card-visual-word">FISCAL</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Fiscalité &amp; comptabilité internationale</div>
+        <div class="card-desc">Optimisation fiscale légale pour entrepreneurs et freelances. Choix de la structure adaptée, suivi comptable annuel, déclarations et conformité dans votre juridiction. En partenariat avec des experts certifiés.</div>
+        <div class="card-price">Sur devis <span>selon situation</span></div>
+        <a href="devis.html" class="card-cta">Demander un devis →</a>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="card-visual vis-societe">
+        <div class="card-visual-tag">Société &amp; Fiscalité</div>
+        <div class="card-visual-icon">🎯</div>
+        <span class="card-visual-word">GUIDE</span>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Accompagnement dédié</div>
+        <div class="card-desc">Un interlocuteur unique de A à Z. Conseil sur la stratégie de structuration, choix de la juridiction, suivi de la création, ouverture de compte et mise en conformité. Zéro surprise, tout inclus.</div>
+        <div class="card-price">Inclus <span>dans tous nos packs société</span></div>
+        <a href="devis.html" class="card-cta">Demander un devis →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 5. SERVICES EXCLUSIFS -->
+<section class="category-section" data-section="exclusif">
+  <div class="exclusif-wrap">
+    <div class="cat-label exclusif">Services exclusifs</div>
+    <h2 class="exclusif-title">Pour les marques qui veulent le niveau Grands Comptes.</h2>
+    <p class="exclusif-sub">Des offres premium pensées pour les business avec des budgets media significatifs et des ambitions de scaling agressif.</p>
+    <div class="exclusif-grid">
+
+      <div class="excl-item">
+        <div class="excl-icon">👑</div>
+        <div class="excl-name">Stratégie 360° multi-plateforme</div>
+        <div class="excl-desc">Meta + Google + TikTok pilotés simultanément avec une stratégie cohérente. Attribution multi-touch, budget dynamique inter-plateformes, reporting hebdomadaire exécutif.</div>
+        <a href="index.html#footer-contact" class="excl-cta">Demander un devis →</a>
+      </div>
+
+      <div class="excl-item">
+        <div class="excl-icon">📐</div>
+        <div class="excl-name">Audit &amp; restructuration compte existant</div>
+        <div class="excl-desc">Analyse chirurgicale d'un compte publicitaire en difficulté. Identification des fuites, refonte complète de la structure, nouveaux créatifs et plan de redressement sous 30 jours.</div>
+        <a href="index.html#footer-contact" class="excl-cta">Demander un devis →</a>
+      </div>
+
+      <div class="excl-item">
+        <div class="excl-icon">🚀</div>
+        <div class="excl-name">Scale &amp; Croissance accélérée</div>
+        <div class="excl-desc">Doubler ou tripler votre budget en maintenant la rentabilité. Méthode de scaling éprouvée sur des campagnes Grands Comptes. Suivi quotidien et ajustements en temps réel.</div>
+        <a href="index.html#footer-contact" class="excl-cta">Demander un devis →</a>
+      </div>
+
+      <div class="excl-item">
+        <div class="excl-icon">🔬</div>
+        <div class="excl-name">Tracking &amp; attribution avancée</div>
+        <div class="excl-desc">Setup complet GA4 + Meta CAPI + server-side tracking. Attribution multi-canal, modèles Data-Driven, dashboards Looker Studio. Vision exacte de votre retour sur investissement publicitaire.</div>
+        <a href="index.html#footer-contact" class="excl-cta">Demander un devis →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section">
+  <h2 class="cta-title">Prêt à scaler votre business ?</h2>
+  <p class="cta-sub">Un audit gratuit de 30 minutes pour identifier vos opportunités de croissance.</p>
+  <a href="index.html#footer-contact" class="cta-btn">
+    <span class="badge">Gratuit</span>
+    Démarrer mon audit
+  </a>
+</section>
+
+<footer>
+  <p>&copy; 2026 Visionnariste Marketing · <a href="services.html">Services</a> · <a href="tarifs.html">Tarifs</a> · <a href="blog.html">Blog</a></p>
+</footer>
+
+<script>
+// Filter tabs
+const tabs = document.querySelectorAll('.filter-tab');
+const sections = document.querySelectorAll('.category-section[data-section]');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const cat = tab.dataset.cat;
+    if (cat === 'all') {
+      sections.forEach(s => s.style.display = '');
+    } else {
+      sections.forEach(s => {
+        s.style.display = s.dataset.section === cat ? '' : 'none';
+      });
+    }
+  });
+});
+</script>
+</body>
+</html>

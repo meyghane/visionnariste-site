@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<link rel="icon" href="assets/favicon.png?v=3" type="image/png"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Demander un devis · Visionnariste Marketing</title>
+<meta name="description" content="Demandez un devis personnalisé pour vos campagnes Meta Ads, TikTok Ads, Google Ads ou Snapchat Ads. Réponse rapide, sans engagement."/>
+<link rel="canonical" href="https://visionnariste-site.vercel.app/devis.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.semibold.otf') format('opentype');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.heavy.otf') format('opentype');font-weight:800 900;font-style:normal;font-display:swap}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--blue:#1a3ff0;--bg2:#f7f6f2;--font:'Aileron','Plus Jakarta Sans','Inter',sans-serif}
+body{background:#fff;color:#111;font-family:var(--font);line-height:1.6}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:16px 52px;background:rgba(7,7,7,.97);backdrop-filter:blur(20px)}
+.nav-logo{display:flex;align-items:center;text-decoration:none;align-self:flex-start}
+.nav-logo .logo-wordmark{height:54px;width:auto;display:block}
+.nav-pills{display:flex;gap:8px;list-style:none;}
+.nav-pills a{display:block;background:#fff;border-radius:100px;padding:9px 22px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#080808;text-decoration:none;transition:background .2s,color .2s}
+.nav-pills a:hover,.nav-pills a.active{background:var(--blue);color:#fff}
+
+/* PAGE */
+.devis-page{min-height:100vh;padding:160px 52px 100px;display:grid;grid-template-columns:1fr 1.4fr;gap:80px;max-width:1200px;margin:0 auto;align-items:start}
+
+/* LEFT */
+.devis-eyebrow{font-size:11px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:rgba(0,0,0,.35);display:block;margin-bottom:20px}
+.devis-title{font-size:clamp(36px,5vw,64px);font-weight:900;line-height:1.05;letter-spacing:-.03em;margin-bottom:20px}
+.devis-sub{font-size:16px;color:#666;max-width:360px;line-height:1.7;margin-bottom:48px}
+.devis-guarantees{list-style:none;display:flex;flex-direction:column;gap:14px}
+.devis-guarantees li{display:flex;align-items:flex-start;gap:12px;font-size:14px;font-weight:500;color:#555}
+.devis-guarantees li::before{content:"";width:20px;height:20px;border-radius:50%;background:#111;color:#fff;font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10' fill='none'%3E%3Cpath d='M1 5l3.5 3.5L11 1' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;background-size:10px 8px;background-color:#111}
+
+/* FORM CARD */
+.devis-form-card{background:var(--bg2);border-radius:24px;padding:48px 44px}
+.form-card-title{font-size:20px;font-weight:800;letter-spacing:-.01em;margin-bottom:8px}
+.form-card-sub{font-size:14px;color:#777;margin-bottom:36px;line-height:1.6}
+.fc-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fc-field{margin-bottom:20px}
+.fc-field label{display:block;font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#888;margin-bottom:8px}
+.fc-input,.fc-select,.fc-textarea{width:100%;padding:14px 16px;background:#fff;border:1.5px solid #e0e0e0;border-radius:10px;font-family:var(--font);font-size:14px;color:#111;outline:none;transition:border-color .2s}
+.fc-input::placeholder,.fc-textarea::placeholder{color:#c0c0c0}
+.fc-input:focus,.fc-select:focus,.fc-textarea:focus{border-color:#111}
+.fc-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;cursor:pointer}
+.fc-textarea{resize:vertical;min-height:100px}
+.fc-submit{width:100%;padding:20px;background:#111;color:#fff;border:none;border-radius:100px;font-family:var(--font);font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s,transform .2s;margin-top:8px}
+.fc-submit:hover{background:#1a3ff0;transform:translateY(-2px)}
+
+footer{background:#080808;color:rgba(255,255,255,.4);text-align:center;padding:32px;font-size:13px}
+footer a{color:rgba(255,255,255,.6);text-decoration:none}
+
+@media(max-width:900px){
+  .devis-page{grid-template-columns:1fr;gap:48px;padding:140px 24px 80px}
+  nav{padding:14px 20px}
+  .fc-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="assets/logo-visionnariste-transparent.png" alt="Visionnariste Marketing" class="logo-wordmark" loading="eager"/></a>
+  <ul class="nav-pills">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="tarifs.html">Tarifs</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="devis-page">
+  <!-- LEFT -->
+  <div>
+    <span class="devis-eyebrow">Devis personnalisé</span>
+    <h1 class="devis-title">Demandez votre devis.</h1>
+    <p class="devis-sub">Chaque projet est unique. Décrivez votre besoin, on revient vers vous avec une proposition adaptée à votre budget et vos objectifs réels.</p>
+    <ul class="devis-guarantees">
+      <li>Devis gratuit et sans engagement</li>
+      <li>Réponse sous 24 à 48 heures ouvrées</li>
+      <li>Proposition adaptée à votre secteur</li>
+      <li>Un seul interlocuteur du début à la fin</li>
+    </ul>
+  </div>
+
+  <!-- FORM -->
+  <div class="devis-form-card">
+    <p class="form-card-title">Décrivez votre besoin</p>
+    <p class="form-card-sub">Plus vous êtes précis, plus notre proposition sera pertinente.</p>
+    <form action="https://formspree.io/f/mykrwjke" method="POST">
+      <input type="hidden" name="_subject" value="Demande de devis, Visionnariste"/>
+      <input type="hidden" name="_next" value="https://visionnariste-site.vercel.app/?merci=1"/>
+      <div class="fc-row">
+        <div class="fc-field"><label>Prénom *</label><input type="text" name="prenom" class="fc-input" required placeholder="Votre prénom"/></div>
+        <div class="fc-field"><label>Entreprise / Marque</label><input type="text" name="entreprise" class="fc-input" placeholder="Ex : Ma Marque Paris"/></div>
+      </div>
+      <div class="fc-field"><label>Courriel *</label><input type="email" name="email" class="fc-input" required placeholder="vous@exemple.com"/></div>
+      <div class="fc-field"><label>Site internet</label><input type="url" name="site" class="fc-input" placeholder="https://votre-boutique.com"/></div>
+      <div class="fc-field">
+        <label>Service souhaité</label>
+        <select name="service" class="fc-select fc-input">
+          <option value="">Sélectionner...</option>
+          <option>Gestion Meta Ads (Facebook / Instagram)</option>
+          <option>Gestion Google Ads</option>
+          <option>Gestion TikTok Ads</option>
+          <option>Gestion Snapchat Ads</option>
+          <option>Stratégie multi-plateforme</option>
+          <option>Audit de compte existant</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="fc-field">
+        <label>Budget pub mensuel envisagé</label>
+        <select name="budget" class="fc-select fc-input">
+          <option value="">Sélectionner...</option>
+          <option>Moins de 500€/mois</option>
+          <option>500€ à 2 000€/mois</option>
+          <option>2 000€ à 10 000€/mois</option>
+          <option>10 000€ et plus/mois</option>
+        </select>
+      </div>
+      <div class="fc-field"><label>Votre besoin en détail</label><textarea name="message" class="fc-textarea" placeholder="Décrivez votre projet, vos objectifs, votre secteur, et ce que vous cherchez à accomplir..."></textarea></div>
+      <button type="submit" class="fc-submit">Demander mon devis →</button>
+    </form>
+  </div>
+</div>
+
+<footer><p>&copy; 2026 <a href="index.html">Visionnariste Marketing</a> · <a href="blog.html">Blog</a> · <a href="tarifs.html">Tarifs</a> · <a href="services.html">Services</a></p></footer>
+
+<script>
+window.addEventListener('scroll',function(){
+  var n=document.querySelector('nav');
+  if(!n)return;
+  n.style.padding=window.scrollY>60?'10px 52px':'16px 52px';
+},{passive:true});
+</script>
+</body>
+</html>

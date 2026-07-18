@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<link rel="icon" href="assets/favicon.png?v=3" type="image/png"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact · Audit Gratuit · Visionnariste Marketing</title>
+<meta name="description" content="Démarrez votre audit gratuit. 30 minutes pour analyser vos campagnes et repartir avec un plan d'action clair. Sans engagement."/>
+<link rel="canonical" href="https://visionnariste-site.vercel.app/contact.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.semibold.otf') format('opentype');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.heavy.otf') format('opentype');font-weight:800 900;font-style:normal;font-display:swap}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--blue:#1a3ff0;--bg2:#f7f6f2;--font:'Aileron','Plus Jakarta Sans','Inter',sans-serif}
+body{background:#fff;color:#111;font-family:var(--font);line-height:1.6}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:16px 52px;background:rgba(7,7,7,.97);backdrop-filter:blur(20px)}
+.nav-logo{display:flex;align-items:center;text-decoration:none;align-self:flex-start}
+.nav-logo .logo-wordmark{height:54px;width:auto;display:block}
+.nav-pills{display:flex;gap:8px;list-style:none;}
+.nav-pills a{display:block;background:#fff;border-radius:100px;padding:9px 22px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#080808;text-decoration:none;transition:background .2s,color .2s}
+.nav-pills a:hover,.nav-pills a.active{background:var(--blue);color:#fff}
+
+/* PAGE */
+.contact-page{min-height:100vh;padding:160px 52px 100px;display:grid;grid-template-columns:1fr 1.4fr;gap:80px;max-width:1200px;margin:0 auto;align-items:start}
+
+/* LEFT */
+.contact-left{}
+.contact-eyebrow{font-size:11px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:rgba(0,0,0,.35);display:block;margin-bottom:20px}
+.contact-title{font-size:clamp(36px,5vw,64px);font-weight:900;line-height:1.05;letter-spacing:-.03em;margin-bottom:20px}
+.contact-sub{font-size:16px;color:#666;max-width:360px;line-height:1.7;margin-bottom:48px}
+.contact-info-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:40px}
+.contact-info-list li{font-size:14px;color:#555}
+.contact-info-list a{color:#555;text-decoration:none;transition:color .2s}
+.contact-info-list a:hover{color:#111}
+.contact-nav{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:40px;border-top:1px solid #eee;padding-top:32px}
+.contact-nav li a{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;text-decoration:none;transition:color .2s}
+.contact-nav li a:hover,.contact-nav li a.active{color:#111}
+.contact-socials{display:flex;gap:16px}
+.contact-socials a{color:#aaa;text-decoration:none;transition:color .2s}
+.contact-socials a:hover{color:#111}
+.contact-socials svg{width:20px;height:20px;display:block}
+
+/* FORM CARD */
+.contact-form-card{background:var(--bg2);border-radius:24px;padding:48px 44px}
+.form-card-title{font-size:20px;font-weight:800;letter-spacing:-.01em;margin-bottom:8px}
+.form-card-sub{font-size:14px;color:#777;margin-bottom:36px;line-height:1.6}
+.fc-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fc-field{margin-bottom:20px}
+.fc-field label{display:block;font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#888;margin-bottom:8px}
+.fc-input,.fc-select,.fc-textarea{width:100%;padding:14px 16px;background:#fff;border:1.5px solid #e0e0e0;border-radius:10px;font-family:var(--font);font-size:14px;color:#111;outline:none;transition:border-color .2s}
+.fc-input::placeholder,.fc-textarea::placeholder{color:#c0c0c0}
+.fc-input:focus,.fc-select:focus,.fc-textarea:focus{border-color:#111}
+.fc-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;cursor:pointer}
+.fc-textarea{resize:vertical;min-height:100px}
+.fc-submit{width:100%;padding:20px;background:#111;color:#fff;border:none;border-radius:100px;font-family:var(--font);font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s,transform .2s;margin-top:8px}
+.fc-submit:hover{background:#1a3ff0;transform:translateY(-2px)}
+
+footer{background:#080808;color:rgba(255,255,255,.4);text-align:center;padding:32px;font-size:13px}
+footer a{color:rgba(255,255,255,.6);text-decoration:none}
+
+@media(max-width:900px){
+  .contact-page{grid-template-columns:1fr;gap:48px;padding:140px 24px 80px}
+  nav{padding:14px 20px}
+  .fc-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="assets/logo-visionnariste-transparent.png" alt="Visionnariste Marketing" class="logo-wordmark" loading="eager"/></a>
+  <ul class="nav-pills">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="tarifs.html">Tarifs</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="contact-page">
+  <!-- LEFT -->
+  <div class="contact-left">
+    <span class="contact-eyebrow">Audit Gratuit</span>
+    <h1 class="contact-title">Parlons de vos campagnes.</h1>
+    <p class="contact-sub">30 minutes pour analyser votre compte, identifier les fuites budgétaires et repartir avec un plan d'action concret. Zéro engagement.</p>
+    <ul class="contact-info-list">
+      <li><a href="mailto:contact@visionnariste.com">contact@visionnariste.com</a></li>
+      <li>Paris · UE · US · Brésil</li>
+    </ul>
+    <ul class="contact-nav">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="tarifs.html">Tarifs</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="contact-socials">
+      <a href="#" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="contact-form-card">
+    <p class="form-card-title">Démarrer mon audit gratuit</p>
+    <p class="form-card-sub">30 minutes pour analyser vos campagnes et repartir avec un plan d'action clair. Zéro engagement.</p>
+    <form action="https://formspree.io/f/mykrwjke" method="POST">
+      <input type="hidden" name="_subject" value="Nouveau prospect, Audit Visionnariste"/>
+      <input type="hidden" name="_next" value="https://visionnariste-site.vercel.app/?merci=1"/>
+      <div class="fc-row">
+        <div class="fc-field"><label>Prénom *</label><input type="text" name="prenom" class="fc-input" required placeholder="Votre prénom"/></div>
+        <div class="fc-field"><label>Entreprise / Marque</label><input type="text" name="entreprise" class="fc-input" placeholder="Ex : Ma Marque Paris"/></div>
+      </div>
+      <div class="fc-field"><label>Courriel *</label><input type="email" name="email" class="fc-input" required placeholder="vous@exemple.com"/></div>
+      <div class="fc-field"><label>Site internet</label><input type="url" name="site" class="fc-input" placeholder="https://votre-boutique.com"/></div>
+      <div class="fc-field">
+        <label>Plateforme(s) actuelle(s)</label>
+        <select name="plateforme" class="fc-select fc-input">
+          <option value="">Sélectionner...</option>
+          <option>Meta Ads (Facebook / Instagram)</option>
+          <option>Google Ads</option>
+          <option>TikTok Ads</option>
+          <option>Snapchat Ads</option>
+          <option>Plusieurs plateformes</option>
+          <option>Pas encore de campagnes</option>
+        </select>
+      </div>
+      <div class="fc-field">
+        <label>Budget pub mensuel actuel</label>
+        <select name="budget" class="fc-select fc-input">
+          <option value="">Sélectionner...</option>
+          <option>Moins de 500€/mois</option>
+          <option>500€ à 2 000€/mois</option>
+          <option>2 000€ à 10 000€/mois</option>
+          <option>10 000€ et plus/mois</option>
+        </select>
+      </div>
+      <div class="fc-field"><label>Votre objectif principal</label><textarea name="message" class="fc-textarea" placeholder="Décrivez votre situation actuelle, vos objectifs et ce qui bloque..."></textarea></div>
+      <button type="submit" class="fc-submit">Réserver mon audit gratuit →</button>
+    </form>
+  </div>
+</div>
+
+<footer><p>&copy; 2026 <a href="index.html">Visionnariste Marketing</a> · <a href="blog.html">Blog</a> · <a href="tarifs.html">Tarifs</a> · <a href="services.html">Services</a></p></footer>
+
+<script>
+window.addEventListener('scroll',function(){
+  var n=document.querySelector('nav');
+  if(!n)return;
+  n.style.padding=window.scrollY>60?'10px 52px':'16px 52px';
+},{passive:true});
+</script>
+</body>
+</html>
