@@ -1227,16 +1227,16 @@ footer.site-footer{
 
   /* Hero */
   #hero{padding:96px 20px 40px}
-  .hero-bg span:nth-child(1){font-size:260px}
-  .hero-bg span:nth-child(2){font-size:220px}
-  .hero-bg span:nth-child(3){font-size:180px}
-  .hero-bg span:nth-child(4){font-size:150px}
-  .hero-bg span:nth-child(5){font-size:110px}
-  .hero-bg span:nth-child(6){font-size:90px}
+  .hero-bg span:nth-child(1){font-size:200px}
+  .hero-bg span:nth-child(2){font-size:170px}
+  .hero-bg span:nth-child(3){font-size:140px}
+  .hero-bg span:nth-child(4){font-size:110px}
+  .hero-bg span:nth-child(5){font-size:80px}
+  .hero-bg span:nth-child(6){font-size:60px}
   .hero-ctas{flex-direction:column;align-items:flex-start;gap:12px}
 
   /* All sections horizontal padding */
-  #pourquoi,#impact,#services,#services-fan,#realisations,#methode,
+  #stats,#pourquoi,#impact,#services,#services-fan,#realisations,#methode,
   #apropos,#processus,#tarifs,#faq,#ads-orbs,#versus,#footer-contact{
     padding-left:20px;padding-right:20px
   }
@@ -1244,6 +1244,8 @@ footer.site-footer{
   /* Grids */
   .pourquoi-wrap{grid-template-columns:1fr;gap:32px}
   .services-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr;max-width:100%}
+  .stat{padding:32px 20px}
   .tarifs-grid{grid-template-columns:1fr;gap:16px}
   .tcard.featured{transform:scale(1)}
   .impact-grid{grid-template-columns:1fr 1fr;gap:0}
@@ -1261,13 +1263,22 @@ footer.site-footer{
   /* FAQ */
   .faq-title{font-size:28px}
 
-  /* Contact form */
+  /* Contact form — 1 colonne sur mobile */
   .fc-grid{grid-template-columns:1fr}
+  .fc-row{grid-template-columns:1fr}
+  .footer-main{grid-template-columns:1fr;gap:32px;padding:40px 20px 0}
+  .footer-left{padding-right:0;padding-bottom:32px}
+  .footer-card{padding:28px 24px}
+  .footer-headline-wrap{padding:40px 20px 0}
+  .footer-headline{font-size:clamp(40px,11vw,80px)}
 
-  /* Footer */
-  .footer-main{flex-direction:column;gap:40px}
-  .footer-headline{font-size:clamp(48px,14vw,100px)}
+  /* Float cards hidden */
   .float-cards{display:none}
+
+  /* Services fan — réduit sur mobile */
+  .fan-stage{height:500px}
+  .fan-card{width:min(340px,85vw);margin-left:calc(min(340px,85vw) / -2)}
+  .svc-title-row{padding:0 20px}
 
   /* Ads orbs / platform logos */
   .orbs-inner{gap:16px}
@@ -1278,6 +1289,13 @@ footer.site-footer{
   .impact-grid{grid-template-columns:1fr}
   .impact-stat:nth-child(even){border-right:1px solid rgba(255,255,255,.07)}
   .ads-orbs-title{font-size:clamp(24px,8vw,40px)}
+  .hero-bg span:nth-child(1){font-size:150px}
+  .hero-bg span:nth-child(2){font-size:130px}
+  .hero-bg span:nth-child(3){font-size:110px}
+  .hero-bg span:nth-child(4){font-size:90px}
+  .hero-bg span:nth-child(5){font-size:60px}
+  .hero-bg span:nth-child(6){font-size:46px}
+  .fan-card{width:min(300px,88vw);margin-left:calc(min(300px,88vw) / -2)}
 }
 
 /* ═══════════════════════════
@@ -1291,8 +1309,9 @@ footer.site-footer{
 /* ─────────────────────────────
    GLOBAL 2026 IMPROVEMENTS
 ───────────────────────────── */
-html{scrollbar-gutter:stable}
 h1,h2,h3{text-wrap:balance}
+@media(min-width:769px){html{scrollbar-gutter:stable}}
+#stats,#processus,#tarifs,#faq,#versus,#apropos{overflow:hidden}
 
 /* Scroll reveal — JS adds .sr class + observes, no JS = content always visible */
 .sr{
