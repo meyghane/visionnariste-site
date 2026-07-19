@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Brochure Visionnariste Marketing 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Aileron';src:url('assets/fonts/aileron.heavy.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --blue:#1a3ff0;
+  --dark:#080808;
+  --bg:#fff;
+  --bg2:#f7f6f2;
+  --font:'Aileron','Plus Jakarta Sans',sans-serif;
+}
+body{
+  font-family:var(--font);
+  background:#e8e8e8;
+  color:#111;
+}
+
+/* ── PAGE CONTAINER ── */
+.page{
+  width:210mm;
+  min-height:297mm;
+  background:#fff;
+  margin:16px auto;
+  position:relative;
+  overflow:hidden;
+  page-break-after:always;
+  break-after:page;
+}
+.page:last-child{page-break-after:auto;break-after:auto}
+
+/* ────────────────────────────
+   PAGE 1 — COVER
+──────────────────────────── */
+.p-cover{
+  background:var(--dark);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:52px 52px 44px;
+}
+.cover-top{display:flex;align-items:flex-start;justify-content:space-between}
+.cover-logo img{height:48px;width:auto}
+.cover-year{
+  font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;
+  color:rgba(255,255,255,.3);padding-top:4px;
+}
+.cover-mid{flex:1;display:flex;flex-direction:column;justify-content:center;padding:64px 0 48px}
+.cover-eyebrow{
+  font-size:10px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:28px;display:flex;align-items:center;gap:12px;
+}
+.cover-eyebrow::before{content:'';width:28px;height:1px;background:var(--blue)}
+.cover-title{
+  font-size:58px;font-weight:900;line-height:1.02;letter-spacing:-.035em;
+  color:#fff;margin-bottom:28px;max-width:480px;
+}
+.cover-title span{color:var(--blue)}
+.cover-sub{
+  font-size:16px;font-weight:400;color:rgba(255,255,255,.55);
+  line-height:1.65;max-width:380px;
+}
+.cover-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:32px}
+.cover-platforms{
+  display:flex;align-items:center;gap:0;
+}
+.cover-platform{
+  display:flex;align-items:center;gap:10px;padding:0 24px 0 0;
+  border-right:1px solid rgba(255,255,255,.12);margin-right:24px;
+}
+.cover-platform:last-child{border-right:none;margin-right:0}
+.cover-platform img{height:22px;width:auto;opacity:.7;filter:brightness(10)}
+.cover-platform-name{
+  font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.4);
+}
+.cover-deco{
+  position:absolute;right:-80px;top:50%;transform:translateY(-50%);
+  font-family:serif;font-size:480px;font-weight:900;
+  color:rgba(255,255,255,.025);line-height:1;user-select:none;pointer-events:none;
+}
+
+/* ────────────────────────────
+   PAGE 2 — PROBLÈME
+──────────────────────────── */
+.p-problem{background:var(--dark);padding:64px 52px}
+.section-eyebrow{
+  font-size:10px;font-weight:700;letter-spacing:.38em;text-transform:uppercase;
+  margin-bottom:20px;display:flex;align-items:center;gap:12px;
+}
+.section-eyebrow.light{color:var(--blue)}
+.section-eyebrow.light::before{content:'';width:24px;height:1px;background:var(--blue)}
+.section-eyebrow.dark{color:rgba(0,0,0,.35)}
+.section-eyebrow.dark::before{content:'';width:24px;height:1px;background:rgba(0,0,0,.25)}
+
+.problem-title{
+  font-size:38px;font-weight:900;line-height:1.1;letter-spacing:-.03em;
+  color:#fff;margin-bottom:12px;max-width:520px;
+}
+.problem-sub{
+  font-size:15px;color:rgba(255,255,255,.45);line-height:1.7;
+  max-width:440px;margin-bottom:52px;
+}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:52px}
+.problem-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+  border-radius:16px;padding:28px 24px;
+}
+.problem-card-num{
+  font-size:36px;font-weight:900;letter-spacing:-.03em;
+  color:var(--blue);margin-bottom:8px;display:block;
+}
+.problem-card-label{
+  font-size:13px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.3;
+}
+.problem-card-desc{font-size:12px;color:rgba(255,255,255,.4);line-height:1.6}
+
+.problem-quote{
+  border-left:3px solid var(--blue);padding:20px 28px;
+  background:rgba(26,63,240,.08);border-radius:0 12px 12px 0;
+}
+.problem-quote p{
+  font-size:17px;font-weight:700;line-height:1.55;color:rgba(255,255,255,.85);
+  letter-spacing:-.01em;
+}
+.problem-quote cite{
+  display:block;font-size:11px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:10px;font-style:normal;
+}
+
+/* ────────────────────────────
+   PAGE 3 — SERVICES + PRICING
+──────────────────────────── */
+.p-services{background:var(--bg);padding:64px 52px}
+.services-title{
+  font-size:38px;font-weight:900;line-height:1.05;letter-spacing:-.03em;
+  color:#111;margin-bottom:8px;
+}
+.services-sub{font-size:14px;color:#888;margin-bottom:44px;line-height:1.6}
+
+.svc-table{width:100%;border-collapse:collapse}
+.svc-table thead th{
+  font-size:9px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;
+  color:#999;padding:0 20px 14px;text-align:left;border-bottom:1.5px solid #eee;
+}
+.svc-table thead th:last-child{text-align:right}
+.svc-table tbody tr{border-bottom:1px solid #f0f0f0}
+.svc-table tbody tr:last-child{border-bottom:none}
+.svc-table td{padding:18px 20px;vertical-align:top}
+.svc-icon{
+  width:40px;height:40px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.svc-icon.meta{background:linear-gradient(135deg,#1a3ff0,#4f6fff)}
+.svc-icon.tiktok{background:#000}
+.svc-icon.google{background:linear-gradient(135deg,#ea4335,#fbbc05)}
+.svc-icon.snap{background:#fffc00}
+.svc-name-cell{display:flex;align-items:center;gap:16px}
+.svc-name{font-size:15px;font-weight:800;color:#111;margin-bottom:3px}
+.svc-desc{font-size:12px;color:#888;line-height:1.5}
+.svc-deliverables{list-style:none;padding:0}
+.svc-deliverables li{
+  font-size:12px;color:#555;padding:2px 0;
+  display:flex;align-items:flex-start;gap:8px;
+}
+.svc-deliverables li::before{
+  content:'';width:4px;height:4px;border-radius:50%;background:var(--blue);
+  margin-top:6px;flex-shrink:0;
+}
+.svc-price{font-size:16px;font-weight:900;color:#111;text-align:right;white-space:nowrap}
+.svc-price-sub{font-size:10px;font-weight:500;color:#bbb;display:block;margin-top:2px}
+.svc-table tfoot td{
+  padding:20px 20px 0;font-size:11px;color:#bbb;
+  border-top:1.5px solid #eee;
+}
+.svc-table tfoot .note{font-style:italic}
+
+/* ────────────────────────────
+   PAGE 4 — CAS CLIENTS
+──────────────────────────── */
+.p-cases{background:var(--bg2);padding:64px 52px}
+.cases-title{
+  font-size:38px;font-weight:900;line-height:1.05;letter-spacing:-.03em;
+  color:#111;margin-bottom:8px;
+}
+.cases-sub{font-size:14px;color:#888;margin-bottom:44px;line-height:1.6}
+
+.case-card{
+  background:#fff;border-radius:20px;padding:28px;margin-bottom:20px;
+  display:grid;grid-template-columns:1fr 1.4fr;gap:28px;align-items:center;
+  border:1px solid rgba(0,0,0,.06);
+}
+.case-card:last-child{margin-bottom:0}
+.case-img{border-radius:12px;overflow:hidden;aspect-ratio:16/10}
+.case-img img{width:100%;height:100%;object-fit:cover}
+.case-client{
+  font-size:9px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:8px;
+}
+.case-title{
+  font-size:18px;font-weight:800;color:#111;margin-bottom:12px;
+  letter-spacing:-.01em;line-height:1.3;
+}
+.case-metrics{display:flex;gap:24px;margin-bottom:16px}
+.case-metric-val{
+  font-size:28px;font-weight:900;letter-spacing:-.03em;
+  color:#111;line-height:1;
+}
+.case-metric-val span{color:var(--blue)}
+.case-metric-label{
+  font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:#aaa;margin-top:4px;
+}
+.case-desc{font-size:12px;color:#777;line-height:1.65}
+
+/* ────────────────────────────
+   PAGE 5 — PROCESSUS
+──────────────────────────── */
+.p-process{background:#fff;padding:64px 52px}
+.process-title{
+  font-size:38px;font-weight:900;line-height:1.05;letter-spacing:-.03em;
+  color:#111;margin-bottom:8px;
+}
+.process-sub{font-size:14px;color:#888;margin-bottom:52px;line-height:1.6}
+.process-steps{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.process-step{
+  background:var(--bg2);border-radius:20px;padding:32px 28px;
+  position:relative;overflow:hidden;
+}
+.step-num{
+  font-size:72px;font-weight:900;color:rgba(0,0,0,.06);
+  line-height:1;position:absolute;bottom:-12px;right:20px;
+  letter-spacing:-.04em;font-family:serif;
+}
+.step-icon{
+  width:44px;height:44px;background:var(--dark);border-radius:12px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+}
+.step-label{
+  font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:8px;
+}
+.step-title{font-size:20px;font-weight:800;color:#111;margin-bottom:10px;letter-spacing:-.01em}
+.step-desc{font-size:13px;color:#777;line-height:1.65}
+.step-duration{
+  display:inline-block;margin-top:16px;padding:5px 14px;
+  background:#fff;border-radius:100px;border:1px solid rgba(0,0,0,.08);
+  font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;
+}
+
+.process-promise{
+  margin-top:32px;background:var(--dark);border-radius:20px;
+  padding:32px 36px;display:flex;align-items:center;gap:32px;
+}
+.process-promise-text{
+  font-size:18px;font-weight:800;color:#fff;line-height:1.5;letter-spacing:-.01em;flex:1;
+}
+.process-promise-text span{color:var(--blue)}
+.process-promise-cta{
+  flex-shrink:0;padding:14px 28px;background:var(--blue);color:#fff;
+  border-radius:100px;font-size:11px;font-weight:800;letter-spacing:.15em;
+  text-transform:uppercase;text-decoration:none;white-space:nowrap;
+}
+
+/* ────────────────────────────
+   PAGE 6 — POURQUOI VISIONNARISTE
+──────────────────────────── */
+.p-why{background:var(--dark);padding:64px 52px}
+.why-title{
+  font-size:38px;font-weight:900;line-height:1.05;letter-spacing:-.03em;
+  color:#fff;margin-bottom:8px;
+}
+.why-sub{font-size:14px;color:rgba(255,255,255,.4);margin-bottom:48px;line-height:1.6}
+
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:40px}
+.why-item{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+  border-radius:16px;padding:24px;
+}
+.why-item-icon{
+  width:36px;height:36px;background:rgba(26,63,240,.2);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+}
+.why-item-title{font-size:15px;font-weight:800;color:#fff;margin-bottom:6px}
+.why-item-desc{font-size:12px;color:rgba(255,255,255,.4);line-height:1.65}
+
+.why-markets{
+  border-top:1px solid rgba(255,255,255,.07);padding-top:32px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+}
+.market-item{text-align:center}
+.market-flag{
+  font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  color:#fff;margin-bottom:4px;
+}
+.market-label{font-size:10px;color:rgba(255,255,255,.3);letter-spacing:.08em;text-transform:uppercase}
+
+/* ────────────────────────────
+   PAGE 7 — CONTACT + CTA
+──────────────────────────── */
+.p-contact{
+  background:var(--bg);padding:64px 52px;
+  display:flex;flex-direction:column;justify-content:space-between;min-height:297mm;
+}
+.contact-top{}
+.contact-title{
+  font-size:48px;font-weight:900;line-height:1.02;letter-spacing:-.035em;
+  color:#111;margin-bottom:12px;max-width:480px;
+}
+.contact-title span{color:var(--blue)}
+.contact-sub{font-size:15px;color:#888;line-height:1.7;max-width:400px;margin-bottom:48px}
+
+.contact-offer{
+  background:var(--dark);border-radius:24px;padding:36px 40px;
+  display:flex;align-items:center;justify-content:space-between;gap:32px;
+  margin-bottom:48px;
+}
+.contact-offer-label{
+  font-size:9px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--blue);margin-bottom:8px;
+}
+.contact-offer-title{font-size:22px;font-weight:900;color:#fff;margin-bottom:6px;letter-spacing:-.02em}
+.contact-offer-desc{font-size:13px;color:rgba(255,255,255,.4);line-height:1.6;max-width:280px}
+.contact-offer-btn{
+  flex-shrink:0;padding:16px 32px;background:var(--blue);color:#fff;
+  border-radius:100px;font-size:11px;font-weight:800;letter-spacing:.15em;
+  text-transform:uppercase;text-decoration:none;white-space:nowrap;
+}
+
+.contact-infos{
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-bottom:48px;
+}
+.contact-info-item{}
+.contact-info-label{
+  font-size:9px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;
+  color:#ccc;margin-bottom:8px;
+}
+.contact-info-val{font-size:15px;font-weight:700;color:#111}
+.contact-info-val a{color:var(--blue);text-decoration:none}
+
+.contact-footer{
+  border-top:1px solid #eee;padding-top:24px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.contact-footer-logo img{height:36px;width:auto;filter:brightness(0)}
+.contact-footer-legal{font-size:10px;color:#ccc;line-height:1.5}
+.contact-footer-url{
+  font-size:12px;font-weight:800;color:var(--blue);letter-spacing:.05em;
+}
+
+/* ── PRINT STYLES ── */
+@media print {
+  body{background:#fff;margin:0;padding:0}
+  .page{
+    margin:0;width:100%;min-height:100vh;
+    box-shadow:none;page-break-after:always;break-after:page;
+  }
+  .page:last-child{page-break-after:auto;break-after:auto}
+  .print-hint{display:none!important}
+}
+
+@page{
+  size:A4 portrait;
+  margin:0;
+}
+
+/* ── PRINT HINT BANNER ── */
+.print-hint{
+  position:fixed;bottom:20px;right:20px;
+  background:var(--dark);color:#fff;padding:14px 24px;border-radius:12px;
+  font-family:var(--font);font-size:12px;font-weight:700;
+  z-index:9999;display:flex;align-items:center;gap:12px;
+  box-shadow:0 8px 32px rgba(0,0,0,.3);
+}
+.print-hint svg{flex-shrink:0}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     PAGE 1 — COVER
+══════════════════════════════════════ -->
+<div class="page p-cover">
+  <div class="cover-deco">V</div>
+
+  <div class="cover-top">
+    <div class="cover-logo">
+      <img src="assets/logo-visionnariste-transparent.png" alt="Visionnariste Marketing"/>
+    </div>
+    <div class="cover-year">Catalogue de services 2026</div>
+  </div>
+
+  <div class="cover-mid">
+    <div class="cover-eyebrow">Agence Paid Advertising</div>
+    <h1 class="cover-title">Votre budget pub mérite des <span>résultats réels.</span></h1>
+    <p class="cover-sub">Méthodes des Grands Comptes du luxe et de la mode, appliquées à votre e-commerce. Transparence totale, reporting hebdomadaire, zéro engagement.</p>
+  </div>
+
+  <div class="cover-bottom">
+    <div class="cover-platforms">
+      <div class="cover-platform">
+        <img src="assets/meta-ads.png" alt="Meta Ads"/>
+        <span class="cover-platform-name">Meta Ads</span>
+      </div>
+      <div class="cover-platform">
+        <img src="assets/tiktok-ads.png" alt="TikTok Ads"/>
+        <span class="cover-platform-name">TikTok Ads</span>
+      </div>
+      <div class="cover-platform">
+        <img src="assets/google-ads.png" alt="Google Ads"/>
+        <span class="cover-platform-name">Google Ads</span>
+      </div>
+      <div class="cover-platform">
+        <img src="assets/snapchat-ads.png" alt="Snapchat Ads"/>
+        <span class="cover-platform-name">Snapchat Ads</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE 2 — LE PROBLÈME
+══════════════════════════════════════ -->
+<div class="page p-problem">
+  <div class="section-eyebrow light">Le constat</div>
+  <h2 class="problem-title">La majorité des budgets pub ne travaillent pas.</h2>
+  <p class="problem-sub">Des milliers d'euros dépensés sans structure, sans tracking, sans stratégie cohérente. Et pendant ce temps, vos concurrents scalent.</p>
+
+  <div class="problem-grid">
+    <div class="problem-card">
+      <span class="problem-card-num">62%</span>
+      <div class="problem-card-label">des e-commerçants ne savent pas d'où vient réellement chaque vente</div>
+      <p class="problem-card-desc">Attribution floue, données manquantes, décisions prises à l'aveugle.</p>
+    </div>
+    <div class="problem-card">
+      <span class="problem-card-num">3,4×</span>
+      <div class="problem-card-label">c'est l'écart de ROAS entre un compte structuré et un compte non optimisé</div>
+      <p class="problem-card-desc">La structure des campagnes fait plus la différence que le budget.</p>
+    </div>
+    <div class="problem-card">
+      <span class="problem-card-num">47%</span>
+      <div class="problem-card-label">des marques changent d'agence dans les 12 premiers mois</div>
+      <p class="problem-card-desc">Promesses non tenues, reporting opaque, résultats absents.</p>
+    </div>
+  </div>
+
+  <div class="problem-quote">
+    <p>"Vous n'avez pas besoin de dépenser plus. Vous avez besoin que chaque euro soit placé au bon endroit, au bon moment, devant la bonne personne."</p>
+    <cite>Mégane Danican, Visionnariste Marketing</cite>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE 3 — SERVICES + PRICING
+══════════════════════════════════════ -->
+<div class="page p-services">
+  <div class="section-eyebrow dark">Nos prestations</div>
+  <h2 class="services-title">Des services clairs, des prix transparents.</h2>
+  <p class="services-sub">Chaque prestation est livrée avec un reporting complet, des accès à vos comptes et un contact direct. Sans intermédiaire, sans surprise.</p>
+
+  <table class="svc-table">
+    <thead>
+      <tr>
+        <th>Plateforme</th>
+        <th>Ce qui est inclus</th>
+        <th>À partir de</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="svc-name-cell">
+            <div class="svc-icon meta">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+            </div>
+            <div>
+              <div class="svc-name">Meta Ads</div>
+              <div class="svc-desc">Facebook · Instagram</div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <ul class="svc-deliverables">
+            <li>Structuration complète du compte (campagnes, ad sets, créatifs)</li>
+            <li>Audiences Lookalike, retargeting, remarketing catalogue</li>
+            <li>Tracking Pixel RGPD + Meta CAPI server-side</li>
+            <li>Reporting hebdomadaire avec métriques clés</li>
+          </ul>
+        </td>
+        <td>
+          <div class="svc-price">490€<span class="svc-price-sub">/mois HT</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="svc-name-cell">
+            <div class="svc-icon tiktok">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <div>
+              <div class="svc-name">TikTok Ads</div>
+              <div class="svc-desc">In-Feed · Spark · TopView</div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <ul class="svc-deliverables">
+            <li>Créatifs UGC-style adaptés aux codes de la plateforme</li>
+            <li>Tests A/B accélérés sur hooks et formats</li>
+            <li>Scaling sur les audiences qui convertissent</li>
+            <li>Synchronisation stratégie Meta + TikTok</li>
+          </ul>
+        </td>
+        <td>
+          <div class="svc-price">490€<span class="svc-price-sub">/mois HT</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="svc-name-cell">
+            <div class="svc-icon google">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <div>
+              <div class="svc-name">Google Ads</div>
+              <div class="svc-desc">Search · Shopping · PMax</div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <ul class="svc-deliverables">
+            <li>Campagnes Search, Performance Max, Shopping</li>
+            <li>Tracking conversions GA4 + import dans Google Ads</li>
+            <li>Optimisation CPA cible et ROAS cible</li>
+            <li>Mots-clés négatifs et structure de compte propre</li>
+          </ul>
+        </td>
+        <td>
+          <div class="svc-price">490€<span class="svc-price-sub">/mois HT</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="svc-name-cell">
+            <div class="svc-icon snap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 19l3 3V10a8 8 0 0 0-8-8z"/></svg>
+            </div>
+            <div>
+              <div class="svc-name">Snapchat Ads</div>
+              <div class="svc-desc">Snap Ads · Collection · Dynamic</div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <ul class="svc-deliverables">
+            <li>Audience 13-34 ans à CPM faible, fort engagement</li>
+            <li>Dynamic Ads catalogue pour e-commerce</li>
+            <li>Complément idéal Meta pour diversifier l'acquisition</li>
+            <li>Créatifs verticaux adaptés format Snap</li>
+          </ul>
+        </td>
+        <td>
+          <div class="svc-price">390€<span class="svc-price-sub">/mois HT</span></div>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3">
+          <span class="note">Budget publicitaire non inclus dans les honoraires · TVA non applicable, art. 293 B du CGI · Audit gratuit offert avant toute collaboration</span>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE 4 — CAS CLIENTS
+══════════════════════════════════════ -->
+<div class="page p-cases">
+  <div class="section-eyebrow dark">Résultats clients</div>
+  <h2 class="cases-title">Des chiffres, pas des promesses.</h2>
+  <p class="cases-sub">Chaque résultat est issu de campagnes réelles, avec des budgets réels. Les performances obtenues par nos clients parlent d'elles-mêmes.</p>
+
+  <div class="case-card">
+    <div class="case-img">
+      <img src="assets/hermood-resultat-meta-ads-ecommerce-beaute.jpg" alt="Hermood résultats Meta Ads e-commerce beauté"/>
+    </div>
+    <div>
+      <div class="case-client">E-commerce Beauté · Meta Ads</div>
+      <div class="case-title">Hermood : de la stagnation à la croissance rentable</div>
+      <div class="case-metrics">
+        <div>
+          <div class="case-metric-val"><span>4.1</span>×</div>
+          <div class="case-metric-label">ROAS moyen</div>
+        </div>
+        <div>
+          <div class="case-metric-val"><span>+67</span>%</div>
+          <div class="case-metric-label">CA en 3 mois</div>
+        </div>
+        <div>
+          <div class="case-metric-val"><span>-31</span>%</div>
+          <div class="case-metric-label">CPM obtenu</div>
+        </div>
+      </div>
+      <p class="case-desc">Restructuration complète du compte Meta Ads, refonte des audiences et des créatifs. Mise en place du tracking CAPI pour retrouver 100% des conversions perdues par iOS 14.</p>
+    </div>
+  </div>
+
+  <div class="case-card">
+    <div class="case-img">
+      <img src="assets/al-wasil-plateforme-communautaire-musulmane-france.jpg" alt="Al-Wasil plateforme communautaire"/>
+    </div>
+    <div>
+      <div class="case-client">Plateforme Communautaire · Meta Ads</div>
+      <div class="case-title">Al-Wasil : acquisition massive à coût minimal</div>
+      <div class="case-metrics">
+        <div>
+          <div class="case-metric-val"><span>+12K</span></div>
+          <div class="case-metric-label">Inscrits en 2 mois</div>
+        </div>
+        <div>
+          <div class="case-metric-val"><span>-38</span>%</div>
+          <div class="case-metric-label">CPM obtenu</div>
+        </div>
+        <div>
+          <div class="case-metric-val"><span>2.8</span>×</div>
+          <div class="case-metric-label">Taux conversion</div>
+        </div>
+      </div>
+      <p class="case-desc">Stratégie d'acquisition communautaire sur Meta avec ciblages affinitaires précis. Créatifs vidéo UGC-style à fort taux d'engagement. Scaling progressif sans perte de performance.</p>
+    </div>
+  </div>
+
+  <div class="case-card">
+    <div class="case-img">
+      <img src="assets/orion-saas-gestion-freelance-resultat-campagne.jpg" alt="Orion SaaS résultats campagne"/>
+    </div>
+    <div>
+      <div class="case-client">SaaS Gestion Freelance · Google + Meta Ads</div>
+      <div class="case-title">Orion : coût par lead divisé par deux en 60 jours</div>
+      <div class="case-metrics">
+        <div>
+          <div class="case-metric-val"><span>-44</span>%</div>
+          <div class="case-metric-label">Coût par lead</div>
+        </div>
+        <div>
+          <div class="case-metric-val"><span>+18K</span></div>
+          <div class="case-metric-label">MRR ajouté</div>
+        </div>
+        <div>
+          <div class="case-metric-val"><span>6.2</span>×</div>
+          <div class="case-metric-label">ROAS campagne</div>
+        </div>
+      </div>
+      <p class="case-desc">Stratégie multi-plateforme Google Search + Meta retargeting. Entonnoir complet : notoriété, consideration, conversion. Attribution GA4 Data-Driven pour décisions optimisées.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE 5 — PROCESSUS
+══════════════════════════════════════ -->
+<div class="page p-process">
+  <div class="section-eyebrow dark">Comment ça marche</div>
+  <h2 class="process-title">De l'audit aux résultats en 4 étapes.</h2>
+  <p class="process-sub">Pas de longue période de "warming up". On analyse, on structure, on lance, on optimise. Chaque étape a une durée définie et des livrables concrets.</p>
+
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-num">01</div>
+      <div class="step-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <div class="step-label">Étape 1</div>
+      <div class="step-title">Audit complet</div>
+      <p class="step-desc">Analyse de vos comptes existants, de votre tracking, de vos créatifs et de votre positionnement. Identification précise des fuites budgétaires et des opportunités inexploitées.</p>
+      <span class="step-duration">Semaine 1 · Gratuit</span>
+    </div>
+
+    <div class="process-step">
+      <div class="step-num">02</div>
+      <div class="step-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      </div>
+      <div class="step-label">Étape 2</div>
+      <div class="step-title">Stratégie sur mesure</div>
+      <p class="step-desc">Construction du plan de campagne : plateformes sélectionnées, objectifs chiffrés, répartition budgétaire, calendrier éditorial et briefs créatifs. Tout est validé avec vous avant le lancement.</p>
+      <span class="step-duration">Semaine 1-2 · Inclus</span>
+    </div>
+
+    <div class="process-step">
+      <div class="step-num">03</div>
+      <div class="step-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      </div>
+      <div class="step-label">Étape 3</div>
+      <div class="step-title">Lancement et tests</div>
+      <p class="step-desc">Mise en ligne des campagnes, configuration du tracking complet (GA4 + pixels + CAPI), tests A/B sur les créatifs et les audiences. Surveillance quotidienne les 14 premiers jours.</p>
+      <span class="step-duration">Semaine 2-3 · Inclus</span>
+    </div>
+
+    <div class="process-step">
+      <div class="step-num">04</div>
+      <div class="step-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+      </div>
+      <div class="step-label">Étape 4</div>
+      <div class="step-title">Optimisation continue</div>
+      <p class="step-desc">Ajustements hebdomadaires basés sur les données réelles. Scaling des créatifs qui performent, arrêt de ce qui ne convertit pas, reporting chaque semaine avec recommandations priorisées.</p>
+      <span class="step-duration">Mensuel · En continu</span>
+    </div>
+  </div>
+
+  <div class="process-promise">
+    <p class="process-promise-text">Vous gardez l'accès total à vos comptes publicitaires. <span>Toujours. Sans exception.</span></p>
+    <a href="https://visionnariste-site.vercel.app/contact.html" class="process-promise-cta">Démarrer l'audit →</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE 6 — POURQUOI VISIONNARISTE
+══════════════════════════════════════ -->
+<div class="page p-why">
+  <div class="section-eyebrow light">Notre différence</div>
+  <h2 class="why-title">Pourquoi Visionnariste ?</h2>
+  <p class="why-sub">Formée aux standards des plus grandes agences parisiennes sur des budgets à cinq chiffres mensuels. La rigueur des Grands Comptes, accessible aux marques en croissance.</p>
+
+  <div class="why-grid">
+    <div class="why-item">
+      <div class="why-item-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      </div>
+      <div class="why-item-title">Méthodes Grands Comptes</div>
+      <p class="why-item-desc">Même rigueur de structuration, même niveau d'exigence sur la donnée. Appliqués à des budgets 2K-20K€/mois, pas uniquement aux marques Fortune 500.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-item-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+      </div>
+      <div class="why-item-title">Un seul interlocuteur</div>
+      <p class="why-item-desc">Votre contact connaît votre dossier de A à Z. Pas de stagiaire, pas de rotation. Réponse sous 24h, disponibilité WhatsApp sur les urgences.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-item-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <div class="why-item-title">Reporting complet chaque semaine</div>
+      <p class="why-item-desc">Dashboard personnalisé, métriques clés, analyse des créatifs, recommandations priorisées. Vous savez exactement ce qui se passe sur vos campagnes.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-item-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <div class="why-item-title">Expertise multi-marchés</div>
+      <p class="why-item-desc">Campagnes actives en France, Belgique, UK, USA et marché MENA. Connaissance des spécificités culturelles et réglementaires de chaque marché.</p>
+    </div>
+  </div>
+
+  <div class="why-markets">
+    <div class="market-item">
+      <div class="market-flag">France</div>
+      <div class="market-label">Marché principal</div>
+    </div>
+    <div class="market-item">
+      <div class="market-flag">UK · UE</div>
+      <div class="market-label">Marchés actifs</div>
+    </div>
+    <div class="market-item">
+      <div class="market-flag">USA</div>
+      <div class="market-label">Marchés actifs</div>
+    </div>
+    <div class="market-item">
+      <div class="market-flag">MENA</div>
+      <div class="market-label">Marchés actifs</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE 7 — CONTACT + CTA
+══════════════════════════════════════ -->
+<div class="page p-contact">
+  <div class="contact-top">
+    <div class="section-eyebrow dark">Prochaine étape</div>
+    <h2 class="contact-title">Prêt à faire travailler votre budget <span>pour vous</span> ?</h2>
+    <p class="contact-sub">L'audit est gratuit, sans engagement, sans frais cachés. On analyse vos campagnes, on identifie les fuites, on vous dit exactement ce qu'on ferait différemment.</p>
+
+    <div class="contact-offer">
+      <div>
+        <div class="contact-offer-label">Offre de bienvenue</div>
+        <div class="contact-offer-title">Audit publicitaire offert</div>
+        <p class="contact-offer-desc">Analyse complète de vos comptes Meta, Google ou TikTok. Livrable écrit avec plan d'action priorisé. Sans engagement.</p>
+      </div>
+      <a href="https://visionnariste-site.vercel.app/contact.html" class="contact-offer-btn">Demander l'audit →</a>
+    </div>
+
+    <div class="contact-infos">
+      <div class="contact-info-item">
+        <div class="contact-info-label">Email</div>
+        <div class="contact-info-val"><a href="mailto:contact@visionnariste.com">contact@visionnariste.com</a></div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-label">Localisation</div>
+        <div class="contact-info-val">Paris · Remote international</div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-label">Site web</div>
+        <div class="contact-info-val"><a href="https://visionnariste-site.vercel.app">visionnariste-site.vercel.app</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-footer">
+    <div class="contact-footer-logo">
+      <img src="assets/logo-visionnariste-black.png" alt="Visionnariste Marketing"/>
+    </div>
+    <div class="contact-footer-legal">
+      Mégane Danican · Micro-entreprise · SIRET 88809943900034<br/>
+      TVA non applicable, art. 293 B du CGI
+    </div>
+    <div class="contact-footer-url">visionnariste-site.vercel.app</div>
+  </div>
+</div>
+
+<!-- PRINT HINT -->
+<div class="print-hint">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+  Ctrl+P (ou Cmd+P) pour exporter en PDF
+</div>
+
+</body>
+</html>
