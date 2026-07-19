@@ -211,15 +211,13 @@ body{
   font-size:18px;font-weight:800;color:#111;margin-bottom:12px;
   letter-spacing:-.01em;line-height:1.3;
 }
-.case-metrics{display:flex;gap:24px;margin-bottom:16px}
-.case-metric-val{
-  font-size:28px;font-weight:900;letter-spacing:-.03em;
-  color:#111;line-height:1;
+.case-actions{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+.case-action-item{
+  font-size:11.5px;color:#444;line-height:1.5;padding-left:14px;position:relative;
 }
-.case-metric-val span{color:var(--blue)}
-.case-metric-label{
-  font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-  color:#aaa;margin-top:4px;
+.case-action-item::before{
+  content:'';position:absolute;left:0;top:7px;
+  width:5px;height:5px;border-radius:50%;background:var(--blue);flex-shrink:0;
 }
 .case-desc{font-size:12px;color:#777;line-height:1.65}
 
@@ -588,32 +586,23 @@ body{
      PAGE 4 — CAS CLIENTS
 ══════════════════════════════════════ -->
 <div class="page p-cases">
-  <div class="section-eyebrow dark">Résultats clients</div>
-  <h2 class="cases-title">Des chiffres, pas des promesses.</h2>
-  <p class="cases-sub">Chaque résultat est issu de campagnes réelles, avec des budgets réels. Les performances obtenues par nos clients parlent d'elles-mêmes.</p>
+  <div class="section-eyebrow dark">Portfolio</div>
+  <h2 class="cases-title">La méthode en action.</h2>
+  <p class="cases-sub">Deux projets personnels pilotes sur lesquels j'applique les mêmes standards que sur les grands comptes. Les premiers résultats clients seront publiés ici dès les premières campagnes.</p>
 
   <div class="case-card">
     <div class="case-img">
-      <img src="assets/hermood-resultat-meta-ads-ecommerce-beaute.jpg" alt="Hermood résultats Meta Ads e-commerce beauté"/>
+      <img src="assets/hermood-resultat-meta-ads-ecommerce-beaute.jpg" alt="Hermood e-commerce beauté bien-être"/>
     </div>
     <div>
-      <div class="case-client">E-commerce Beauté · Meta Ads</div>
-      <div class="case-title">Hermood : de la stagnation à la croissance rentable</div>
-      <div class="case-metrics">
-        <div>
-          <div class="case-metric-val"><span>4.1</span>×</div>
-          <div class="case-metric-label">ROAS moyen</div>
-        </div>
-        <div>
-          <div class="case-metric-val"><span>+67</span>%</div>
-          <div class="case-metric-label">CA en 3 mois</div>
-        </div>
-        <div>
-          <div class="case-metric-val"><span>-31</span>%</div>
-          <div class="case-metric-label">CPM obtenu</div>
-        </div>
+      <div class="case-client">Projet personnel · E-commerce Beauté · Meta Ads</div>
+      <div class="case-title">Hermood : stratégie Meta Ads e-commerce beauté bien-être</div>
+      <div class="case-actions">
+        <div class="case-action-item">Audit complet du compte Meta Ads et restructuration des campagnes</div>
+        <div class="case-action-item">Implémentation Conversions API (CAPI) pour tracking iOS 14</div>
+        <div class="case-action-item">Refonte des audiences : centres d'intérêt, LAL, retargeting segmenté</div>
+        <div class="case-action-item">Production créatifs UGC et A/B testing sur angles messaging</div>
       </div>
-      <p class="case-desc">Restructuration complète du compte Meta Ads, refonte des audiences et des créatifs. Mise en place du tracking CAPI pour retrouver 100% des conversions perdues par iOS 14.</p>
     </div>
   </div>
 
@@ -622,48 +611,14 @@ body{
       <img src="assets/al-wasil-plateforme-communautaire-musulmane-france.jpg" alt="Al-Wasil plateforme communautaire"/>
     </div>
     <div>
-      <div class="case-client">Plateforme Communautaire · Meta Ads</div>
-      <div class="case-title">Al-Wasil : acquisition massive à coût minimal</div>
-      <div class="case-metrics">
-        <div>
-          <div class="case-metric-val"><span>+12K</span></div>
-          <div class="case-metric-label">Inscrits en 2 mois</div>
-        </div>
-        <div>
-          <div class="case-metric-val"><span>-38</span>%</div>
-          <div class="case-metric-label">CPM obtenu</div>
-        </div>
-        <div>
-          <div class="case-metric-val"><span>2.8</span>×</div>
-          <div class="case-metric-label">Taux conversion</div>
-        </div>
+      <div class="case-client">Projet personnel · Plateforme Communautaire · Acquisition</div>
+      <div class="case-title">Al-Wasil : architecture d'acquisition pour plateforme communautaire</div>
+      <div class="case-actions">
+        <div class="case-action-item">Stratégie Meta Ads sur ciblages affinitaires communautaires</div>
+        <div class="case-action-item">Création d'une landing page dédiée à l'inscription (taux conversion optimisé)</div>
+        <div class="case-action-item">Créatifs vidéo UGC-style, formats Reels et Stories adaptés</div>
+        <div class="case-action-item">Automatisations Make.com : scraping, modération IA, notifications</div>
       </div>
-      <p class="case-desc">Stratégie d'acquisition communautaire sur Meta avec ciblages affinitaires précis. Créatifs vidéo UGC-style à fort taux d'engagement. Scaling progressif sans perte de performance.</p>
-    </div>
-  </div>
-
-  <div class="case-card">
-    <div class="case-img">
-      <img src="assets/orion-saas-gestion-freelance-resultat-campagne.jpg" alt="Orion SaaS résultats campagne"/>
-    </div>
-    <div>
-      <div class="case-client">SaaS Gestion Freelance · Google + Meta Ads</div>
-      <div class="case-title">Orion : coût par lead divisé par deux en 60 jours</div>
-      <div class="case-metrics">
-        <div>
-          <div class="case-metric-val"><span>-44</span>%</div>
-          <div class="case-metric-label">Coût par lead</div>
-        </div>
-        <div>
-          <div class="case-metric-val"><span>+18K</span></div>
-          <div class="case-metric-label">MRR ajouté</div>
-        </div>
-        <div>
-          <div class="case-metric-val"><span>6.2</span>×</div>
-          <div class="case-metric-label">ROAS campagne</div>
-        </div>
-      </div>
-      <p class="case-desc">Stratégie multi-plateforme Google Search + Meta retargeting. Entonnoir complet : notoriété, consideration, conversion. Attribution GA4 Data-Driven pour décisions optimisées.</p>
     </div>
   </div>
 </div>
