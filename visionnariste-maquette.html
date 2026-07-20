@@ -1216,6 +1216,9 @@ footer.site-footer{
   text-transform:uppercase;text-decoration:none;
 }
 
+/* Témoignages grid — placé AVANT les media queries pour que l'override mobile fonctionne */
+.temoignages-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+
 /* ═══════════════════════════
    MOBILE RESPONSIVE (≤ 768px)
 ═══════════════════════════ */
@@ -1320,8 +1323,8 @@ footer.site-footer{
   .temoignage-card{padding:28px}
 
   /* ── FOOTER ── */
-  .footer-top{grid-template-columns:1fr;gap:24px;padding:40px 20px}
-  .footer-bottom-bar{flex-direction:column;gap:8px;padding:16px 20px;text-align:center}
+  .footer-top{grid-template-columns:1fr!important;gap:24px!important;padding:40px 20px!important}
+  .footer-bottom-bar{flex-direction:column!important;gap:8px;padding:16px 20px;text-align:center}
   .footer-brand p{max-width:100%}
 
   /* ── RÉALISATIONS SWIPE MOBILE ── */
@@ -1353,8 +1356,7 @@ footer.site-footer{
   *{transition-duration:.01ms !important}
 }
 
-/* Témoignages grid — remplace l'inline style pour pouvoir override en media query */
-.temoignages-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+/* Témoignages grid — doit être AVANT les media queries pour que l'override mobile fonctionne */
 
 /* ─────────────────────────────
    GLOBAL 2026 IMPROVEMENTS
@@ -1638,151 +1640,6 @@ h1,h2,h3{text-wrap:balance}
   </div>
 </section>
 
-<!-- ══ RÉALISATIONS ══ -->
-<section id="realisations">
-  <div class="real-header">
-    <span class="real-eyebrow">Réalisations</span>
-    <h2 class="real-title">Réalisations</h2>
-    <p class="real-desc">Sites clients et visuels livrés, pour de <b>vrais commerces</b>. Survolez pour mettre en pause.</p>
-  </div>
-  <p class="real-strip-label">Sites clients, cliquez pour ouvrir</p>
-  <div class="real-strip-outer">
-    <div class="real-strip" id="realStrip">
-
-      <!-- Carte 1 : Hermood (réel) -->
-      <div class="real-card" onclick="window.open('https://hermood.fr','_blank')">
-        <div class="real-preview" style="background:linear-gradient(135deg,#f4faf6 0%,#e8f5ee 100%)">
-          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>hermood.fr</span></div></div>
-          <div class="real-screenshot" style="color:#2d6a4f;padding:10px">
-            <div class="fw-hero">
-              <div class="fw-nav"><div class="fw-logo" style="background:#2d6a4f;opacity:.55;width:64px"></div><div class="fw-nav-items"><div class="fw-ni" style="background:#2d6a4f"></div><div class="fw-ni" style="background:#2d6a4f"></div><div class="fw-ni" style="background:#2d6a4f"></div><div class="fw-ni" style="background:#2d6a4f;width:28px"></div></div></div>
-              <div style="font-size:9px;letter-spacing:.22em;color:#2d6a4f;opacity:.55;margin-top:10px">BIEN-ÊTRE · NATUREL</div>
-              <div style="color:#1a3d2b;font-size:16px;font-weight:800;line-height:1.1;margin-top:3px;opacity:.9">HERMOOD</div>
-              <div style="font-size:7px;letter-spacing:.18em;color:#2d6a4f;opacity:.45;margin-top:2px">Inositol &amp; Compléments</div>
-              <div style="background:#2d6a4f;opacity:.7;width:84px;height:15px;border-radius:20px;margin-top:9px"></div>
-              <div class="fw-grid" style="margin-top:9px"><div class="fw-col" style="background:#2d6a4f;opacity:.09;height:44px;border-radius:8px"></div><div class="fw-col" style="background:#2d6a4f;opacity:.09;height:44px;border-radius:8px"></div><div class="fw-col" style="background:#2d6a4f;opacity:.09;height:44px;border-radius:8px"></div></div>
-            </div>
-          </div>
-        </div>
-        <div class="real-info"><span class="real-category">E-commerce · Bien-être</span><span class="real-name">Hermood</span></div>
-      </div>
-
-      <!-- Carte 2 : Al-Wasil (réel) -->
-      <div class="real-card" onclick="window.open('https://al-wasil.fr','_blank')">
-        <div class="real-preview" style="background:linear-gradient(135deg,#1a0535 0%,#2d0b57 100%)">
-          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>al-wasil.fr</span></div></div>
-          <div class="real-screenshot" style="color:#a855f7;padding:10px">
-            <div class="fw-hero">
-              <div class="fw-nav"><div class="fw-logo" style="background:#a855f7;opacity:.6;width:60px"></div><div class="fw-nav-items"><div class="fw-ni" style="background:#a855f7"></div><div class="fw-ni" style="background:#a855f7"></div><div class="fw-ni" style="background:#a855f7"></div></div></div>
-              <div style="font-size:9px;letter-spacing:.2em;color:#a855f7;opacity:.55;margin-top:10px">COMMUNAUTÉ · FRANCE</div>
-              <div style="color:#fff;font-size:15px;font-weight:700;line-height:1.15;margin-top:3px;opacity:.9">AL-WASIL</div>
-              <div style="font-size:7px;letter-spacing:.15em;color:#a855f7;opacity:.5;margin-top:2px">Plateforme musulmane</div>
-              <div style="background:#7c3aed;opacity:.8;width:78px;height:15px;border-radius:4px;margin-top:9px"></div>
-              <div class="fw-grid" style="margin-top:9px"><div class="fw-col" style="background:#a855f7;opacity:.1;height:44px;border-radius:8px"></div><div class="fw-col" style="background:#a855f7;opacity:.1;height:44px;border-radius:8px"></div></div>
-            </div>
-          </div>
-        </div>
-        <div class="real-info"><span class="real-category">Tech · Communauté</span><span class="real-name">Al-Wasil</span></div>
-      </div>
-
-      <!-- Carte 3 : Orion SaaS (réel) -->
-      <div class="real-card" onclick="window.open('https://orion-saas.vercel.app','_blank')">
-        <div class="real-preview">
-          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>orion-saas.vercel.app</span></div></div>
-          <img src="assets/orion-saas-gestion-freelance-resultat-campagne.jpg" class="real-img" alt="Orion — dashboard SaaS gestion freelance campagnes"/>
-        </div>
-        <div class="real-info"><span class="real-category">SaaS · Dashboard</span><span class="real-name">Orion</span></div>
-      </div>
-
-      <!-- Carte 4 : Maison Éclat -->
-      <div class="real-card">
-        <div class="real-preview" style="background:linear-gradient(135deg,#0a0806 0%,#1c1208 100%)">
-          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>maisoneclat.com</span></div></div>
-          <div class="real-screenshot" style="color:#c8a000;padding:10px">
-            <div class="fw-hero"><div class="fw-nav"><div class="fw-logo" style="background:#c8a000;opacity:.5"></div><div class="fw-nav-items"><div class="fw-ni" style="background:#c8a000"></div><div class="fw-ni" style="background:#c8a000"></div><div class="fw-ni" style="background:#c8a000"></div></div></div><div style="letter-spacing:.25em;font-size:9px;color:#c8a000;opacity:.6;margin-top:10px">NOUVELLE COLLECTION</div><div style="color:#fff;font-size:16px;font-weight:700;line-height:1.1;margin-top:4px;opacity:.9">MAISON<br/>ÉCLAT</div><div style="background:#c8a000;opacity:.7;width:70px;height:14px;border-radius:2px;margin-top:10px"></div><div class="fw-grid" style="margin-top:8px"><div class="fw-col" style="background:#c8a000;opacity:.08;height:48px;border-radius:6px"></div><div class="fw-col" style="background:#c8a000;opacity:.08;height:48px;border-radius:6px"></div><div class="fw-col" style="background:#c8a000;opacity:.08;height:48px;border-radius:6px"></div></div></div>
-          </div>
-        </div>
-        <div class="real-info"><span class="real-category">Mode · E-commerce</span><span class="real-name">Maison Éclat</span></div>
-      </div>
-
-      <!-- Carte 5 : Bloom Beauty -->
-      <div class="real-card">
-        <div class="real-preview" style="background:linear-gradient(135deg,#fdf5f0 0%,#f5e0d5 100%)">
-          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>bloom-beauty.co</span></div></div>
-          <div class="real-screenshot" style="color:#8b3a2a;padding:10px">
-            <div class="fw-hero"><div class="fw-nav"><div class="fw-logo" style="background:#8b3a2a;opacity:.4"></div><div class="fw-nav-items"><div class="fw-ni" style="background:#8b3a2a"></div><div class="fw-ni" style="background:#8b3a2a"></div><div class="fw-ni" style="background:#8b3a2a"></div></div></div><div style="font-size:16px;font-weight:800;color:#8b3a2a;opacity:.8;margin-top:8px">BLOOM</div><div style="font-size:7px;letter-spacing:.2em;color:#8b3a2a;opacity:.5;margin-top:2px">BEAUTY · SKINCARE</div><div class="fw-h1" style="color:#8b3a2a;opacity:.4;margin-top:8px;width:80%"></div><div style="display:flex;gap:6px;margin-top:8px"><div style="background:#8b3a2a;opacity:.6;width:70px;height:16px;border-radius:20px"></div></div><div class="fw-grid" style="margin-top:8px"><div class="fw-col" style="background:#8b3a2a;opacity:.06;height:45px;border-radius:10px"></div><div class="fw-col" style="background:#8b3a2a;opacity:.06;height:45px;border-radius:10px"></div></div></div>
-          </div>
-        </div>
-        <div class="real-info"><span class="real-category">Beauté · E-commerce</span><span class="real-name">Bloom Beauty</span></div>
-      </div>
-
-      <!-- Carte 6 : Auric Paris -->
-      <div class="real-card">
-        <div class="real-preview" style="background:linear-gradient(135deg,#060a14 0%,#0e1828 100%)">
-          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>auric-paris.com</span></div></div>
-          <div class="real-screenshot" style="color:#d4a830;padding:10px">
-            <div class="fw-hero"><div class="fw-nav"><div class="fw-logo" style="background:#d4a830;opacity:.5"></div><div class="fw-nav-items"><div class="fw-ni" style="background:#d4a830"></div><div class="fw-ni" style="background:#d4a830"></div><div class="fw-ni" style="background:#d4a830"></div><div class="fw-ni" style="background:#d4a830"></div></div></div><div style="font-size:9px;letter-spacing:.3em;color:#d4a830;opacity:.6;margin-top:10px">BIJOUTERIE · PARIS</div><div style="color:#fff;font-size:18px;font-weight:300;letter-spacing:.08em;margin-top:4px;opacity:.9">AURIC</div><div class="fw-h2" style="color:#d4a830;opacity:.3;margin-top:6px;width:70%"></div><div style="background:#d4a830;opacity:.8;width:80px;height:14px;border-radius:2px;margin-top:10px"></div><div class="fw-img" style="background:linear-gradient(90deg,rgba(212,168,48,.12),transparent);height:48px;border-radius:6px;margin-top:8px"></div></div>
-          </div>
-        </div>
-        <div class="real-info"><span class="real-category">Bijoux · E-commerce</span><span class="real-name">Auric Paris</span></div>
-      </div>
-
-      <!-- Carte 7 : Velda Studio -->
-      <div class="real-card">
-        <div class="real-preview" style="background:linear-gradient(135deg,#f8f4ef 0%,#ede8e0 100%)">
-          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>velda-studio.fr</span></div></div>
-          <div class="real-screenshot" style="color:#111;padding:10px">
-            <div class="fw-hero"><div class="fw-nav"><div class="fw-logo" style="background:#111;opacity:.3"></div><div class="fw-nav-items"><div class="fw-ni" style="background:#111"></div><div class="fw-ni" style="background:#111"></div><div class="fw-ni" style="background:#111"></div></div></div><div style="font-size:16px;font-weight:800;letter-spacing:-.01em;color:#111;opacity:.85;margin-top:10px">VELDA STUDIO</div><div style="font-size:7px;letter-spacing:.2em;color:#111;opacity:.4;margin-top:3px">PRÊT-À-PORTER</div><div class="fw-h1" style="color:#111;opacity:.15;margin-top:8px;width:90%"></div><div style="background:#111;opacity:.7;width:80px;height:16px;border-radius:2px;margin-top:10px"></div><div class="fw-grid" style="margin-top:8px"><div class="fw-col" style="background:#111;opacity:.06;height:50px;border-radius:4px"></div><div class="fw-col" style="background:#111;opacity:.06;height:50px;border-radius:4px"></div><div class="fw-col" style="background:#111;opacity:.06;height:50px;border-radius:4px"></div></div></div>
-          </div>
-        </div>
-        <div class="real-info"><span class="real-category">Mode · Paris</span><span class="real-name">Velda Studio</span></div>
-      </div>
-
-      <!-- Carte 8 : The Roam -->
-      <div class="real-card">
-        <div class="real-preview" style="background:linear-gradient(135deg,#030612 0%,#080c20 100%)">
-          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>theroam.co</span></div></div>
-          <div class="real-screenshot" style="color:#4a6fff;padding:10px">
-            <div class="fw-hero"><div class="fw-nav"><div class="fw-logo" style="background:#4a6fff;opacity:.5"></div><div class="fw-nav-items"><div class="fw-ni" style="background:#4a6fff"></div><div class="fw-ni" style="background:#4a6fff"></div><div class="fw-ni" style="background:#4a6fff"></div></div></div><div style="font-size:9px;letter-spacing:.2em;color:#4a6fff;opacity:.6;margin-top:10px">US MARKET</div><div style="color:#fff;font-size:18px;font-weight:700;line-height:1.1;margin-top:4px;opacity:.9">THE<br/>ROAM</div><div style="background:#4a6fff;opacity:.8;width:80px;height:16px;border-radius:4px;margin-top:10px"></div><div style="display:flex;gap:4px;margin-top:8px"><div style="background:#4a6fff;opacity:.1;flex:1;height:48px;border-radius:8px"></div><div style="background:#4a6fff;opacity:.1;flex:1;height:48px;border-radius:8px"></div><div style="background:#4a6fff;opacity:.1;flex:1;height:48px;border-radius:8px"></div></div></div>
-          </div>
-        </div>
-        <div class="real-info"><span class="real-category">Mode · US Market</span><span class="real-name">The Roam</span></div>
-      </div>
-
-      <!-- Repeat for seamless scroll -->
-      <div class="real-card">
-        <div class="real-preview" style="background:linear-gradient(135deg,#f5f0e8 0%,#ece4d0 100%)">
-          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>noe-skincare.com</span></div></div>
-          <div class="real-screenshot" style="color:#4a3218;padding:10px"><div class="fw-hero"><div class="fw-nav"><div class="fw-logo" style="background:#4a3218;opacity:.3"></div><div class="fw-nav-items"><div class="fw-ni" style="background:#4a3218"></div><div class="fw-ni" style="background:#4a3218"></div></div></div><div style="font-size:14px;font-weight:700;color:#4a3218;opacity:.7;margin-top:10px">NOÉ</div><div style="font-size:7px;letter-spacing:.25em;color:#4a3218;opacity:.4;margin-top:2px">SKINCARE NATUREL</div><div class="fw-h1" style="color:#4a3218;opacity:.2;margin-top:8px;width:85%"></div><div style="display:flex;gap:6px;margin-top:8px"><div style="background:#4a3218;opacity:.5;width:70px;height:16px;border-radius:20px"></div></div></div></div>
-        </div>
-        <div class="real-info"><span class="real-category">Skincare · E-commerce</span><span class="real-name">Noé Skincare</span></div>
-      </div>
-      <div class="real-card">
-        <div class="real-preview" style="background:linear-gradient(135deg,#080808 0%,#121212 100%)">
-          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>kova-paris.com</span></div></div>
-          <div class="real-screenshot" style="color:#fff;padding:10px"><div class="fw-hero"><div class="fw-nav"><div class="fw-logo" style="background:#fff;opacity:.3"></div><div class="fw-nav-items"><div class="fw-ni" style="background:#fff"></div><div class="fw-ni" style="background:#fff"></div><div class="fw-ni" style="background:#fff"></div></div></div><div style="font-size:18px;font-weight:800;letter-spacing:.02em;color:#fff;opacity:.9;margin-top:8px">KOVA</div><div style="font-size:7px;letter-spacing:.3em;color:#fff;opacity:.4;margin-top:2px">PARIS · INTERNATIONAL</div><div class="fw-h1" style="color:#fff;opacity:.12;margin-top:8px;width:80%"></div><div style="background:#fff;opacity:.6;width:80px;height:16px;border-radius:2px;margin-top:10px"></div><div class="fw-grid" style="margin-top:8px"><div class="fw-col" style="background:#fff;opacity:.05;height:48px;border-radius:4px"></div><div class="fw-col" style="background:#fff;opacity:.05;height:48px;border-radius:4px"></div></div></div></div>
-        </div>
-        <div class="real-info"><span class="real-category">Mode · International</span><span class="real-name">Kova Paris</span></div>
-      </div>
-      <div class="real-card">
-        <div class="real-preview" style="background:linear-gradient(135deg,#0f0516 0%,#180a24 100%)">
-          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>orea-beaute.fr</span></div></div>
-          <div class="real-screenshot" style="color:#c878e0;padding:10px"><div class="fw-hero"><div class="fw-nav"><div class="fw-logo" style="background:#c878e0;opacity:.4"></div><div class="fw-nav-items"><div class="fw-ni" style="background:#c878e0"></div><div class="fw-ni" style="background:#c878e0"></div></div></div><div style="font-size:16px;font-weight:700;color:#fff;opacity:.85;margin-top:8px">ORÉA</div><div style="font-size:7px;letter-spacing:.2em;color:#c878e0;opacity:.6;margin-top:2px">BEAUTÉ PREMIUM</div><div class="fw-h1" style="color:#c878e0;opacity:.25;margin-top:8px;width:75%"></div><div style="display:flex;gap:6px;margin-top:8px"><div style="background:#c878e0;opacity:.6;width:70px;height:16px;border-radius:20px"></div></div><div class="fw-grid" style="margin-top:8px"><div class="fw-col" style="background:#c878e0;opacity:.08;height:45px;border-radius:10px"></div><div class="fw-col" style="background:#c878e0;opacity:.08;height:45px;border-radius:10px"></div></div></div></div>
-        </div>
-        <div class="real-info"><span class="real-category">Beauté · Paris</span><span class="real-name">Oréa</span></div>
-      </div>
-      <div class="real-card">
-        <div class="real-preview" style="background:linear-gradient(135deg,#0a0806 0%,#1c1208 100%)">
-          <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>maisoneclat.com</span></div></div>
-          <div class="real-screenshot" style="color:#c8a000;padding:10px"><div class="fw-hero"><div class="fw-nav"><div class="fw-logo" style="background:#c8a000;opacity:.5"></div><div class="fw-nav-items"><div class="fw-ni" style="background:#c8a000"></div><div class="fw-ni" style="background:#c8a000"></div><div class="fw-ni" style="background:#c8a000"></div></div></div><div style="letter-spacing:.25em;font-size:9px;color:#c8a000;opacity:.6;margin-top:10px">NOUVELLE COLLECTION</div><div style="color:#fff;font-size:16px;font-weight:700;line-height:1.1;margin-top:4px;opacity:.9">MAISON<br/>ÉCLAT</div><div style="background:#c8a000;opacity:.7;width:70px;height:14px;border-radius:2px;margin-top:10px"></div><div class="fw-grid" style="margin-top:8px"><div class="fw-col" style="background:#c8a000;opacity:.08;height:48px;border-radius:6px"></div><div class="fw-col" style="background:#c8a000;opacity:.08;height:48px;border-radius:6px"></div><div class="fw-col" style="background:#c8a000;opacity:.08;height:48px;border-radius:6px"></div></div></div></div>
-        </div>
-        <div class="real-info"><span class="real-category">Mode · E-commerce</span><span class="real-name">Maison Éclat</span></div>
-      </div>
-
-    </div>
-  </div>
-  <button class="real-footer-btn" id="realToggle">Réduire ↑</button>
-</section>
 
 <!-- ══ BIG TEXT ══ -->
 <section id="big-text">

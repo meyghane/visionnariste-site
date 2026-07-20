@@ -192,6 +192,14 @@ nav{
   transition:gap .2s;
 }
 .card-cta:hover{gap:10px}
+.card-cta-secondary{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  color:#999;text-decoration:none;border:1.5px solid #ddd;border-radius:100px;
+  padding:8px 16px;transition:border-color .2s,color .2s;
+}
+.card-cta-secondary:hover{border-color:#111;color:#111}
+.card-ctas{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:auto}
 
 /* Exclusif section */
 .exclusif-wrap{
@@ -406,7 +414,10 @@ footer.site-footer{background:#080808;color:rgba(255,255,255,.6);border-top:1px 
         <div class="card-name">Site vitrine &amp; e-commerce</div>
         <div class="card-desc">Site web rapide, mobile-first, pensé pour transformer les visiteurs en clients. Design sur-mesure, référencement local intégré et expérience utilisateur optimisée pour convertir.</div>
         <div class="card-price">1 500€ – 5 000€ <span>selon projet</span></div>
-        <a href="devis.html" class="card-cta">Demander un devis →</a>
+        <div class="card-ctas">
+          <a href="devis.html" class="card-cta">Demander un devis →</a>
+          <a href="portfolio.html" class="card-cta-secondary">Voir portfolio</a>
+        </div>
       </div>
     </div>
 
@@ -530,7 +541,10 @@ footer.site-footer{background:#080808;color:rgba(255,255,255,.6);border-top:1px 
         <div class="card-name">Création de visuels &amp; flyers publicitaires</div>
         <div class="card-desc">Visuels statiques, carrousels et flyers pensés pour performer en paid media. Chaque créatif est conçu avec les codes de votre secteur (mode, beauté, e-commerce) pour capter l'attention et générer le clic.</div>
         <div class="card-price">Sur devis <span>selon volume et format</span></div>
-        <a href="devis.html" class="card-cta">Demander un devis →</a>
+        <div class="card-ctas">
+          <a href="devis.html" class="card-cta">Demander un devis →</a>
+          <a href="portfolio.html#flyers" class="card-cta-secondary">Voir portfolio</a>
+        </div>
       </div>
     </div>
 
