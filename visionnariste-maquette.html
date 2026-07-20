@@ -1026,8 +1026,9 @@ footer.site-footer{
 }
 .real-strip-outer{
   overflow:hidden;position:relative;
-  cursor:grab;
+  cursor:grab;scrollbar-width:none;
 }
+.real-strip-outer::-webkit-scrollbar{display:none}
 .real-strip-outer:active{cursor:grabbing}
 .real-strip{
   display:flex;gap:20px;
@@ -1236,16 +1237,20 @@ footer.site-footer{
   .hero-ctas{flex-direction:column;align-items:flex-start;gap:12px}
 
   /* All sections horizontal padding */
-  #stats,#pourquoi,#impact,#services,#services-fan,#realisations,#methode,
+  #stats,#pourquoi,#impact,#services,#services-fan,#methode,
   #apropos,#processus,#tarifs,#faq,#ads-orbs,#versus,#footer-contact{
     padding-left:20px;padding-right:20px
   }
+  /* Réalisations : header/label ont leur propre padding, strip va bord à bord */
+  .real-header{padding:0 20px}
+  .real-strip-label{padding:0 20px}
+  .real-footer-btn{margin-left:20px}
 
   /* Grids */
   .pourquoi-wrap{grid-template-columns:1fr;gap:32px}
   .services-grid{grid-template-columns:1fr}
-  .stats-grid{grid-template-columns:1fr;max-width:100%}
-  .stat{padding:32px 20px}
+  .stats-grid{grid-template-columns:1fr 1fr;max-width:100%}
+  .stat{padding:24px 16px}
   .tarifs-grid{grid-template-columns:1fr;gap:16px}
   .tcard.featured{transform:scale(1)}
   .impact-grid{grid-template-columns:1fr 1fr;gap:0}
@@ -1283,6 +1288,48 @@ footer.site-footer{
   /* Ads orbs / platform logos */
   .orbs-inner{gap:16px}
   .orb{width:52px;height:52px}
+
+  /* ── SECTION VERTICAL PADDING COMPACT ── */
+  #pourquoi,#impact,#services,#methode,#apropos,#processus,#tarifs,#faq,#versus{
+    padding-top:56px;padding-bottom:56px
+  }
+  #stats{padding-top:48px;padding-bottom:48px}
+  #realisations{padding-top:52px;padding-bottom:48px}
+
+  /* ── STATS COMPACT ── */
+  .stat-n{font-size:clamp(34px,9vw,50px)}
+  .stat-label{font-size:13px}
+
+  /* ── SERVICES COMPACT ── */
+  .svc-card{padding:24px 18px}
+  .svc-list{gap:6px}
+
+  /* ── METHODE COMPACT ── */
+  .steps{gap:20px}
+  .step{gap:12px;padding:16px 0}
+  .big-quote{font-size:clamp(22px,6.5vw,34px);padding:32px 20px}
+  .quote-note{font-size:13px}
+  .methode-right{padding:0}
+
+  /* ── BIG TEXT → caché sur mobile (décoratif uniquement) ── */
+  #big-text{display:none}
+
+  /* ── TEMOIGNAGES ── */
+  #temoignages{padding:56px 20px!important}
+  .temoignages-grid{grid-template-columns:1fr}
+  .temoignage-card{padding:28px}
+
+  /* ── FOOTER ── */
+  .footer-top{grid-template-columns:1fr;gap:24px;padding:40px 20px}
+  .footer-bottom-bar{flex-direction:column;gap:8px;padding:16px 20px;text-align:center}
+  .footer-brand p{max-width:100%}
+
+  /* ── RÉALISATIONS SWIPE MOBILE ── */
+  .real-strip-outer{overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;cursor:default}
+  .real-strip-outer::-webkit-scrollbar{display:none}
+  .real-strip{width:auto;animation:none!important;padding:12px 20px 28px}
+  .real-card{width:min(280px,72vw);scroll-snap-align:start;flex-shrink:0}
+  .real-header,.real-strip-label{padding:0 20px}
 }
 
 @media(max-width:480px){
@@ -1305,6 +1352,9 @@ footer.site-footer{
   .orb,.tilted-inner,.wband,.band-inner,.real-strip{animation:none !important}
   *{transition-duration:.01ms !important}
 }
+
+/* Témoignages grid — remplace l'inline style pour pouvoir override en media query */
+.temoignages-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 
 /* ─────────────────────────────
    GLOBAL 2026 IMPROVEMENTS
@@ -1601,18 +1651,36 @@ h1,h2,h3{text-wrap:balance}
 
       <!-- Carte 1 : Hermood (réel) -->
       <div class="real-card" onclick="window.open('https://hermood.fr','_blank')">
-        <div class="real-preview">
+        <div class="real-preview" style="background:linear-gradient(135deg,#f4faf6 0%,#e8f5ee 100%)">
           <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>hermood.fr</span></div></div>
-          <img src="assets/hermood-resultat-meta-ads-ecommerce-beaute.jpg" class="real-img" alt="Hermood — résultats Meta Ads e-commerce beauté bien-être"/>
+          <div class="real-screenshot" style="color:#2d6a4f;padding:10px">
+            <div class="fw-hero">
+              <div class="fw-nav"><div class="fw-logo" style="background:#2d6a4f;opacity:.55;width:64px"></div><div class="fw-nav-items"><div class="fw-ni" style="background:#2d6a4f"></div><div class="fw-ni" style="background:#2d6a4f"></div><div class="fw-ni" style="background:#2d6a4f"></div><div class="fw-ni" style="background:#2d6a4f;width:28px"></div></div></div>
+              <div style="font-size:9px;letter-spacing:.22em;color:#2d6a4f;opacity:.55;margin-top:10px">BIEN-ÊTRE · NATUREL</div>
+              <div style="color:#1a3d2b;font-size:16px;font-weight:800;line-height:1.1;margin-top:3px;opacity:.9">HERMOOD</div>
+              <div style="font-size:7px;letter-spacing:.18em;color:#2d6a4f;opacity:.45;margin-top:2px">Inositol &amp; Compléments</div>
+              <div style="background:#2d6a4f;opacity:.7;width:84px;height:15px;border-radius:20px;margin-top:9px"></div>
+              <div class="fw-grid" style="margin-top:9px"><div class="fw-col" style="background:#2d6a4f;opacity:.09;height:44px;border-radius:8px"></div><div class="fw-col" style="background:#2d6a4f;opacity:.09;height:44px;border-radius:8px"></div><div class="fw-col" style="background:#2d6a4f;opacity:.09;height:44px;border-radius:8px"></div></div>
+            </div>
+          </div>
         </div>
         <div class="real-info"><span class="real-category">E-commerce · Bien-être</span><span class="real-name">Hermood</span></div>
       </div>
 
       <!-- Carte 2 : Al-Wasil (réel) -->
       <div class="real-card" onclick="window.open('https://al-wasil.fr','_blank')">
-        <div class="real-preview">
+        <div class="real-preview" style="background:linear-gradient(135deg,#1a0535 0%,#2d0b57 100%)">
           <div class="real-browser-bar"><span class="real-dot r"></span><span class="real-dot y"></span><span class="real-dot g"></span><div class="real-url"><span>al-wasil.fr</span></div></div>
-          <img src="assets/al-wasil-plateforme-communautaire-musulmane-france.jpg" class="real-img" alt="Al-Wasil — plateforme communautaire musulmane France"/>
+          <div class="real-screenshot" style="color:#a855f7;padding:10px">
+            <div class="fw-hero">
+              <div class="fw-nav"><div class="fw-logo" style="background:#a855f7;opacity:.6;width:60px"></div><div class="fw-nav-items"><div class="fw-ni" style="background:#a855f7"></div><div class="fw-ni" style="background:#a855f7"></div><div class="fw-ni" style="background:#a855f7"></div></div></div>
+              <div style="font-size:9px;letter-spacing:.2em;color:#a855f7;opacity:.55;margin-top:10px">COMMUNAUTÉ · FRANCE</div>
+              <div style="color:#fff;font-size:15px;font-weight:700;line-height:1.15;margin-top:3px;opacity:.9">AL-WASIL</div>
+              <div style="font-size:7px;letter-spacing:.15em;color:#a855f7;opacity:.5;margin-top:2px">Plateforme musulmane</div>
+              <div style="background:#7c3aed;opacity:.8;width:78px;height:15px;border-radius:4px;margin-top:9px"></div>
+              <div class="fw-grid" style="margin-top:9px"><div class="fw-col" style="background:#a855f7;opacity:.1;height:44px;border-radius:8px"></div><div class="fw-col" style="background:#a855f7;opacity:.1;height:44px;border-radius:8px"></div></div>
+            </div>
+          </div>
         </div>
         <div class="real-info"><span class="real-category">Tech · Communauté</span><span class="real-name">Al-Wasil</span></div>
       </div>
@@ -1959,7 +2027,7 @@ h1,h2,h3{text-wrap:balance}
   <div style="max-width:1100px;margin:0 auto">
     <span class="sec-label">Ce qu'ils disent</span>
     <h2 style="font-family:var(--font);font-size:clamp(32px,4vw,56px);font-weight:900;line-height:1.05;letter-spacing:-.03em;color:#111;margin-bottom:60px;max-width:600px">Ils ont décidé de viser plus haut.</h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div class="temoignages-grid">
 
       <div class="temoignage-card" style="background:var(--bg2);border-radius:20px;padding:40px;display:flex;flex-direction:column;gap:24px">
         <p style="font-size:18px;line-height:1.65;color:#111;font-weight:500;letter-spacing:-.01em">"Notre ROAS Meta est passé de 1,8 à 4,1 en huit semaines. Ce qui m'a frappée, c'est la rigueur : chaque décision était justifiée par la data, aucun budget dilapidé. On a enfin une acquisition qui ressemble à une vraie stratégie."</p>
