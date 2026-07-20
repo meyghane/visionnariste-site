@@ -38,3 +38,4 @@ https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;
 - Source principale : `visionnariste-maquette.html` → copier en `index.html` avant chaque déploiement Vercel
 - Pages : index.html, services.html, tarifs.html, blog.html, blog/*.html
 - Formspree : remplacer `VOTRE_ID_FORMSPREE` dans le formulaire de contact
+- **Contexte fondatrice :** lire `FICHE-PERSO.md` avant de rédiger du copywriting ou du contenu pour le site
